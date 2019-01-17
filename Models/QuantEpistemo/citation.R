@@ -18,6 +18,7 @@ citation <- graph_from_data_frame(edges,vertices = nodes[,c(2,1,3)])#3:7)])
 components(citation)$csize
 
 citation = induced_subgraph(citation,which(components(citation)$membership==1))
+# IGRAPH 4865d41 DN-- 146774 210341
 
 V(citation)$reduced_title = sapply(V(citation)$title,function(s){paste0(substr(s,1,50),"...")})
 V(citation)$reduced_title = ifelse(degree(citation)>20,V(citation)$reduced_title,rep("",vcount(citation)))
@@ -41,6 +42,13 @@ citationd1 =induced_subgraph(citation,vids = V(citation)$name%in%vdepth1$name)
 V(citationd1)$reduced_title = ifelse(degree(citationd1)>40,V(citationd1)$reduced_title,rep("",vcount(citationd1)))
 
 write_graph(citationd1,file='data/spatialmicrosim_depth1.gml',format = 'gml')
+
+vdepth0=V(citation)[V(citation)$initial]
+citationd0 = induced_subgraph(citation,vids = vdepth0)
+citationd0giant = induced_subgraph(citationd0,which(components(citationd0)$membership==1))
+
+write_graph(citationd0,file='data/spatialmicrosim_depth0.gml',format = 'gml')
+write_graph(citationd0giant,file='data/spatialmicrosim_depth0giantcomp.gml',format = 'gml')
 
 
 # TODO :

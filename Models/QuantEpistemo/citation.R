@@ -41,6 +41,8 @@ citationd1 =induced_subgraph(citation,vids = V(citation)$name%in%vdepth1$name)
 # adjust reduced title degree
 V(citationd1)$reduced_title = ifelse(degree(citationd1)>40,V(citationd1)$reduced_title,rep("",vcount(citationd1)))
 
+mean(degree(citationd1,mode = 'in'))
+
 write_graph(citationd1,file='data/spatialmicrosim_depth1.gml',format = 'gml')
 
 vdepth0=V(citation)[V(citation)$initial]
@@ -50,6 +52,7 @@ citationd0giant = induced_subgraph(citationd0,which(components(citationd0)$membe
 write_graph(citationd0,file='data/spatialmicrosim_depth0.gml',format = 'gml')
 write_graph(citationd0giant,file='data/spatialmicrosim_depth0giantcomp.gml',format = 'gml')
 
+mean(degree(citationd0giant,mode = 'in'))
 
 # TODO :
 # : separate two graphs ; see communities within each
@@ -71,7 +74,7 @@ ecount(citationcore)/(vcount(citationcore)*(vcount(citationcore)-1))
 mean(degree(citation))
 mean(degree(citation,mode = 'in'))
 mean(degree(citationcore,mode = 'in'))
-
+mean(degree(citationcorehigher,mode = 'in'))
 
 
 # modularity / vs null model

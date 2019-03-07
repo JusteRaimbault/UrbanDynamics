@@ -8,3 +8,8 @@ urbanabm;urban agent based model
 spatintmodel;spatial interaction model
 spatintabm;spatial interaction agent based model
 geosimulation;geosimulation
+urbangeosimulation;urban geosimulation
+urbanca;urban cellular automata
+urbgrowthmodel;urban growth model
+urbanlandusechangemodel;urban land use change model
+urbanlandusemodel;urban land use model

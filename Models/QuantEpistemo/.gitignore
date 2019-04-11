@@ -1,3 +1,4 @@
 launchdb
 .tor_tmp
+*.log
 

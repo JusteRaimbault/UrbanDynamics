@@ -1,4 +1,4 @@
-cd /home/ubuntu/ComplexSystems/UrbanDynamics/Models/QuantEpistemo 
+cd /home/ubuntu/ComplexSystems/UrbanDynamics/Models/QuantEpistemo
 
 TOTAL=`mongo urbmod --quiet --eval "db.references.count()"`
 LINKS=`mongo urbmod --quiet --eval "db.links.count()"`
@@ -8,7 +8,3 @@ DATE=`date +%s`
 echo "$TOTAL;$LINKS;$REMAINING"
 
 echo "$DATE;$TOTAL;$LINKS;$REMAINING" >> progress.txt
-
-
-
-

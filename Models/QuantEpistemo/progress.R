@@ -4,6 +4,8 @@ library(dplyr)
 
 setwd(paste0(Sys.getenv('CS_HOME'),'/UrbanDynamics/Models/QuantEpistemo'))
 
+source(paste0(Sys.getenv('CS_HOME'),'/Organisation/Models/Utils/R/plots.R'))
+
 counts <- read.csv('progress.txt',sep=";")
 names(counts)<-c("time","refs","links","remaining")
 counts$time <- as.POSIXct(counts$time,origin="1970-01-01")

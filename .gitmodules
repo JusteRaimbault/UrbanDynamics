@@ -4,6 +4,6 @@
 [submodule "Models/MobilityPlaces"]
 	path = Models/MobilityPlaces
 	url = git@github.com:MettiHoof/3circles.git
-[submodule "Models/QuantEpistemo_"]
-	path = Models/QuantEpistemo_
+[submodule "Models/QuantEpistemo"]
+	path = Models/QuantEpistemo
 	url = git@github.com:JusteRaimbault/UrbanModelingCitations.git

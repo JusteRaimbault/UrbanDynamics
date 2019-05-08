@@ -1,3 +1,9 @@
 [submodule "Docs/Papers/MicrosimReview"]
 	path = Docs/Papers/MicrosimReview
 	url = git@github.com:JusteRaimbault/MicrosimReview.git
+[submodule "Models/MobilityPlaces"]
+	path = Models/MobilityPlaces
+	url = git@github.com:MettiHoof/3circles.git
+[submodule "Models/QuantEpistemo"]
+	path = Models/QuantEpistemo
+	url = git@github.com:JusteRaimbault/UrbanModelingCitations.git

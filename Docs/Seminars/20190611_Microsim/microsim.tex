@@ -125,10 +125,9 @@
  Currently :
  
  \begin{itemize}
- \item Extended/rewrote a bibliographic data collection and management library (java) to get citation data from google scholar
- \item 
+ \item Extended/rewrote a bibliographic data collection and management library (java) to get citation data from google scholar (parallel collection, mongodb storage)
+ \item Citation network analysis (4.67e5 papers, 8.34e5 citation links): endogenous disciplines and their positioning, evolution of communities in time
  \end{itemize}
- 
  
  
 
@@ -136,13 +135,31 @@
 
 \sframe{Coverage of the citation network}{
   
-  \includegraphics[width=\textwidth]{figures/coverage_subnws}
+  \textit{Robustness of the corpus to the construction method (keyword request): majority coverage for each request}
+  
+  \medskip
+  
+  \centering
+  \includegraphics[height=0.8\textheight]{figures/coverage_subnws}
   
 }
 
+\sframe{Sensitivity analysis}{
+
+\textit{Multiobjective optimization of network structure on the parameter for query answer kept}
+
+\medskip
+
+\centering
+ \includegraphics[height=0.8\textheight]{figures/pareto_vcount-modularity.png}
+
+}
+
+
+
 \sframe{Citation network}{
 
-\includegraphics[width=\textwidth]{figures/core_hdepth3_filtered_LOWRES.png}
+\includegraphics[width=\textwidth,trim=3cm 0cm 0 cm 0cm]{figures/core_hdepth3_filtered_LOWRES.png}
 
 }
 
@@ -153,30 +170,58 @@
 }
 
 
+\sframe{Preliminary conclusions from literature mapping}{
 
-\section{Specific definitions}
+}
+
+
+
+\section{Specific definitions of Microsimulation and ABM}
+
+\sframe{Microsimulation and agent-based modeling}{
+
+% micro ontology ; linked to implementation choice ?
+% discrete dynamical system for quant
+
+}
+
 
 
 
 \section{Description of SPENSER}
 
-\sframe{General purpose}{
+\sframe{General purpose of SPENSER}{
 
-  Individual and household-level simulation of population
+  Individual and household-level spatially explicit simulation of population (projective model)
 
-  $\rightarrow$ test policies and scenarios at the UK-level
+  $\rightarrow$ purpose: test policies and scenarios at any level
   
   \medskip
   
   Modules:
   
   \begin{itemize}
+    \item Data source API
   	\item Synthetic population generator %(Iterative Prop Fitting)
   	\item Dynamic micro-simulation library
   	\item Simim, spatial interaction library
   \end{itemize}
   
+  \medskip
+
+  \textit{In practice, not yet integrated}
+  
+  % + use DAFNI for user interface / visualization / integration of HPC.
+  
 }
+
+\sframe{Flowchart of SPENSER}{
+
+% can integrate ?
+
+}
+
+
 
 \sframe{Synthetic population generation}{
 
@@ -187,6 +232,8 @@
 }
 
 \sframe{Spatial interactions}{
+
+% concurrent of quant ? for pop only - migrations
 
 }
 
@@ -203,7 +250,7 @@
 
 % -> roadmap, incl sensitivity analysis
 
-\sframe{Comparison of properties}{
+\sframe{Comparison of QUANT/SPENSER properties}{
 
 %%%%%%%%%%%%
 \begin{table}
@@ -272,21 +319,32 @@ $\rightarrow$ strong coupling can be seen as building a new model
 
 \sframe{Sensitivity analysis of SPENSER}{
  
-  % validation of spatial interaction module
+  % validation of spatial interaction module -> currently done by Maarten
   
+  % done eitherway by the spenser team through dafni ?
  
 }
 
 \sframe{Sensitivity analysis of QUANT}{
-
+  
+  % ideas to go with : missing data / data perturbations
+  %. => descruption of spatialdata / forcity / spatial projects generator
+  
 }
 
 
 \sframe{Computational experiments using OpenMOLE}{
 
+ % what is poenmole
+ % what does it do
+ % list of methods
+
 }
 
 \sframe{Running OpenMOLE on DAFNI}{
+
+ % possibility to run as a service ? (kubernetes cluster - currently also being intergaetd
+ % 
 
 }
 

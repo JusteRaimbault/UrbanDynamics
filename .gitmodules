@@ -13,3 +13,12 @@
 [submodule "Models/ABMCitiesFirms"]
 	path = Models/ABMCitiesFirms
 	url = git@github.com:JusteRaimbault/ABMCitiesFirms.git
+[submodule "Models/Microsimulation/neworder"]
+	path = Models/Microsimulation/neworder
+	url = https://github.com/virgesmith/neworder.git
+[submodule "Models/Microsimulation/UKCensusAPI"]
+	path = Models/Microsimulation/UKCensusAPI
+	url = https://github.com/virgesmith/UKCensusAPI.git
+[submodule "Models/Microsimulation/humanleague"]
+	path = Models/Microsimulation/humanleague
+	url = https://github.com/virgesmith/humanleague.git

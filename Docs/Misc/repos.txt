@@ -9,3 +9,6 @@ microsynthesis (synthetic population)
 
 dynamic microsimulation: https://github.com/virgesmith/neworder
 
+Nomis API
+  https://www.nomisweb.co.uk/api/v01/help
+

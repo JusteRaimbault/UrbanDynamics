@@ -1,0 +1,12 @@
+
+
+Running C# on linux / docker ?
+
+
+https://www.mono-project.com/docs/about-mono/languages/
+
+https://hub.docker.com/_/mono/
+
+https://codefresh.io/docker-tutorial/c-sharp-in-docker/
+
+

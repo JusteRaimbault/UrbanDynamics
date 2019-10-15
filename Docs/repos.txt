@@ -1,8 +1,0 @@
-Spatial interaction:  https://github.com/nismod/simim
-
-Population data: https://github.com/virgesmith/UKCensusAPI and https://github.com/nismod/ukpopulation
-
-microsynthesis https://github.com/virgesmith/humanleague
-
-dynamic microsimulation: https://github.com/virgesmith/neworder
-

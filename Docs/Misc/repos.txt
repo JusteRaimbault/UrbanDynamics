@@ -1,0 +1,14 @@
+Spatial interaction:  https://github.com/nismod/simim
+
+Population data: https://github.com/virgesmith/UKCensusAPI and https://github.com/nismod/ukpopulation
+
+microsynthesis (synthetic population)
+  https://github.com/virgesmith/humanleague
+  https://www.theoj.org/joss-papers/joss.00629/10.21105.joss.00629.pdf
+  IPF method https://en.wikipedia.org/wiki/Iterative_proportional_fitting
+
+dynamic microsimulation: https://github.com/virgesmith/neworder
+
+Nomis API
+  https://www.nomisweb.co.uk/api/v01/help
+

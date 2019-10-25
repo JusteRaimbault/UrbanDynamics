@@ -1,3 +1,8 @@
+
+scala akka https://doc.akka.io/docs/akka/current/typed/guide/tutorial_1.html
+
+https://github.com/jasmineRepo
+
 Spatial interaction:  https://github.com/nismod/simim
 
 Population data: https://github.com/virgesmith/UKCensusAPI and https://github.com/nismod/ukpopulation

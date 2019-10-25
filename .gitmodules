@@ -22,3 +22,9 @@
 [submodule "Models/Microsimulation/humanleague"]
 	path = Models/Microsimulation/humanleague
 	url = https://github.com/virgesmith/humanleague.git
+[submodule "Models/Microsimulation/h24"]
+	path = Models/Microsimulation/h24
+	url = https://github.com/eighties-cities/h24.git
+[submodule "Models/Microsimulation/microsim"]
+	path = Models/Microsimulation/microsim
+	url = git@github.com:openmole/microsim.git

@@ -28,3 +28,6 @@
 [submodule "Models/Microsimulation/microsim"]
 	path = Models/Microsimulation/microsim
 	url = git@github.com:openmole/microsim.git
+[submodule "Models/Quant"]
+	path = Models/Quant
+	url = git@github.com:JusteRaimbault/Quant.git

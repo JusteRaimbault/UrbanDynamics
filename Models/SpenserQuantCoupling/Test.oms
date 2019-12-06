@@ -1,0 +1,16 @@
+
+
+
+val model = ScalaTask("println(\"TEST\")")
+    
+val id = Val[Long]
+    
+val replication = Replication(
+    evaluation = (model hook ToStringHook()),
+    seed = id,
+    replications = 2
+    )
+    
+replication
+
+

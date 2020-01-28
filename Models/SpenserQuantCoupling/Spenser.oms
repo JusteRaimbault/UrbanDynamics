@@ -1,0 +1,11 @@
+val model = ContainerTask(
+        //image = "nismod/spenser:1.1",
+        image = "justeraimbault/spenser:1.1.2",
+        //command = "sh -c \"chmod u+x setup.sh;ls; ./setup.sh\"",
+        //command = "sh -c \"python3 WORKED_EXAMPLE/example.py\"",
+        command = "sh -c \"cd microsimulation;export HOME=/root;export REGION=S12000030;./run.sh;ls data\""
+        //containerSystem = Singularity()//org.openmole.plugin.task.container.container.Singularity()
+)
+
+model
+

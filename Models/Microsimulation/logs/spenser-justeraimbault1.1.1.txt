@@ -1,0 +1,107 @@
+Static P Microsimulation:  S12000030 @ MSOA11
+Unable to contact https://www.nomisweb.co.uk/, operating in offline mode - pre-cached data only
+Unable to contact https://www.scotlandscensus.gov.uk/ods-web/download/getDownloadFile.html, operating in offline mode - pre-cached data only
+Unable to contact https://www.nomisweb.co.uk/, operating in offline mode - pre-cached data only
+Unable to contact https://www.nomisweb.co.uk/, operating in offline mode - pre-cached data only
+Loading NPP principal (ppp) data for England, Wales, Scotland & Northern Ireland
+Unable to contact https://www.nomisweb.co.uk/, operating in offline mode - pre-cached data only
+Collating SNPP data for England...
+Collating SNPP data for Wales...
+Collating SNPP data for Scotland...
+Collating SNPP data for Northern Ireland...
+Synthesising Scottish DC1117/DC2101 tables from LAD-level seeds and univariate data
+Extracting cache/QS103SC.csv
+Extracting cache/QS104SC.csv
+Extracting cache/DC1117SC.csv
+Extracting cache/KS201SC.csv
+Extracting cache/DC2101SC.csv
+Synthesising 2011 seed population...OK
+Running in fast mode. Rounded IPF populations may not exactly match the marginals
+Starting microsynthesis sequence...
+Generating ./data/ssm_S12000030_MSOA11_ppp_2011.csv [MYE]... updating seed to 2011  OK
+Generating ./data/ssm_S12000030_MSOA11_ppp_2012.csv [MYE]... updating seed to 2012  OK
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/urllib/request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "/usr/lib/python3.6/http/client.py", line 1254, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1300, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1249, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1036, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 974, in send
+    self.connect()
+  File "/usr/lib/python3.6/http/client.py", line 1407, in connect
+    super().connect()
+  File "/usr/lib/python3.6/http/client.py", line 946, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.6/socket.py", line 704, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "scripts/run_ssm.py", line 48, in <module>
+    main(PARAMS)
+  File "scripts/run_ssm.py", line 37, in main
+    ssm.run(ref_year, horizon_year)
+  File "/usr/local/lib/python3.6/dist-packages/microsimulation-0.0.1-py3.6.egg/microsimulation/static.py", line 90, in run
+    msynth = self.__microsynthesise(year)
+  File "/usr/local/lib/python3.6/dist-packages/microsimulation-0.0.1-py3.6.egg/microsimulation/static.py", line 101, in __microsynthesise
+    age_sex = utils.create_age_sex_marginal(utils.adjust_pp_age(self.mye_api.filter(self.region, year)), self.region)
+  File "/usr/local/lib/python3.6/dist-packages/ukpopulation-1.2.1-py3.6.egg/ukpopulation/myedata.py", line 63, in filter
+  File "/usr/local/lib/python3.6/dist-packages/ukpopulation-1.2.1-py3.6.egg/ukpopulation/myedata.py", line 106, in __fetch_data
+  File "/usr/local/lib/python3.6/dist-packages/ukcensusapi-1.1.6-py3.6.egg/ukcensusapi/Nomisweb.py", line 213, in get_data
+  File "/usr/lib/python3.6/urllib/request.py", line 248, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/usr/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/usr/lib/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.6/urllib/request.py", line 1361, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.6/urllib/request.py", line 1320, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+Generating ./data/ssm_S12000030_MSOA11_ppp_2013.csv [MYE]... ssm_E07000041_MSOA11_ppp_2011.csv
+ssm_E07000041_MSOA11_ppp_2012.csv
+ssm_S12000030_MSOA11_ppp_2011.csv
+ssm_S12000030_MSOA11_ppp_2012.csv
+ssm_hh_E09000001_OA11_2011.csv
+ssm_hh_E09000001_OA11_2012.csv
+ssm_hh_E09000001_OA11_2013.csv
+ssm_hh_E09000001_OA11_2014.csv
+ssm_hh_E09000001_OA11_2015.csv
+ssm_hh_E09000001_OA11_2016.csv
+ssm_hh_E09000001_OA11_2017.csv
+ssm_hh_E09000001_OA11_2018.csv
+ssm_hh_E09000001_OA11_2019.csv
+ssm_hh_E09000001_OA11_2020.csv
+ssm_hh_E09000001_OA11_2021.csv
+ssm_hh_E09000001_OA11_2022.csv
+ssm_hh_E09000001_OA11_2023.csv
+ssm_hh_E09000001_OA11_2024.csv
+ssm_hh_E09000001_OA11_2025.csv
+ssm_hh_E09000001_OA11_2026.csv
+ssm_hh_E09000001_OA11_2027.csv
+ssm_hh_E09000001_OA11_2028.csv
+ssm_hh_E09000001_OA11_2029.csv
+ssm_hh_E09000001_OA11_2030.csv
+ssm_hh_E09000001_OA11_2031.csv
+ssm_hh_E09000001_OA11_2032.csv
+ssm_hh_E09000001_OA11_2033.csv
+ssm_hh_E09000001_OA11_2034.csv
+ssm_hh_E09000001_OA11_2035.csv
+ssm_hh_E09000001_OA11_2036.csv
+ssm_hh_E09000001_OA11_2037.csv
+ssm_hh_E09000001_OA11_2038.csv
+ssm_hh_E09000001_OA11_2039.csv

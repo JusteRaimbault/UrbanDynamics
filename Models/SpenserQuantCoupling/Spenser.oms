@@ -1,7 +1,8 @@
 
 val region = Val[String]
 val popfiles = Val[File]
-val msoayearlypops = Val[Array[File]]
+//val msoayearlypops = Val[Array[File]]
+val msoayearlypops = Val[File]
 val years = Val[Array[String]]
 
 val yearsval = Array("2011","2020","2030","2040","2050")
@@ -26,26 +27,27 @@ val processpop = ScalaTask("""
 		|//import java.nio.file.Files
 		|//val msoayearlypops = newDir()
 		|//years.foreach{ y =>
-		|val msoayearlypops = years.map{y =>
-		|val yearlypops = (popfiles / ("ssm_"+region+"_MSOA11_ppp_"+y+".csv")).content.split("\n").toList.tail.map{case row => val a = row.split(","); (a(1),a(4).toDouble)}.groupBy{case (s,p) => s}.map{case (k,p) => k+","+p.map{_._2}.sum.toString}.mkString("\n")
-		|val res = newFile("pop",y+".csv")
-		|res.content = yearlypops
+		|val msoayearlypopstr = years.map{y =>
+		|val yearlypops = (popfiles / ("ssm_"+region+"_MSOA11_ppp_"+y+".csv")).content.split("\n").toList.tail.map{case row => val a = row.split(","); (a(1),a(4).toDouble)}.groupBy{case (s,p) => s}.map{case (k,p) => k+","+y+","+p.map{_._2}.sum.toString}.mkString("\n")
+		|//val res = newFile("pop",y+".csv")
+		|//res.content = yearlypops
 		|//Files.copy(res,msoayearlypops / (y+".csv"))
-		|res
-		|}
+		|yearlypops
+		|}.mkString("\n")
+		|val msoayearlypops = newFile()
+		|msoayearlypops.content = msoayearlypopstr
 		""".stripMargin
 	) set (
 	(inputs,outputs) += (region,popfiles,years),
 	outputs += (msoayearlypops)
 )
 
-val copyresdir = CopyFileHook(msoayearlypops, workDirectory / "test/${region}" )
+val copyresdir = CopyFileHook(msoayearlypops, workDirectory / "test/${region}.csv" )
 
 
 val exploregions = DirectSampling(
    evaluation = (spenser -- (processpop hook copyresdir)),
-   //sampling = (region in Seq("S12000030","E06000028"))
-   sampling = (region in Seq("S12000030"))
+   sampling = (region in Seq("S12000030",""))
 )
 
 exploregions

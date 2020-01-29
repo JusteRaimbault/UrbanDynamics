@@ -1,25 +1,19 @@
 
 
+val msoayearlypops = Val[File]
+
+
+val quantcommand = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run -- /home/tmp/pop.csv /home/tmp/nw.graphml /home/tmp/res.csv \""
+
 val model = ContainerTask(
-    //image = workDirectory / "images/quant-0.2.tgz",
-    image = "justeraimbault/quant:1.0.2",
-    //command = "sh -c \"sh ./home/QUANT/run-quant.sh\""
-    //command = "sh -c \"/home/Quant/QUANTAI/run.sh\"" // fails: "Failed to resolve full path of the current executable"
-    command = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run\"",
-    containerSystem = Singularity() 
+    image = "justeraimbault/quant:1.0.4",
+    command = quantcommand, 
+    containerSystem = Singularity() // FIXME proot seems to have issues resolving symlinks 
+) set (
+   inputFiles += 
+
 )
   
 model
   
-/*
-val id = Val[Long]
-    
-val replication = Replication(
-    evaluation = (model hook ToStringHook()),
-    seed = id,
-    replications = 2
-)
-    
-replication
-*/
 

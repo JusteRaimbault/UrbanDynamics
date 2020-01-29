@@ -1,20 +1,21 @@
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 val region = Val[String]
 val popfiles = Val[File]
-//val msoayearlypops = Val[Array[File]]
 val msoayearlypops = Val[File]
 val years = Val[Array[String]]
 
 val yearsval = Array("2011","2020","2030","2040","2050")
 
-val spensercommand = "sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;cp data/ssm_${region}_MSOA11_ppp_2011.csv res;cp data/ssm_${region}_MSOA11_ppp_2020.csv res;cp data/ssm_${region}_MSOA11_ppp_2030.csv res;cp data/ssm_${region}_MSOA11_ppp_2040.csv res;cp data/ssm_${region}_MSOA11_ppp_2050.csv res\""
-//val spensercommand = s"sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;${years.map{y => "cp data/ssm_"+region+"_MSOA11_ppp_"+y+".csv res"}.mkString(";")}"
+val cpfiles = yearsval.map{y => "cp data/ssm_${region}_MSOA11_ppp_"+y+".csv res"}.mkString(";")
+//val spensercommand = "sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;cp data/ssm_${region}_MSOA11_ppp_2011.csv res;cp data/ssm_${region}_MSOA11_ppp_2020.csv res;cp data/ssm_${region}_MSOA11_ppp_2030.csv res;cp data/ssm_${region}_MSOA11_ppp_2040.csv res;cp data/ssm_${region}_MSOA11_ppp_2050.csv res\""
+val spensercommand = "sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;"+cpfiles+"\""
 
 val spenser = ContainerTask(
-        //image = "nismod/spenser:1.1",
-        image = "justeraimbault/spenser:1.1.2",
+        image = "justeraimbault/spenser:1.1.3",
         //command = "sh -c \"chmod u+x setup.sh;ls; ./setup.sh\"",
-        //command = "sh -c \"python3 WORKED_EXAMPLE/example.py\"",
         command = spensercommand//,
         //containerSystem = Singularity()
 ) set (
@@ -24,14 +25,8 @@ val spenser = ContainerTask(
 )
 
 val processpop = ScalaTask("""
-		|//import java.nio.file.Files
-		|//val msoayearlypops = newDir()
-		|//years.foreach{ y =>
 		|val msoayearlypopstr = years.map{y =>
 		|val yearlypops = (popfiles / ("ssm_"+region+"_MSOA11_ppp_"+y+".csv")).content.split("\n").toList.tail.map{case row => val a = row.split(","); (a(1),a(4).toDouble)}.groupBy{case (s,p) => s}.map{case (k,p) => k+","+y+","+p.map{_._2}.sum.toString}.mkString("\n")
-		|//val res = newFile("pop",y+".csv")
-		|//res.content = yearlypops
-		|//Files.copy(res,msoayearlypops / (y+".csv"))
 		|yearlypops
 		|}.mkString("\n")
 		|val msoayearlypops = newFile()
@@ -47,8 +42,12 @@ val copyresdir = CopyFileHook(msoayearlypops, workDirectory / "test/${region}.cs
 
 val exploregions = DirectSampling(
    evaluation = (spenser -- (processpop hook copyresdir)),
-   sampling = (region in Seq("S12000030",""))
+  // Stirling, City of London, Manchester, Birmingham
+  // sampling = (region in Seq("S12000030","E09000001","E08000003","E08000025"))
+  // E09000001 is failing
+  sampling = (region in Seq("E08000003"))
 )
 
 exploregions
+
 

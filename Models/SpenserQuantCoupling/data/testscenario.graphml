@@ -1,0 +1,12 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="Weight" for="edge" attr.name="Weight" attr.type="float" />
+  <graph id="G" edgedefault="directed">
+   <node id="9100EUSTON" code="EUS" lines="P1" lon="-0.13328971879932" lat="51.52859626089940" name="Euston"/>
+   <node id="9100LUTON" lon="-0.41748" lat="51.87"/>
+   <edge id="e0" source="9100EUSTON" target="9100LUTON" Weight="219"/>
+  </graph>
+</graphml>
+
+

@@ -2,7 +2,13 @@
 import java.text.SimpleDateFormat
 import java.util.Date
 
+
+// global param
 val region = Val[String]
+
+
+// Spenser part
+
 val popfiles = Val[File]
 val msoayearlypops = Val[File]
 val years = Val[Array[String]]
@@ -38,15 +44,52 @@ val processpop = ScalaTask("""
 	outputs += (msoayearlypops)
 )
 
-val copyresdir = CopyFileHook(msoayearlypops, workDirectory / "test/${region}.csv" )
 
+// Quant part
+val nwchanges = Val[File]
+val quantresults = Val[File]
+
+// final indicators
+//val indicators = Val[String] // FIXME this is dirty - would be better to have an array and collapse it - better hardcode it anyway?
+val indicators = "CDiff,alpha,delta"
+val cdiff = Val[Array[Double]] // for each year
+val alpha = Val[Array[Double]]
+val delta = Val[Array[Double]]
+
+val quantcommand = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run -- /home/tmp/pop.csv /home/tmp/nw.graphml /home/tmp/res.csv "+indicators+"\""
+
+val quant = ContainerTask(
+    image = "justeraimbault/quant:1.0.4",
+    command = quantcommand, 
+    containerSystem = Singularity() // FIXME proot seems to have issues resolving symlinks 
+) set (
+   (inputs,outputs) += (region),
+   inputs += (indicators),
+   inputFiles += (msoayearlypops,"/home/tmp/pop.csv"),
+   inputFiles += (nwchanges,"/home/tmp/nw.graphml"),
+   outputFiles += ("/home/tmp/res.csv",quantresults),
+   nwchanges := workDirectory / "data" / "testscenario.graphml",
+   msoayearlypops := workDirectory / "test" / "S12000030.csv"
+)
+
+val postprocessquantresults = ScalaTask("""
+		|val rawres = quantresults.content.split("\n").map(_.split(",").map(_.toDouble)).sortBy(r => r(0))
+		|val cdiff = rawres.map{r => r(1)}
+		|val alpha = rawres.map{r => r(2)}
+		|val delta = rawres.map{r => r(3)}
+					""".stripMargin
+			 ) set (
+	(inputs,outputs) += (region),
+	inputs += (quantresults),
+	outputs += (cdiff,alpha,delta)
+)
+
+val indics_hook = AppendToCSVFileHook(workDirectory / "exploration" / (((new SimpleDateFormat("yyyyMMdd_HHmmss")).format(new Date()))+".csv"),arrayOnRow = true)
 
 val exploregions = DirectSampling(
-   evaluation = (spenser -- (processpop hook copyresdir)),
+   evaluation = (spenser -- processpop -- quant -- (postprocessquantresults hook copyresdir)),
   // Stirling, City of London, Manchester, Birmingham
-  // sampling = (region in Seq("S12000030","E09000001","E08000003","E08000025"))
-  // E09000001 is failing at runtime
-  sampling = (region in Seq("S12000030"))
+  sampling = (region in Seq("S12000030","E09000001","E08000003","E08000025"))
 )
 
 exploregions

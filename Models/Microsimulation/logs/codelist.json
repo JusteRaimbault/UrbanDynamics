@@ -1,0 +1,2273 @@
+{
+"structure" :{
+"codelists" :{
+"codelist" :[
+{
+"agencyid" :"NOMIS",
+"id" :"CL_144_1_GEOGRAPHY",
+"code" :[
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001827",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 001",
+"lang" :"en"},
+"value" :1245710068},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001828",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 002",
+"lang" :"en"},
+"value" :1245710069},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001829",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 003",
+"lang" :"en"},
+"value" :1245710070},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001830",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 004",
+"lang" :"en"},
+"value" :1245710071},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001831",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 005",
+"lang" :"en"},
+"value" :1245710072},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001832",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 006",
+"lang" :"en"},
+"value" :1245710073},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001833",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 007",
+"lang" :"en"},
+"value" :1245710074},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001834",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 008",
+"lang" :"en"},
+"value" :1245710075},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001835",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 009",
+"lang" :"en"},
+"value" :1245710076},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001836",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 010",
+"lang" :"en"},
+"value" :1245710077},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001837",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 011",
+"lang" :"en"},
+"value" :1245710078},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001838",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 012",
+"lang" :"en"},
+"value" :1245710079},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001839",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 013",
+"lang" :"en"},
+"value" :1245710080},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001840",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 014",
+"lang" :"en"},
+"value" :1245710081},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001841",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 015",
+"lang" :"en"},
+"value" :1245710082},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001842",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 016",
+"lang" :"en"},
+"value" :1245710083},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001843",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 017",
+"lang" :"en"},
+"value" :1245710084},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001844",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 018",
+"lang" :"en"},
+"value" :1245710085},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001845",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 019",
+"lang" :"en"},
+"value" :1245710086},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001846",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 020",
+"lang" :"en"},
+"value" :1245710087},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001847",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 021",
+"lang" :"en"},
+"value" :1245710088},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001848",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 022",
+"lang" :"en"},
+"value" :1245710089},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001849",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 023",
+"lang" :"en"},
+"value" :1245710090},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001850",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 024",
+"lang" :"en"},
+"value" :1245710091},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001851",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 025",
+"lang" :"en"},
+"value" :1245710092},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001852",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 026",
+"lang" :"en"},
+"value" :1245710093},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001854",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 028",
+"lang" :"en"},
+"value" :1245710094},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001855",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 029",
+"lang" :"en"},
+"value" :1245710095},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001856",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 030",
+"lang" :"en"},
+"value" :1245710096},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001857",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 031",
+"lang" :"en"},
+"value" :1245710097},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001858",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 032",
+"lang" :"en"},
+"value" :1245710098},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001859",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 033",
+"lang" :"en"},
+"value" :1245710099},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001860",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 034",
+"lang" :"en"},
+"value" :1245710100},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001861",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 035",
+"lang" :"en"},
+"value" :1245710101},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001862",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 036",
+"lang" :"en"},
+"value" :1245710102},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001863",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 037",
+"lang" :"en"},
+"value" :1245710103},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001864",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 038",
+"lang" :"en"},
+"value" :1245710104},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001865",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 039",
+"lang" :"en"},
+"value" :1245710105},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001866",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 040",
+"lang" :"en"},
+"value" :1245710106},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001867",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 041",
+"lang" :"en"},
+"value" :1245710107},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001868",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 042",
+"lang" :"en"},
+"value" :1245710108},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001869",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 043",
+"lang" :"en"},
+"value" :1245710109},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001870",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 044",
+"lang" :"en"},
+"value" :1245710110},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001871",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 045",
+"lang" :"en"},
+"value" :1245710111},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001872",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 046",
+"lang" :"en"},
+"value" :1245710112},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001873",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 047",
+"lang" :"en"},
+"value" :1245710113},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001874",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 048",
+"lang" :"en"},
+"value" :1245710114},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001875",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 049",
+"lang" :"en"},
+"value" :1245710115},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001876",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 050",
+"lang" :"en"},
+"value" :1245710116},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001877",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 051",
+"lang" :"en"},
+"value" :1245710117},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001878",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 052",
+"lang" :"en"},
+"value" :1245710118},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001879",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 053",
+"lang" :"en"},
+"value" :1245710119},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001880",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 054",
+"lang" :"en"},
+"value" :1245710120},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001881",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 055",
+"lang" :"en"},
+"value" :1245710121},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001882",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 056",
+"lang" :"en"},
+"value" :1245710122},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001883",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 057",
+"lang" :"en"},
+"value" :1245710123},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001884",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 058",
+"lang" :"en"},
+"value" :1245710124},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001886",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 060",
+"lang" :"en"},
+"value" :1245710125},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001888",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 062",
+"lang" :"en"},
+"value" :1245710126},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001889",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 063",
+"lang" :"en"},
+"value" :1245710127},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001890",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 064",
+"lang" :"en"},
+"value" :1245710128},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001892",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 066",
+"lang" :"en"},
+"value" :1245710129},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001893",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 067",
+"lang" :"en"},
+"value" :1245710130},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001895",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 069",
+"lang" :"en"},
+"value" :1245710131},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001896",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 070",
+"lang" :"en"},
+"value" :1245710132},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001897",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 071",
+"lang" :"en"},
+"value" :1245710133},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001898",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 072",
+"lang" :"en"},
+"value" :1245710134},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001899",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 073",
+"lang" :"en"},
+"value" :1245710135},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001900",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 074",
+"lang" :"en"},
+"value" :1245710136},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001901",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 075",
+"lang" :"en"},
+"value" :1245710137},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001902",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 076",
+"lang" :"en"},
+"value" :1245710138},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001903",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 077",
+"lang" :"en"},
+"value" :1245710139},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001904",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 078",
+"lang" :"en"},
+"value" :1245710140},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001905",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 079",
+"lang" :"en"},
+"value" :1245710141},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001906",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 080",
+"lang" :"en"},
+"value" :1245710142},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001907",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 081",
+"lang" :"en"},
+"value" :1245710143},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001908",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 082",
+"lang" :"en"},
+"value" :1245710144},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001909",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 083",
+"lang" :"en"},
+"value" :1245710145},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001910",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 084",
+"lang" :"en"},
+"value" :1245710146},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001911",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 085",
+"lang" :"en"},
+"value" :1245710147},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001913",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 087",
+"lang" :"en"},
+"value" :1245710148},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001914",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 088",
+"lang" :"en"},
+"value" :1245710149},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001915",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 089",
+"lang" :"en"},
+"value" :1245710150},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001916",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 090",
+"lang" :"en"},
+"value" :1245710151},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001918",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 092",
+"lang" :"en"},
+"value" :1245710152},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001919",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 093",
+"lang" :"en"},
+"value" :1245710153},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001920",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 094",
+"lang" :"en"},
+"value" :1245710154},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001921",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 095",
+"lang" :"en"},
+"value" :1245710155},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001922",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 096",
+"lang" :"en"},
+"value" :1245710156},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001923",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 097",
+"lang" :"en"},
+"value" :1245710157},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001924",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 098",
+"lang" :"en"},
+"value" :1245710158},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001925",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 099",
+"lang" :"en"},
+"value" :1245710159},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001926",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 100",
+"lang" :"en"},
+"value" :1245710160},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001927",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 101",
+"lang" :"en"},
+"value" :1245710161},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001928",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 102",
+"lang" :"en"},
+"value" :1245710162},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001929",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 103",
+"lang" :"en"},
+"value" :1245710163},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001930",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 104",
+"lang" :"en"},
+"value" :1245710164},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001931",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 105",
+"lang" :"en"},
+"value" :1245710165},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001932",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 106",
+"lang" :"en"},
+"value" :1245710166},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001933",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 107",
+"lang" :"en"},
+"value" :1245710167},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001934",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 108",
+"lang" :"en"},
+"value" :1245710168},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001935",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 109",
+"lang" :"en"},
+"value" :1245710169},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001936",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 110",
+"lang" :"en"},
+"value" :1245710170},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001937",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 111",
+"lang" :"en"},
+"value" :1245710171},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001938",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 112",
+"lang" :"en"},
+"value" :1245710172},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001939",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 113",
+"lang" :"en"},
+"value" :1245710173},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001941",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 115",
+"lang" :"en"},
+"value" :1245710174},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001942",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 116",
+"lang" :"en"},
+"value" :1245710175},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001943",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 117",
+"lang" :"en"},
+"value" :1245710176},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001944",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 118",
+"lang" :"en"},
+"value" :1245710177},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001945",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 119",
+"lang" :"en"},
+"value" :1245710178},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001946",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 120",
+"lang" :"en"},
+"value" :1245710179},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001947",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 121",
+"lang" :"en"},
+"value" :1245710180},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001948",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 122",
+"lang" :"en"},
+"value" :1245710181},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001949",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 123",
+"lang" :"en"},
+"value" :1245710182},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001950",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 124",
+"lang" :"en"},
+"value" :1245710183},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001951",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 125",
+"lang" :"en"},
+"value" :1245710184},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001952",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 126",
+"lang" :"en"},
+"value" :1245710185},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001953",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 127",
+"lang" :"en"},
+"value" :1245710186},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001954",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 128",
+"lang" :"en"},
+"value" :1245710187},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001955",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 129",
+"lang" :"en"},
+"value" :1245710188},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001956",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 130",
+"lang" :"en"},
+"value" :1245710189},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02001957",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 131",
+"lang" :"en"},
+"value" :1245710190},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006807",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 132",
+"lang" :"en"},
+"value" :1245714953},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006809",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 133",
+"lang" :"en"},
+"value" :1245714955},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006895",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 134",
+"lang" :"en"},
+"value" :1245715041},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006896",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 135",
+"lang" :"en"},
+"value" :1245715042},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006897",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 136",
+"lang" :"en"},
+"value" :1245715043},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006898",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 137",
+"lang" :"en"},
+"value" :1245715044},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006899",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 138",
+"lang" :"en"},
+"value" :1245715045},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006900",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 139",
+"lang" :"en"},
+"value" :1245715046},
+{
+"annotations" :{
+"annotation" :[
+{
+"annotationtext" :"2011 super output areas - middle layer",
+"annotationtitle" :"TypeName"},
+{
+"annotationtext" :297,
+"annotationtitle" :"TypeCode"},
+{
+"annotationtext" :"E02006901",
+"annotationtitle" :"GeogCode"}]},
+"parentcode" :1228931202,
+"description" :{
+"value" :"Birmingham 140",
+"lang" :"en"},
+"value" :1245715047}],
+"name" :{
+"value" :"geography",
+"lang" :"en"},
+"uri" :""}]},
+"header" :{
+"id" :"NM_144_1",
+"prepared" :"2020-01-29T10:56:12Z",
+"sender" :{
+"contact" :{
+"email" :"census.customerservices@ons.gov.uk",
+"name" :"Census",
+"telephone" :"01329 444 972",
+"uri" :"http:\/\/www.ons.gov.uk\/census"},
+"id" :"NOMIS"},
+"test" :"false"},
+"xmlns" :"http:\/\/www.SDMX.org\/resources\/SDMXML\/schemas\/v2_0\/message",
+"common" :"http:\/\/www.SDMX.org\/resources\/SDMXML\/schemas\/v2_0\/common",
+"structure" :"http:\/\/www.SDMX.org\/resources\/SDMXML\/schemas\/v2_0\/structure",
+"xsi" :"http:\/\/www.w3.org\/2001\/XMLSchema-instance",
+"schemalocation" :"http:\/\/sdmx.org\/docs\/2_0\/SDMXMessage.xsd"}
+}

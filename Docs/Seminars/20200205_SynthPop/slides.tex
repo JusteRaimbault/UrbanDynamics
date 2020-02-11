@@ -1,0 +1,115 @@
+\input{header_slides.tex}
+
+\begin{document}
+
+\title{Coupling Microsimulation and LUTI models}
+\author[Raimbault]{J.~Raimbault$^{1,2,3\ast}$\\\medskip
+$^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
+}
+
+\institute[UCL]{$^{1}$CASA, UCL\\
+$^{2}$UPS CNRS 3611 ISC-PIF\\
+$^{3}$UMR CNRS 8504 G{\'e}ographie-cit{\'e}s
+}
+
+
+\date[5th February 2020]{}
+
+\frame{\maketitle}
+
+
+\sframe{Coupling Microsimulation and LUTI models}{
+
+\begin{center}
+\includegraphics[width=\textwidth]{figures/quant.png}
+\end{center}
+
+\medskip
+
+QUANT land-use transport model for Great Britain developed at CASA (PI Michael Batty, Urban Dynamics Lab EPSRC project)
+
+}
+
+\sframe{Coupling Microsimulation and LUTI models}{
+
+\begin{center}
+\includegraphics[width=0.95\textwidth]{figures/spenser.png}
+\end{center}
+
+\medskip
+
+SPENSER population microsimulation model (population synthesis and projection) developed at University of Leeds (PI Nik Lomaks, ATI project)
+
+}
+
+
+\sframe{Spatial sensitivity analysis}{
+
+scala library for spatial sensitivity analysis
+
+\texttt{github.com/openmole/spatialdata}
+
+\begin{center}
+\includegraphics[width=0.42\textwidth]{figures/simpopnet_Fig1.png}\includegraphics[width=0.42\textwidth]{figures/spatialsens_examplegenerators.png}
+\end{center}
+
+\footnotesize
+
+Raimbault, J., Cottineau, C., Le Texier, M., Le Néchet, F., \& Reuillon, R. (2019). Space Matters: Extending Sensitivity Analysis to Initial Spatial Conditions in Geosimulation Models. Journal of Artificial Societies \& Social Simulation, 22(4).
+
+}
+
+
+\sframe{OpenMOLE integration}{
+
+\textit{Heterogeneity of models and implementations}
+
+\medskip
+
+$\rightarrow$ integration into the OpenMOLE model exploration open source software \texttt{next.openmole.org}
+%\cite{reuillon2013openmole}
+
+\begin{center}
+\includegraphics[height=0.13\textheight]{figures/iconOM.png}
+\includegraphics[height=0.13\textheight]{figures/openmole.png}
+\end{center}
+
+\textit{Enables seamlessly (i) model embedding; (ii) access to HPC resources; (iii) exploration and optimization algorithms}
+
+}
+
+\sframe{Expectations}{
+
+\begin{itemize}
+	\item Discuss a scala implementation of fast statistical algorithms for population synthesis (IPF, QRIS) and simulation (matrices updates)
+	\item Discuss OpenMOLE integration of microsimulation models
+	\item Discuss spatial sensitivity analysis in the context of microsimulation
+\end{itemize}
+
+
+
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[allowframebreaks]
+%\frametitle{References}
+%\bibliographystyle{apalike}
+%\bibliography{biblio}
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

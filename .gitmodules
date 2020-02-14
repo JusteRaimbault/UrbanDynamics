@@ -28,12 +28,15 @@
 [submodule "Models/Microsimulation/microsim"]
 	path = Models/Microsimulation/microsim
 	url = git@github.com:openmole/microsim.git
-[submodule "Models/Quant"]
+[submodule "Models/QuantCore"]
 	path = Models/QuantCore
-	url = git@github.com:JusteRaimbault/Quant.git
+	url = git@github.com:JusteRaimbault/QuantCore.git
 [submodule "Models/Quant-developing"]
 	path = Models/Quant-developing
 	url = git@github.com:MettiHoof/Quant-developing.git
 [submodule "Models/quant"]
 	path = Models/quant
 	url = git@github.com:maptube/quant.git
+[submodule "Docs/WorkingPapers/QuantDescription"]
+	path = Docs/WorkingPapers/QuantDescription
+	url = git@github.com:JusteRaimbault/QuantDescription.git

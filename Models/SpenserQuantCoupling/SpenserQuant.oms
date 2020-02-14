@@ -1,0 +1,97 @@
+
+import java.text.SimpleDateFormat
+import java.util.Date
+
+
+// global param
+val region = Val[String]
+
+
+// Spenser part
+
+val popfiles = Val[File]
+val msoayearlypops = Val[File]
+val years = Val[Array[String]]
+
+val yearsval = Array("2011","2020","2030","2040","2050")
+
+val cpfiles = yearsval.map{y => "cp data/ssm_${region}_MSOA11_ppp_"+y+".csv res"}.mkString(";")
+//val spensercommand = "sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;cp data/ssm_${region}_MSOA11_ppp_2011.csv res;cp data/ssm_${region}_MSOA11_ppp_2020.csv res;cp data/ssm_${region}_MSOA11_ppp_2030.csv res;cp data/ssm_${region}_MSOA11_ppp_2040.csv res;cp data/ssm_${region}_MSOA11_ppp_2050.csv res\""
+val spensercommand = "sh -c \"cd microsimulation;export HOME=/root;export REGION=${region};./run.sh;mkdir res;"+cpfiles+"\""
+
+val spenser = ContainerTask(
+        //image = "justeraimbault/spenser:1.1.2",
+        image = "nismod/spenser:1.3",
+	//command = "sh -c \"chmod u+x setup.sh;ls; ./setup.sh\"",
+        command = spensercommand//,
+        //containerSystem = Singularity()
+) set (
+    (inputs,outputs) += (region,years),
+    outputFiles += ("/home/docker/SPENSER/microsimulation/res",popfiles),
+    years := yearsval
+)
+
+val processpop = ScalaTask("""
+		|val msoayearlypopstr = years.map{y =>
+		|val yearlypops = (popfiles / ("ssm_"+region+"_MSOA11_ppp_"+y+".csv")).content.split("\n").toList.tail.map{case row => val a = row.split(","); (a(1),a(4).toDouble)}.groupBy{case (s,p) => s}.map{case (k,p) => k+","+y+","+p.map{_._2}.sum.toString}.mkString("\n")
+		|yearlypops
+		|}.mkString("\n")
+		|val msoayearlypops = newFile()
+		|msoayearlypops.content = msoayearlypopstr
+		""".stripMargin
+	) set (
+	(inputs,outputs) += (region,popfiles,years),
+	outputs += (msoayearlypops)
+)
+
+
+// Quant part
+val nwchanges = Val[File]
+val quantresults = Val[File]
+
+// final indicators
+//val indicators = Val[String] // FIXME this is dirty - would be better to have an array and collapse it - better hardcode it anyway?
+val indicators = "CDiff,alpha,delta"
+val cdiff = Val[Array[Double]] // for each year
+val alpha = Val[Array[Double]]
+val delta = Val[Array[Double]]
+
+val quantcommand = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run -- /home/tmp/pop.csv /home/tmp/nw.graphml /home/tmp/res.csv "+indicators+"\""
+
+val quant = ContainerTask(
+    image = "justeraimbault/quant:1.0.4",
+    command = quantcommand, 
+    containerSystem = Singularity() // FIXME proot seems to have issues resolving symlinks 
+) set (
+   (inputs,outputs) += (region),
+   inputs += (indicators),
+   inputFiles += (msoayearlypops,"/home/tmp/pop.csv"),
+   inputFiles += (nwchanges,"/home/tmp/nw.graphml"),
+   outputFiles += ("/home/tmp/res.csv",quantresults),
+   nwchanges := workDirectory / "data" / "testscenario.graphml",
+   msoayearlypops := workDirectory / "test" / "S12000030.csv"
+)
+
+val postprocessquantresults = ScalaTask("""
+		|val rawres = quantresults.content.split("\n").map(_.split(",").map(_.toDouble)).sortBy(r => r(0))
+		|val cdiff = rawres.map{r => r(1)}
+		|val alpha = rawres.map{r => r(2)}
+		|val delta = rawres.map{r => r(3)}
+					""".stripMargin
+			 ) set (
+	(inputs,outputs) += (region),
+	inputs += (quantresults),
+	outputs += (cdiff,alpha,delta)
+)
+
+val indics_hook = AppendToCSVFileHook(workDirectory / "exploration" / (((new SimpleDateFormat("yyyyMMdd_HHmmss")).format(new Date()))+".csv"),arrayOnRow = true)
+
+val exploregions = DirectSampling(
+   evaluation = (spenser -- processpop -- quant -- (postprocessquantresults hook copyresdir)),
+  // Stirling, City of London, Manchester, Birmingham
+  sampling = (region in Seq("S12000030","E09000001","E08000003","E08000025"))
+)
+
+exploregions
+
+

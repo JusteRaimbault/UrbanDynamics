@@ -1,0 +1,81 @@
+
+Oliv: French data: CLAP
+all estab. but not self employed (ex lawyers)
+2003 onwards.
+2015 latest. (diverse sources : secu, taxes, etc.)
+Siren : similar - but unchecked.
+location: not precise: municipality (arrondissements) - cross with siren: exact adress. 
+(recently released)
+LIFI: financial links. via box also.
+% of capital owned. (5-10% min threshold).
+ -> compute distances plant / headquarters.
+
+Neave: Columbia (employment/migration)
+mobility(commuting, transport., agriculture)
+Mexico: census, (not have: geotagged firms), input/output nws.
+US: envt data - plant level. toxic emissions.
+Chili mobile phone.
+(Africa: terrorist nws)
+landuse India, Ehtopia. (detailed prod / landuse)
+UK: hash: 1% panel (pop over time). ? (lsoa)
+Irish data: unusual subset (export firms), FDI.
+Trade dataset? open but hard to get. (UN)
+Scraping employment annoucments. Leapfrog dvlpmt. ~global labour market? (online platforms). Mech turk. 
+Learning for ppl working on these platforms? 
+tax data. policy to hire minorities (South Africa). 
+
+Amadeus: ownership.
+! last update. 
+(scraping / browser automation)
+
+Oliv: open data version. 1973 -> today. exact adress of estab. + base adresse : geoloc. open access.
+27Mio estab. today 6Mio. 
+
+----
+Methods.
+
+coproduction issues?
+comp soci sci? mobility models: limited impact (not specialists)
+same with economists? connecting new data/texhniques with thematic. interdisc collab? 
+presenting to economists? right way of putting stuff.
+need a root disc / interdisc pers?
+need to be in the disc to actually to publish in it. plus different pub patterns.
+eco geo a bit more open. 
+in between ? ex innov. 
+OECD / macro. open or not?
+nws but not geo in the end? 
+eco is reputation based (convince people). - build a profile. 
+institute new eco thinking: complexity, inoovation,.
+
+pb number of firms each unit? lsoa level - does not work for Manchester.
+lower level? -> Delaunay tesselation.
+Product space at city level?
+multilayer? (from products?) - crossing data.
+synth data? Q applic. to reprod.
+pb open data.
+Manch data: disclosure pb? - cant extract it.
+
+----
+Projects
+
+Common call from National funding agencies.
+Open Resarch Area.
+Comparison? Methods?
+How to compares nested trees in time? - related to resilience. + multi-scale - multi-level. (cities)
+(National rules) Stakeholders? 
+GLA? Nesta? 
+Newton fund?
+Complexity center at UNAM
+Leverhome trust?
+
+
+
+
+
+
+
+
+
+
+
+

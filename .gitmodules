@@ -40,3 +40,6 @@
 [submodule "Docs/WorkingPapers/QuantDescription"]
 	path = Docs/WorkingPapers/QuantDescription
 	url = git@github.com:JusteRaimbault/QuantDescription.git
+[submodule "Models/matsim-libs"]
+	path = Models/matsim-libs
+	url = https://github.com/matsim-org/matsim-libs.git

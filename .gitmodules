@@ -34,6 +34,9 @@
 [submodule "Models/Quant-developing"]
 	path = Models/Quant-developing
 	url = git@github.com:MettiHoof/Quant-developing.git
-[submodule "Models/Quant"]
-	path = Models/Quant
+[submodule "Models/quant"]
+	path = Models/quant
 	url = git@github.com:maptube/quant.git
+[submodule "Docs/WorkingPapers/QuantDescription"]
+	path = Docs/WorkingPapers/QuantDescription
+	url = git@github.com:JusteRaimbault/QuantDescription.git

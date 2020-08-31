@@ -12,26 +12,27 @@ val cdiff = Val[Array[Double]] // for each year
 val alpha = Val[Array[Double]]
 val delta = Val[Array[Double]]
 
-val quantcommand = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run -- /home/tmp/pop.csv /home/tmp/nw.graphml /home/tmp/res.csv "+indicators+"\""
+val quantcommand = "sh -c \"cd /home/Quant/QUANTAI;/usr/bin/dotnet run -- /home/pop.csv /home/nw.graphml /home/res.csv "+indicators+"\""
 
 val model = ContainerTask(
-    image = "justeraimbault/quant:1.0.4",
+    //image = "justeraimbault/quant:1.0.4",
+    image = workDirectory / "images" / "justeraimbault-quant-1.0.4.tgz",
     command = quantcommand, 
     containerSystem = Singularity() // FIXME proot seems to have issues resolving symlinks 
 ) set (
-   inputs += (indicators),
-   inputFiles += (msoayearlypops,"/home/tmp/pop.csv"),
-   inputFiles += (nwchanges,"/home/tmp/nw.graphml"),
-   outputFiles += ("/home/tmp/res.csv",quantresults),
+   //inputs += (indicators),
+   inputFiles += (msoayearlypops,"/home/pop.csv"),
+   inputFiles += (nwchanges,"/home/nw.graphml"),
+   outputFiles += ("/home/res.csv",quantresults),
    nwchanges := workDirectory / "data" / "testscenario.graphml",
-   msoayearlypops := workDirectory / "test" / "S12000030.csv"
+   msoayearlypops := workDirectory / "test" / "S12000030_2050.csv"
 )
 
 val postprocessquantresults = ScalaTask("""
-		|val rawres = quantresults.content.split("\n").map(_.split(",").map(_.toDouble)).sortBy(r => r(0))
-		|val cdiff = rawres.map{r => r(1)}
-		|val alpha = rawres.map{r => r(2)}
-		|val delta = rawres.map{r => r(3)}
+		|val rawres = quantresults.content.split("\n").toSeq.tail.map(_.split(",").map(_.toDouble)).sortBy(r => r(0))
+		|val cdiff = rawres.map{r => r(1)}.toArray
+		|val alpha = rawres.map{r => r(2)}.toArray
+		|val delta = rawres.map{r => r(3)}.toArray
 					""".stripMargin
 			 ) set (
 	inputs += (quantresults),

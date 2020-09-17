@@ -1,0 +1,3 @@
+FROM saltelli:1.0
+
+CMD ["openmole", "--script","/Script.oms","--password","oml"]

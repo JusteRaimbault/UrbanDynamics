@@ -1,0 +1,32 @@
+kind: Model
+apiVersion: v1alpha3
+metadata:
+  displayName: Test Model
+  name: test-model
+  type: test
+  summary: Monte Carlo computation of Pi in python.
+  description: >
+    Estimates Pi by drawing uniform points in the unit square.
+
+spec:
+  inputs:
+    env:
+      - name: SAMPLES
+        title: Samples
+        desc: Number of samples.
+        type: integer
+        default: 100000
+        min: 1000
+        max: 10000000
+      - name: STEPS
+        title: Steps
+        desc: Number of steps.
+        type: integer
+        default: 1000
+        min: 1000
+        max: 10000
+  outputs:
+    datasets:
+      - name: estimate.csv
+        type: csv
+        desc: Average estimate for each step.

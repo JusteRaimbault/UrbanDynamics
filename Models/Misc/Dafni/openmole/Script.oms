@@ -1,0 +1,22 @@
+val x1 = Val[Double]
+val x2 = Val[Double]
+val y1 = Val[Double]
+val y2 = Val[Double]
+
+val model = ScalaTask("""val y1 = x1 + 0.5 * x2;
+                         val y2 = x1 + 0.5 * x2 + x1 * x2""") set (
+  inputs += (x1, x2),
+  outputs += (y1, y2)
+)
+
+val samples = scala.sys.env("SAMPLES").toInt
+val parallel = scala.sys.env("PARALLEL").toInt
+
+val env = LocalEnvironment(parallel)
+
+SensitivitySaltelli(
+  evaluation = model on env by parallel,
+  sample = samples,
+  inputs = Seq(x1 in (0.0, 1.0), x2 in (0.0, 1.0)),
+  outputs = Seq(y1, y2)
+) hook (workDirectory / "saltelli")

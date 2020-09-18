@@ -15,7 +15,7 @@ val parallel = scala.sys.env("PARALLEL").toInt
 val env = LocalEnvironment(parallel)
 
 SensitivitySaltelli(
-  evaluation = model on env by parallel,
+  evaluation = model on env by parallel hook display,
   sample = samples,
   inputs = Seq(x1 in (0.0, 1.0), x2 in (0.0, 1.0)),
   outputs = Seq(y1, y2)

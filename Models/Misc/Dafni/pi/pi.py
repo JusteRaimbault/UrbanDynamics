@@ -12,6 +12,6 @@ for k in range(K):
     estimate = 4*N/B
     print(estimate)
 
-    f = open('estimate.csv','a')
+    f = open('/data/outputs/estimate.csv','a')
     f.write(str(estimate)+"\n")
     f.close()

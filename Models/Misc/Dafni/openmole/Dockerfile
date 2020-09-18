@@ -2,7 +2,11 @@ FROM openmole/openmole:latest
 
 COPY Script.oms /Script.oms
 
-CMD ["openmole", "--script","/Script.oms","--password","oml"]
+COPY run.sh /run.sh
+
+RUN chmod +x /run.sh
+
+CMD ["/run.sh"]
 
 # note: must run once, set password by hand, and commit to container
 # ! run with hostname, otherwise pref saved in different directories each time (host by default from docker is a hash)

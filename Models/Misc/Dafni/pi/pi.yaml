@@ -27,6 +27,6 @@ spec:
         max: 10000
   outputs:
     datasets:
-      - name: estimate.csv
+      - name: /data/outputs/estimate.csv
         type: csv
         desc: Average estimate for each step.

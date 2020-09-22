@@ -1,8 +1,8 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: Test Model
-  name: test-model
+  displayName: python-pi-1.0-
+  name: python-pi
   type: test
   summary: Monte Carlo computation of Pi in python.
   description: >
@@ -27,6 +27,6 @@ spec:
         max: 10000
   outputs:
     datasets:
-      - name: /data/outputs/estimate.csv
-        type: csv
-        desc: Average estimate for each step.
+      - name: /data/outputs
+        type: directory
+        desc: Model output.

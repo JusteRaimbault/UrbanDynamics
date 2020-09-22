@@ -19,4 +19,4 @@ SensitivitySaltelli(
   sample = samples,
   inputs = Seq(x1 in (0.0, 1.0), x2 in (0.0, 1.0)),
   outputs = Seq(y1, y2)
-) hook (workDirectory / "saltelli")
+) hook (workDirectory / "data" / "outputs" / "saltelli")

@@ -1,10 +1,10 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: Test OpenMOLE embedding
+  displayName: saltelli-1.0-
   name: test-openmole
   type: test
-  summary: Saltelli global sensitivity analysis.
+  summary: Test OpenMOLE embedding - Saltelli global sensitivity analysis.
   description: >
     Runs OpenMOLE as a model to do a Global Sensitivity Analysis on a dummy model.
 
@@ -27,6 +27,6 @@ spec:
         max: 1000
   outputs:
     datasets:
-      - name: saltelli
-        type: dir
+      - name: /data/outputs/saltelli
+        type: directory
         desc: Result files.

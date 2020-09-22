@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: python-pi-1.0-
+  displayName: python-pi-1.0-3bd1fcacd1
   name: python-pi
   type: test
   summary: Monte Carlo computation of Pi in python.

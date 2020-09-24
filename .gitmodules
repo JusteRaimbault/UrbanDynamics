@@ -43,3 +43,6 @@
 [submodule "Models/matsim-libs"]
 	path = Models/matsim-libs
 	url = https://github.com/matsim-org/matsim-libs.git
+[submodule "Docs/Papers/UrbanNetworkLUR"]
+	path = Docs/Papers/UrbanNetworkLUR
+	url = git@github.com:JusteRaimbault/UrbanNetworkLUR.git

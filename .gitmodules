@@ -46,3 +46,9 @@
 [submodule "Docs/Papers/UrbanNetworkLUR"]
 	path = Docs/Papers/UrbanNetworkLUR
 	url = git@github.com:JusteRaimbault/UrbanNetworkLUR.git
+[submodule "Docs/WorkingPapers/ABMJobMarket-doc"]
+	path = Docs/WorkingPapers/ABMJobMarket-doc
+	url = git@github.com:JusteRaimbault/ABMJobMarket-doc.git
+[submodule "Docs/WorkingPapers/ABMJobMarket"]
+	path = Docs/WorkingPapers/ABMJobMarket
+	url = git@github.com:JusteRaimbault/ABMJobMarket.git

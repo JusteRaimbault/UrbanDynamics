@@ -1,0 +1,10 @@
+
+dafni: https://facility.secure.dafni.rl.ac.uk/
+
+doc: https://docs.secure.dafni.rl.ac.uk/docs/reference/model-definition-reference/
+
+issues: https://github.com/dafnifacility/user-feedback/issues
+ (visu: https://github.com/dafnifacility/user-feedback/issues/14)
+
+slack for help
+

@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: saltelli-1.0-
+  displayName: saltelli-1.0-f1e341c053e
   name: test-openmole
   type: test
   summary: Test OpenMOLE embedding - Saltelli global sensitivity analysis.

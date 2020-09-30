@@ -1,0 +1,24 @@
+kind: Model
+apiVersion: v1alpha3
+metadata:
+  displayName: spenser-1.4-microsimulation-7a643f2820
+  name: spenser-microsimulation
+  type: Model
+  summary: Synthetic population generation
+  description: >
+    Uses the `microsimulation` module of the SPENSER framework to generate a synthetic population.
+    See https://github.com/nismod/microsimulation/tree/docker
+
+spec:
+  inputs:
+    env:
+      - name: REGION
+        title: REGION
+        desc: Id of the simulated region.
+        type: string
+        default: "E08000003"
+  outputs:
+    datasets:
+      - name: /data/outputs
+        type: directory
+        desc: Result files.

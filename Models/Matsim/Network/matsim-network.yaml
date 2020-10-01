@@ -1,0 +1,23 @@
+kind: Model
+apiVersion: v1alpha3
+metadata:
+  displayName: matsim-network-1.0-
+  name: matsim-network
+  type: model
+  summary: Road network data preprocessing.
+  description: >
+    Road network data preprocessing for the Matsim model.
+
+spec:
+  inputs:
+    env:
+      - name: OSFILE
+        title: OSFILE
+        desc:  OS network file path.
+        type: string
+        default: "/root/test/road_line.shp"
+  outputs:
+    datasets:
+      - name: /data/outputs
+        type: directory
+        desc: Model output.

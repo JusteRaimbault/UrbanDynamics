@@ -1,4 +1,4 @@
 #!/bin/sh
 cd spatialdata/library
-sbt "project spatialdata" "run-main org.openmole.spatialdata.test.Test"
+sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim /root/test/road_line.shp;"
 #cp -r data /data/outputs

@@ -1,17 +1,16 @@
-FROM 1science/sbt:0.13-oracle-jdk-8
-
-RUN apk update
-
-RUN apk add git
+FROM hseeberger/scala-sbt:8u222_1.3.5_2.13.1
 
 RUN git clone https://github.com/openmole/spatialdata.git
 
-RUN mkdir /data
+RUN mkdir -p /data/outputs
 
-COPY run.sh /run.sh
+COPY run.sh /root/run.sh
 
-RUN chmod +x /run.sh
+RUN chmod +x /root/run.sh
 
-RUN cd /app/spatialdata/library; sbt "project spatialdata" compile
+RUN cd spatialdata/library;git pull origin master
+#; sbt "project spatialdata" compile
 
-CMD ["/run.sh"]
+COPY test/mygeodata /root/test
+
+CMD ["/root/run.sh"]

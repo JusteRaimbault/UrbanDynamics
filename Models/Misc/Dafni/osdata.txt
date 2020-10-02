@@ -1,3 +1,4 @@
 
 https://www.ordnancesurvey.co.uk/documents/product-support/user-guide/os-open-roads-user-guide.pdf
 
+To directly export and convert osm to shp: https://mygeodata.cloud/result

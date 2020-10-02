@@ -1,0 +1,4 @@
+
+Q: use microsimulation or household_microsimulation?
+https://github.com/nismod/household_microsynth
+

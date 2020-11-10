@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: matsim-network-1.0-
+  displayName: matsim-network-1.0-091ab92957
   name: matsim-network
   type: model
   summary: Road network data preprocessing.

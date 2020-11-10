@@ -1,21 +1,31 @@
 kind: Model
 apiVersion: v1alpha3
 metadata:
-  displayName: matsim-network-1.0-e8bf2e4480
+  displayName: matsim-network-1.0-
   name: matsim-network
   type: model
   summary: Road network data preprocessing.
   description: >
     Road network data preprocessing for the Matsim model.
+    Functional Urban Areas with tile merging.
 
 spec:
   inputs:
     env:
-      - name: OSFILE
-        title: OSFILE
-        desc:  OS network file path.
+      - name: FUANAME
+        title: FUANAME
+        desc:  Name of Functional Urban Area
         type: string
-        default: "/root/test/road_line.shp"
+        default: "Exeter"
+    datasets:
+      - uid: d34c5213-e8a7-4107-9825-168f3abb08c7
+        versionUid: 2a266819-b8e6-4a05-995c-7b9d76789976
+        path: inputs/OSOpenRoads
+
+      - uid: 1bd73b5a-f2d1-4337-8267-2f447ebff2c8
+        versionUid: de490541-004f-4c66-88ca-1f8aa39c64ea
+        path: inputs/GHSFUAS
+
   outputs:
     datasets:
       - name: /data/outputs

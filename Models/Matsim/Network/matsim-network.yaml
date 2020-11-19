@@ -26,6 +26,10 @@ spec:
         versionUid: de490541-004f-4c66-88ca-1f8aa39c64ea
         path: inputs/GHSFUAS
 
+      - uid: 85977a59-c7f1-4697-b036-849448c9b022
+        versionUid: 1dfcc665-067e-400c-9e20-41270f721f72
+        path: inputs/OSOpenRoadsTiles
+
   outputs:
     datasets:
       - name: /data/outputs

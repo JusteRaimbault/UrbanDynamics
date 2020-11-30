@@ -1,0 +1,61 @@
+kind: Model
+apiVersion: v1alpha4
+metadata:
+  displayName: matsim-population-1.0-
+  name: matsim-population
+  type: model
+  summary: Synthetic population data preprocessing.
+  description: >
+    Synthetic population preprocessing for the Matsim model.
+    Converts SPENSER synthetic population for 2020 to matsim xml plans.
+
+spec:
+  inputs:
+    env:
+      - name: FUANAME
+        title: FUANAME
+        desc:  Name of Functional Urban Area
+        type: string
+        default: "Exeter"
+    dataslots:
+      - name: GHS FUAs
+        description: >
+          GHS FUAs.
+        default:
+          - uid: 1bd73b5a-f2d1-4337-8267-2f447ebff2c8
+            versionUid: de490541-004f-4c66-88ca-1f8aa39c64ea
+        path: inputs/GHSFUAS
+        required: true
+
+      - name: MSOAs
+        description: >
+          MSOAs.
+        default:
+          - uid: a3073246-eb2d-41f9-a224-1de84e8bc963
+            versionUid: 3700fc98-8137-45b8-b62d-1187664d505c
+        path: inputs/MSOA
+        required: true
+
+      - name: LADistricts
+        description: >
+          LADistricts.
+        default:
+          - uid: ec162ec3-e298-446c-a321-17e9daf7acc3
+            versionUid: e972dbcc-8718-4b77-afcf-94b3907a5afa
+        path: inputs/LADistricts
+        required: true
+
+      - name: SPENSER
+        description: >
+          SPENSER synthetic population.
+        default:
+          - uid: c5683170-fd84-4e0e-9db3-dfbcf8ea7427
+            versionUid: a574f910-38af-45a1-9154-79b776c8aebd
+        path: inputs/LADistricts
+        required: true
+
+  outputs:
+    datasets:
+      - name: /data/outputs
+        type: directory
+        desc: Model output.

@@ -8,13 +8,13 @@
 	</module>
 
 	<module name="network">
-		<param name="inputNetworkFile" value="Network_example.xml" />
-		<!-- <param name="inputNetworkFile" value="Network.xml" /> -->
+		<!--<param name="inputNetworkFile" value="Network_example.xml" /> -->
+		<param name="inputNetworkFile" value="Network.xml" />
 	</module>
 
 	<module name="plans">
-		<param name="inputPlansFile" value="Plans_example.xml" />
-		<!--  <param name="inputPlansFile" value="Plans.xml" /> -->
+		<!-- <param name="inputPlansFile" value="Plans_example.xml" /> -->
+		<param name="inputPlansFile" value="Plans.xml" />
 	</module>
 
 	<module name="controler">

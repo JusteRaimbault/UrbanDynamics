@@ -8,3 +8,6 @@ issues: https://github.com/dafnifacility/user-feedback/issues
 
 slack for help
 
+ontologies: https://dafni.ac.uk/dafni-champions-2-2/dafni-champions-infrastructure-research-ontologies/
+
+

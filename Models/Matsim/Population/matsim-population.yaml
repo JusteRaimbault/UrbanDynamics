@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-population-1.0-d5afd4176a
+  displayName: matsim-population-1.0-3d083a86a0
   name: matsim-population
   type: model
   summary: Synthetic population data preprocessing.
@@ -17,6 +17,11 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+      - name: SAMPLE
+        title: SAMPLE
+        desc:  Proportion of population sampled
+        type: float
+        default: 0.1
     dataslots:
       - name: GHS FUAs
         description: >
@@ -27,13 +32,13 @@ spec:
         path: inputs/GHSFUAS
         required: true
 
-      - name: MSOAs
+      - name: Output Areas
         description: >
-          MSOAs.
+            Output Areas
         default:
           - uid: a3073246-eb2d-41f9-a224-1de84e8bc963
             versionUid: 3700fc98-8137-45b8-b62d-1187664d505c
-        path: inputs/MSOA
+        path: inputs/OA
         required: true
 
       - name: LADistricts
@@ -45,13 +50,31 @@ spec:
         path: inputs/LADistricts
         required: true
 
-      - name: SPENSER
+      - name: SPENSER England
         description: >
-          SPENSER synthetic population.
+          SPENSER synthetic population for England.
+        default:
+          - uid: e0714e10-a037-4d8e-a44a-c72bf7ad59c0
+            versionUid: ead35286-d600-48dd-8388-06b76c1b8c68
+        path: inputs/SPENSER/England
+        required: true
+
+      - name: SPENSER Scotland
+        description: >
+          SPENSER synthetic population for Scotland.
         default:
           - uid: c5683170-fd84-4e0e-9db3-dfbcf8ea7427
             versionUid: a574f910-38af-45a1-9154-79b776c8aebd
-        path: inputs/LADistricts
+        path: inputs/SPENSER/Scotland
+        required: true
+
+      - name: SPENSER Wales
+        description: >
+          SPENSER synthetic population for Wales.
+        default:
+          - uid: 559e63b9-522d-4666-b6fe-033ab38c14e2
+            versionUid: 030a2c83-ffd4-4433-acbc-43f4bc199920
+        path: inputs/SPENSER/Wales
         required: true
 
   outputs:

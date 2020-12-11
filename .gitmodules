@@ -52,3 +52,6 @@
 [submodule "Docs/WorkingPapers/ABMJobMarket"]
 	path = Docs/WorkingPapers/ABMJobMarket
 	url = git@github.com:JusteRaimbault/ABMJobMarket.git
+[submodule "Models/Microsimulation/microsimulation"]
+	path = Models/Microsimulation/microsimulation
+	url = https://github.com/nismod/microsimulation.git

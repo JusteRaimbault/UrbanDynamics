@@ -1,8 +1,8 @@
 #!/bin/sh
 cd spatialdata/library
-export SBT_OPTS="-Xmx16G"
+export SBT_OPTS="-Xmx64G"
 mkdir -p /data/outputs
-sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=uniform --jobMode=random --planMode=default --sample="$SAMPLE" --FUAName=\""$FUANAME"\" --FUAFile=/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/inputs/LADistricts/LAD_WGS84.shp --OAFile=/data/inputs/OA/OA2011_WGS84.shp --SPENSERDirs=/data/inputs/SPENSER/England,/data/inputs/SPENSER/Scotland,/data/inputs/SPENSER/Wales --output=/data/outputs/Plans.xml"
+sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=uniform --jobMode=random --planMode=default --sample="$SAMPLE" --FUAName=\""$FUANAME"\" --FUAFile=/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/inputs/LADistricts/LAD_WGS84.shp --OAFile=/data/inputs/OA/OA2011_WGS84.shp --SPENSERDirs=/data/inputs/SPENSER/England,/data/inputs/SPENSER/Scotland,/data/inputs/SPENSER/Wales --output=/data/outputs/"$FUANAME"_Plans.xml"
 
 : '
 # test docker locally

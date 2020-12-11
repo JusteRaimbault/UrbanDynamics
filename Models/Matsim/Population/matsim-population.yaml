@@ -20,7 +20,7 @@ spec:
       - name: SAMPLE
         title: SAMPLE
         desc:  Proportion of population sampled
-        type: float
+        type: number
         default: 0.1
     dataslots:
       - name: GHS FUAs
@@ -36,8 +36,8 @@ spec:
         description: >
             Output Areas
         default:
-          - uid: a3073246-eb2d-41f9-a224-1de84e8bc963
-            versionUid: 3700fc98-8137-45b8-b62d-1187664d505c
+          - uid: db3ed282-26bb-48aa-ba13-5a5d77374a62
+            versionUid: 2ccbf1f6-65c1-4278-9416-424f48dba316
         path: inputs/OA
         required: true
 

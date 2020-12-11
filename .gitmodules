@@ -41,7 +41,7 @@
 	path = Docs/WorkingPapers/QuantDescription
 	url = git@github.com:JusteRaimbault/QuantDescription.git
 [submodule "Models/matsim-libs"]
-	path = Models/matsim-libs
+	path = Models/Matsim/matsim-libs
 	url = https://github.com/matsim-org/matsim-libs.git
 [submodule "Docs/Papers/UrbanNetworkLUR"]
 	path = Docs/Papers/UrbanNetworkLUR

@@ -1,13 +1,15 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-population-1.0-
+  displayName: matsim-population-1.0-7bd6d9d18f
   name: matsim-population
   type: model
   summary: Synthetic population data preprocessing.
   description: >
     Synthetic population preprocessing for the Matsim model.
     Converts SPENSER synthetic population for 2020 to matsim xml plans.
+    UrbanDynamics commit 7bd6d9d18fe3f9ca0ce804d1915988695ae7f177
+    SpatialData commit 3d083a86a01e05043248e225c32b03c255d962f4
 
 spec:
   inputs:

@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-population-1.0-3d083a86a0
+  displayName: matsim-population-1.0-
   name: matsim-population
   type: model
   summary: Synthetic population data preprocessing.
@@ -54,8 +54,8 @@ spec:
         description: >
           SPENSER synthetic population for England.
         default:
-          - uid: e0714e10-a037-4d8e-a44a-c72bf7ad59c0
-            versionUid: ead35286-d600-48dd-8388-06b76c1b8c68
+          - uid: e372b7a7-db3d-4d09-8d79-30df291b0e0e
+            versionUid: e0c68a1e-95d4-43f0-9f6e-4cfa1b25d03b
         path: inputs/SPENSER/England
         required: true
 
@@ -63,8 +63,8 @@ spec:
         description: >
           SPENSER synthetic population for Scotland.
         default:
-          - uid: c5683170-fd84-4e0e-9db3-dfbcf8ea7427
-            versionUid: a574f910-38af-45a1-9154-79b776c8aebd
+          - uid: 5dedbe14-0558-4dba-b74f-35ea3cdcca9f
+            versionUid: 29dbd473-91cb-413a-a2db-f5bd4a74d29a
         path: inputs/SPENSER/Scotland
         required: true
 
@@ -72,8 +72,8 @@ spec:
         description: >
           SPENSER synthetic population for Wales.
         default:
-          - uid: 559e63b9-522d-4666-b6fe-033ab38c14e2
-            versionUid: 030a2c83-ffd4-4433-acbc-43f4bc199920
+          - uid: 1a5aedf4-f7c4-4269-abc0-ec40ddd5ffcd
+            versionUid: a99cd6c1-051e-43a5-b27c-2e806cd99a91
         path: inputs/SPENSER/Wales
         required: true
 

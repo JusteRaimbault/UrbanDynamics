@@ -1,0 +1,13 @@
+
+
+## In progress 2021/01/04
+
+ * Pb convergence in Spenser synthpop (occurs for The City MSOA (?) for example => iterations hardcoded in https://github.com/BenjaminIsaac0111/humanleague/blob/master/src/IPF.h
+=> open issue / pull request? ; in https://github.com/nismod/household_microsynth ? / recalrify Spenser synthpop workflow (pop/hosueholds, matching, etc.)
+
+ * vis matsim: otfvis ; see https://github.com/matsim-org/matsim-code-examples/issues/341
+
+ * scenario IDF Matsim https://www.matsim.org/gallery/ile_de_france
+
+ * Integrate public transport: https://itsleeds.github.io/UK2GTFS/reference/transxchange2gtfs.html ; https://www.travelinedata.org.uk/traveline-open-data/traveline-national-dataset/
+

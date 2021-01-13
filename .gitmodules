@@ -55,3 +55,6 @@
 [submodule "Models/Microsimulation/microsimulation"]
 	path = Models/Microsimulation/microsimulation
 	url = https://github.com/nismod/microsimulation.git
+[submodule "Models/Matsim/ile-de-france"]
+	path = Models/Matsim/ile-de-france
+	url = git@github.com:JusteRaimbault/ile-de-france.git

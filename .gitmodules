@@ -58,3 +58,6 @@
 [submodule "Models/Matsim/ile-de-france"]
 	path = Models/Matsim/ile-de-france
 	url = git@github.com:JusteRaimbault/ile-de-france.git
+[submodule "Models/Matsim/eqasim-java"]
+	path = Models/Matsim/eqasim-java
+	url = git@github.com:JusteRaimbault/eqasim-java.git

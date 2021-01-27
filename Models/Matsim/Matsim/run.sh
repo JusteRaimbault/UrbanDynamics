@@ -6,7 +6,18 @@
 
 if [ -z "$SEED" ]
 then
-    SEED=$RANDOM
+    export SEED=$RANDOM
+fi
+
+if [ -z "$ITERATIONS" ]
+then
+    export ITERATIONS=5
+fi
+
+# does not work in config: should export?
+if [ -z "$THREADS" ]
+then
+    export THREADS=4
 fi
 
 
@@ -14,18 +25,20 @@ fi
 cp /data/inputs/Network_$FUANAME.xml /root/Network.xml
 cp /data/inputs/Plans_$FUANAME.xml /root/Plans.xml
 
+/root/config.sh
+
 rm -rf output
 java -Xmx2G -cp /root/matsim-12.0/matsim-12.0.jar org.matsim.run.Controler /root/config.xml
 # command line config available in eqasim but not matsim -> edit xml config
 # --config:global.randomSeed $SEED --config:controler.lastIteration 5 --config:controler.writeTripsInterval 1 --config:counts.writeCountsInterval 1
 #cp /root/map_network.ipynb /data/outputs/map_network.ipynb
-mkdir -p /data/outputs
+#mkdir -p /data/outputs
 cp -r output /data/outputs
 
 : '
 # test docker locally
 docker build --no-cache -t matsim:1.0 .
-docker run -it --env FUANAME="Taunton" --env SEED=42 \
+docker run -it --env FUANAME="Taunton" --env SEED=42 --env ITERATIONS=1 \
 -v $CS_HOME/UrbanDynamics/Models/Matsim/test:/data/inputs \
 matsim:1.0
 '

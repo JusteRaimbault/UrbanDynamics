@@ -26,3 +26,10 @@ docker run -it --env FUANAME="Taunton" --env SAMPLE=0.1 \
 -v $CS_HOME/UrbanDynamics/Data/SPENSER/2020/Wales:/data/inputs/SPENSER/Wales \
 matsim-population:1.0
 '
+
+: '
+# build and save docker image
+docker build --no-cache -t matsim-population:1.0 .
+cd ..
+docker save -t matsim-population:1.0 | gzip > images/matsim-population-1.0-`git rev-parse --short HEAD`.tar.gz
+'

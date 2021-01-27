@@ -1,14 +1,16 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-network-1.0-328b7bcaa8
+  displayName: Matsim Network
   name: matsim-network
   type: model
   summary: Road network data preprocessing.
   description: >
     Road network data preprocessing for the Matsim model.
+
     Functional Urban Areas with tile merging.
-    Note: commit hash designs commit in $CS_HOME/UrbanDynamics, not $CS_HOME/SpatialData
+
+    $CS_HOME/UrbanDynamics:
 
 spec:
   inputs:

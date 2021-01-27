@@ -3,7 +3,7 @@
 <config>
 
 	<module name="global">
-		<param name="randomSeed" value="0" />
+		<param name="randomSeed" value="123" />
 		<param name="coordinateSystem" value="WGS84" />
 		<!-- "global" number of threads.  This number is used, e.g., for replanning, but NOT in the mobsim.  This can typically be set to as many cores as you have available, or possibly even slightly more. -->
 		<param name="numberOfThreads" value="4" />
@@ -22,8 +22,9 @@
 	<module name="controler">
 		<param name="outputDirectory" value="./output" />
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="5" />
+		<param name="lastIteration" value="3" />
 		<param name= "routingAlgorithmType" value="AStarLandmarks" />
+		<param name="writeTripsInterval" value="1" />
 	</module>
 
 	<module name="qsim" >

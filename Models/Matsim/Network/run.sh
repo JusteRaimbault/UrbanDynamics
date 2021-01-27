@@ -28,3 +28,10 @@ matsim-network:1.0
 # Taunton;Weston-super-Mare
 # "Taunton,Weston-super-Mare;Exeter,Torquay"
 # Q: ivy libs cached, but not compiled classes, why?
+
+: '
+# build and save docker image
+docker build --no-cache -t matsim-network:1.0 .
+cd ..
+docker save -t matsim-network:1.0 | gzip > images/matsim-network-1.0-`git rev-parse --short HEAD`.tar.gz
+'

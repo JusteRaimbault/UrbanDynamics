@@ -2,8 +2,12 @@ FROM openjdk:11.0.9-jre
 
 COPY run.sh /root/run.sh
 
-COPY matsim-0.10.1 /root/matsim-0.10.1
+COPY matsim-12.0 /root/matsim-12.0
+
+COPY config.xml /root/config.xml
 
 RUN chmod +x /root/run.sh
+
+RUN mkdir /data
 
 CMD ["/root/run.sh"]

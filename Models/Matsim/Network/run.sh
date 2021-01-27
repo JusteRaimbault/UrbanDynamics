@@ -18,12 +18,13 @@ cp /root/map_network.ipynb /data/outputs/map_network.ipynb
 : '
 # test docker locally
 docker build --no-cache -t matsim-network:1.0 .
-docker run -it --env FUANAME="Taunton;Weston-super-Mare" \
+docker run -it --env FUANAME="Taunton" \
 -v $CS_HOME/Data/JRC_EC/GHS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0:/data/inputs/GHSFUAS \
 -v $CS_HOME/UrbanDynamics/Models/Matsim/Network/data:/data/inputs/OSOpenRoadsTiles \
 -v $CS_HOME/UrbanDynamics/Data/OrdnanceSurvey/OSOpenRoads:/data/inputs/OSOpenRoads/data \
 matsim-network:1.0
 '
 #  --env PARALLEL=true
+# Taunton;Weston-super-Mare
 # "Taunton,Weston-super-Mare;Exeter,Torquay"
 # Q: ivy libs cached, but not compiled classes, why?

@@ -1,13 +1,9 @@
-FROM openjdk:11.0.9-jre
+FROM alpine:3.13.0
 
-COPY run.sh /root/run.sh
+COPY run.sh /run.sh
 
-COPY matsim-12.0 /root/matsim-12.0
-
-COPY config.xml /root/config.xml
-
-RUN chmod +x /root/run.sh
+RUN chmod +x /run.sh
 
 RUN mkdir /data
 
-CMD ["/root/run.sh"]
+CMD ["/run.sh"]

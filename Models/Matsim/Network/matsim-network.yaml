@@ -10,7 +10,11 @@ metadata:
 
     Functional Urban Areas with tile merging.
 
-    $CS_HOME/UrbanDynamics:
+    Version:
+
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit e862e648cc
+
+      - https://github.com/openmole/spatialdata : commit 3bed4bcbe9
 
 spec:
   inputs:

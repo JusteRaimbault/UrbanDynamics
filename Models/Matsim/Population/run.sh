@@ -31,5 +31,5 @@ matsim-population:1.0
 # build and save docker image
 docker build --no-cache -t matsim-population:1.0 .
 cd ..
-docker save -t matsim-population:1.0 | gzip > images/matsim-population-1.0-`git rev-parse --short HEAD`.tar.gz
+docker save matsim-population:1.0 | gzip > images/matsim-population-1.0-`git rev-parse --short=10 HEAD`.tar.gz
 '

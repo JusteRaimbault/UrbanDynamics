@@ -1,13 +1,17 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-1.0-f484b6fa09
+  displayName: Matsim
   name: matsim
   type: model
   summary: Matsim model.
   description: >
-    Matsim model.
-    Requires from upstream models: file inputs/Network_$FUANAME.xml (network), file inputs/$FUANAME.xml (population)
+
+    Matsim model (release 12.0)
+
+    Requires from upstream models: file /data/inputs/Network_$FUANAME.xml (network), file inputs/Plans_$FUANAME.xml (population)
+
+    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit e862e648cc
 
 spec:
   inputs:
@@ -17,6 +21,25 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+
+      - name: SEED
+        title: SEED
+        desc:  Random seed
+        type: integer
+        default: 123
+
+      - name: ITERATIONS
+        title: ITERATIONS
+        desc:  Number of matsim iterations
+        type: integer
+        default: 5
+
+      - name: THREADS
+        title: THREADS
+        desc:  Number of parallel threads
+        type: integer
+        default: 16
+
 
   outputs:
     datasets:

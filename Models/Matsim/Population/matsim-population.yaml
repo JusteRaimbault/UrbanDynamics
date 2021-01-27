@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-population-1.0-
+  displayName: Matsim Population
   name: matsim-population
   type: model
   summary: Synthetic population data preprocessing.
@@ -10,9 +10,11 @@ metadata:
 
     Converts SPENSER synthetic population for 2020 to matsim xml plans.
 
-    UrbanDynamics commit 
+    Version:
 
-    SpatialData commit 7baa6fee968dc04c1b1d665be81bedc6d9108f8d
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit e862e648cc
+
+      - https://github.com/openmole/spatialdata : commit 3bed4bcbe9
 
 spec:
   inputs:

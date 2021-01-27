@@ -28,7 +28,7 @@ cp /data/inputs/Plans_$FUANAME.xml /root/Plans.xml
 /root/config.sh
 
 rm -rf output
-java -Xmx2G -cp /root/matsim-12.0/matsim-12.0.jar org.matsim.run.Controler /root/config.xml
+java -Xmx64G -cp /root/matsim-12.0/matsim-12.0.jar org.matsim.run.Controler /root/config.xml
 # command line config available in eqasim but not matsim -> edit xml config
 # --config:global.randomSeed $SEED --config:controler.lastIteration 5 --config:controler.writeTripsInterval 1 --config:counts.writeCountsInterval 1
 #cp /root/map_network.ipynb /data/outputs/map_network.ipynb

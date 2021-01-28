@@ -1,14 +1,20 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-network-1.0-328b7bcaa8
+  displayName: Matsim Network
   name: matsim-network
   type: model
   summary: Road network data preprocessing.
   description: >
     Road network data preprocessing for the Matsim model.
+
     Functional Urban Areas with tile merging.
-    Note: commit hash designs commit in $CS_HOME/UrbanDynamics, not $CS_HOME/SpatialData
+
+    Version:
+
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit 86e8b4653a
+
+      - https://github.com/openmole/spatialdata : commit 85200d9e57
 
 spec:
   inputs:
@@ -18,6 +24,12 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+
+      - name: MEMORY
+        title: MEMORY
+        desc:  sbt memory
+        type: string
+        default: "64G"
     dataslots:
       - name: OS Open Roads
         description: >

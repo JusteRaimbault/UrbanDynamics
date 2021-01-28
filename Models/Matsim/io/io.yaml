@@ -1,0 +1,16 @@
+kind: Model
+apiVersion: v1alpha4
+metadata:
+  displayName: io-test
+  name: io-test
+  type: model
+  summary: Test I/O
+  description: >
+    Test for inputs/outputs transfer
+
+spec:
+  outputs:
+    datasets:
+      - name: /data/outputs
+        type: directory
+        desc: Model output.

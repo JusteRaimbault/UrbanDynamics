@@ -3,8 +3,10 @@
 <config>
 
 	<module name="global">
-		<param name="randomSeed" value="0" />
+		<param name="randomSeed" value="123" />
 		<param name="coordinateSystem" value="WGS84" />
+		<!-- "global" number of threads.  This number is used, e.g., for replanning, but NOT in the mobsim.  This can typically be set to as many cores as you have available, or possibly even slightly more. -->
+		<param name="numberOfThreads" value="4" />
 	</module>
 
 	<module name="network">
@@ -20,11 +22,19 @@
 	<module name="controler">
 		<param name="outputDirectory" value="./output" />
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="10" />
+		<param name="lastIteration" value="3" />
+		<param name= "routingAlgorithmType" value="AStarLandmarks" />
+		<param name="writeTripsInterval" value="1" />
 	</module>
 
-	<module name="controler">
-		<param name= "routingAlgorithmType" value="AStarLandmarks" />
+	<module name="qsim" >
+		      <!-- end time in hours for one day of simulation? -->
+		      <param name="endTime" value="30:00:00" />
+					<!-- Number of threads used for the QSim.  Note that this setting is independent from the "global" threads setting.  In contrast to earlier versions, the non-parallel special version is no longer there. -->
+					<param name="numberOfThreads" value="4" />
+					<!-- capacityFactors should be scaled according to sampling -->
+					<!-- <param name="storageCapacityFactor" value="0.001" />
+					<param name="flowCapacityFactor" value="0.001" />-->
 	</module>
 
 	<module name="planCalcScore">

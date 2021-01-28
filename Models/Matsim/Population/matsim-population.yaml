@@ -1,7 +1,7 @@
 kind: Model
 apiVersion: v1alpha4
 metadata:
-  displayName: matsim-population-1.0-
+  displayName: Matsim Population
   name: matsim-population
   type: model
   summary: Synthetic population data preprocessing.
@@ -10,9 +10,11 @@ metadata:
 
     Converts SPENSER synthetic population for 2020 to matsim xml plans.
 
-    UrbanDynamics commit 
+    Version:
 
-    SpatialData commit 7baa6fee968dc04c1b1d665be81bedc6d9108f8d
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit 86e8b4653a
+
+      - https://github.com/openmole/spatialdata : commit 85200d9e57
 
 spec:
   inputs:
@@ -22,11 +24,18 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+
       - name: SAMPLE
         title: SAMPLE
         desc:  Proportion of population sampled
         type: number
         default: 0.1
+
+      - name: MEMORY
+        title: MEMORY
+        desc: sbt memory
+        type: string
+        default: "64G"
     dataslots:
       - name: GHS FUAs
         description: >

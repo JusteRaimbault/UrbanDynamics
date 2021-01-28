@@ -14,7 +14,11 @@ MEMORY=18G
 # use override to compute anyway
 #OVERRIDE=true
 
+# context to name simulation results (ex dafni or ubuntu)
+CONTEXT=ubuntu
+
 mkdir -p data
+mkdir -p simulations
 
 #####
 # Network
@@ -64,5 +68,7 @@ docker run -it --env FUANAME="$FUANAME" --env SEED=$SEED --env ITERATIONS=$ITERA
   -v $CS_HOME/UrbanDynamics/Models/Matsim/data:/data/inputs \
   matsim:1.0
 
+MATSIMID=`docker ps -a --last 1 -q`
 
+docker cp MATSIMID:/data/outputs simulations/matsim-output_FUA-$FUANAME_seed-$SEED_$CONTEXT
 

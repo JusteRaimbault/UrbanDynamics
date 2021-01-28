@@ -3,10 +3,11 @@
 
 FUANAME=$1
 SEED=$2
+CS_HOME=$3
 
 SAMPLE=0.1
 ITERATIONS=5
-THREADS=16
+THREADS=10
 MEMORY=18G
 
 # keep previously cached data
@@ -23,28 +24,35 @@ mkdir -p simulations
 #####
 # Network
 
-if [ ! -f "data/Network_$FUANAME.xml" ] || [ ! -z OVERRIDE ]; then
+#if [ ! -f "data/Network_$FUANAME.xml" ] || [ ! -z OVERRIDE ]; then
+if [ ! -f "data/Network_$FUANAME.xml" ]; then
     echo "Running network generation for FUA $FUANAME"
+    echo "    Data: GHSFUAs: $CS_HOME/Data/JRC_EC/GHS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0"
+    echo "    Data: OSOpenRoads: $CS_HOME/Data/OrdnanceSurvey/OSOpenRoads"
+    #ls $CS_HOME/Data/JRC_EC/GHS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0
 
-    docker run -it --env FUANAME=$FUANAME --env MEMORY=$MEMORY \
+    docker run --env FUANAME=$FUANAME --env MEMORY=$MEMORY \
       -v $CS_HOME/Data/JRC_EC/GHS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0:/data/inputs/GHSFUAS \
       -v $CS_HOME/UrbanDynamics/Models/Matsim/Network/data:/data/inputs/OSOpenRoadsTiles \
-      -v $CS_HOME/UrbanDynamics/Data/OrdnanceSurvey/OSOpenRoads:/data/inputs/OSOpenRoads/data \
+      -v $CS_HOME/Data/OrdnanceSurvey/OSOpenRoads:/data/inputs/OSOpenRoads/data \
       matsim-network:1.0
 
     NWID=`docker ps -a --last 1 -q`
 
-    docker cp NWID:/data/outputs/Network_$FUANAME.xml data
+    echo "Container id: $NWID"
+
+    docker cp $NWID:/data/outputs/Network_$FUANAME.xml data
 
 fi
 
 #####
 # Population
 
-if [ ! -f "data/Plans_$FUANAME.xml" ] || [ ! -z OVERRIDE ]; then
+#if [ ! -f "data/Plans_$FUANAME.xml" ] || [ ! -z OVERRIDE ]; then
+if [ ! -f "data/Plans_$FUANAME.xml" ]; then
     echo "Running plans generation for FUA $FUANAME"
 
-    docker run -it --env FUANAME=$FUANAME --env SAMPLE=$SAMPLE --env MEMORY=$MEMORY \
+    docker run --env FUANAME=$FUANAME --env SAMPLE=$SAMPLE --env MEMORY=$MEMORY \
         -v $CS_HOME/Data/JRC_EC/GHS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0:/data/inputs/GHSFUAS \
         -v $CS_HOME/Data/OrdnanceSurvey/Output_Areas__December_2011__Boundaries_EW_BGC-shp:/data/inputs/OA \
         -v $CS_HOME/Data/OrdnanceSurvey/Local_Authority_Districts__December_2019__Boundaries_UK_BUC-shp:/data/inputs/LADistricts \
@@ -55,20 +63,26 @@ if [ ! -f "data/Plans_$FUANAME.xml" ] || [ ! -z OVERRIDE ]; then
 
     POPID=`docker ps -a --last 1 -q`
 
-    docker cp POPID:/data/outputs/Plans_$FUANAME.xml data
+    echo "Container id: $POPID"
+
+    docker cp $POPID:/data/outputs/Plans_$FUANAME.xml data
 fi
 
 
 #####
 # Matsim
 
-echo "Running Matsim for FUA $FUANAME"
+echo "Running Matsim for FUA $FUANAME with seed $SEED; iterations $ITERATIONS; threads $THREADS; memory $MEMORY"
 
-docker run -it --env FUANAME="$FUANAME" --env SEED=$SEED --env ITERATIONS=$ITERATIONS --env THREADS=$THREADS --env MEMORY=$MEMORY \
+ls $CS_HOME/UrbanDynamics/Models/Matsim/data
+
+docker run --env FUANAME="$FUANAME" --env SEED=$SEED --env ITERATIONS=$ITERATIONS --env THREADS=$THREADS --env MEMORY=$MEMORY \
   -v $CS_HOME/UrbanDynamics/Models/Matsim/data:/data/inputs \
   matsim:1.0
 
 MATSIMID=`docker ps -a --last 1 -q`
 
-docker cp MATSIMID:/data/outputs simulations/matsim-output_FUA-$FUANAME_seed-$SEED_$CONTEXT
+echo "Container id: $MATSIMID"
+
+docker cp $MATSIMID:/data/outputs "simulations/matsim-output_FUA-"$FUANAME"_seed-"$SEED"_"$CONTEXT
 

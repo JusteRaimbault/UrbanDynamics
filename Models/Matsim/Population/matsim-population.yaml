@@ -12,11 +12,11 @@ metadata:
 
     Version:
 
-      - https://github.com/JusteRaimbault/UrbanDynamics : commit 86e8b4653a
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit 657d1c24e8
 
-      - https://github.com/openmole/spatialdata : commit 85200d9e57
+      - https://github.com/openmole/spatialdata : commit 07e6a3b1d7
 
-      v1.0-UrbanDynamics_86e8b4653a-spatialdata_85200d9e57
+      v1.0-UrbanDynamics_657d1c24e8-spatialdata_07e6a3b1d7
 
 spec:
   inputs:

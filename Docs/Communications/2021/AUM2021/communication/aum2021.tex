@@ -33,37 +33,182 @@ January 28th, 2021\\
 \section{Introduction}
 
 
-%Urban transportation models such as four-step models, and more generally land-use transport inter- action models, require the integration of heterogenous data and the coupling of various submodules with possibly high levels of complexity. This raises issues on the one hand for their implementation, transferability and reproducibility, and on the other hand for their validation which requires large scale numerical experiments to validate the submodules and the whole models. 
+%Urban transportation models such as four-step models, and more generally land-use transport inter- action models, require the integration of heterogenous data and the coupling of various submodules with possibly high levels of complexity.  
 
 \sframe{Urban transportation models}{
 
+\textit{MATSim model: heterogenous data and integration of many sub-models}
+
+\medskip
+
+\begin{center}
+	\includegraphics[height=0.7\textheight]{figures/matsim.png}	
+\end{center}
+
+Source: \cite{balmer2009matsim}
+
 }
 
-% This work proposes to tackle both issues by leveraging modularity and transparency for the construction of large urban models in a modular way, using scientific workflow systems to couple the different components of models and to launch numerical experiments for their validation.
+\sframe{Land-use transport models}{
+
+\textit{Land-use transport models as a progressive complexification through coupling of detailed sub-models}
+
+\medskip
+
+\begin{center}
+	\includegraphics[width=0.45\linewidth]{figures/wegener1.png}\hspace{0.3cm}
+	\includegraphics[width=0.45\linewidth]{figures/wegener2.png}
+\end{center}
+
+Source: \cite{wegener2004land}
+
+}
+
+\sframe{Relevance of large scale models}{
+
+\textit{Large scale urban models are intrinsically flawed and do not reach their goals of long-term application to planning}: \textbf{Requiem for large scale models in 1973} \cite{lee1973requiem}
+
+\bigskip
+
+
+\textit{Urban analytics and Smart Cities approaches may follow the same path if they ignore the past and the complexity of cities} \cite{batty2014can}
+
+
+\bigskip
+
+
+To foster relevance of large urban models:
+
+\begin{itemize}
+	\item Transparency on data and implementation, reproducibility
+	\item Validation of models and sub-models: from small simple models well validated to larger integrated models
+\end{itemize}
+
+\medskip
+
+$\rightarrow$ Open, reproducible urban models can be shared, coupled into modular integrated models, tested and validated \cite{banos2013pour}
+
+
+
+}
+
 
 \sframe{Towards modular models using workflow systems}{
 
+%This raises issues on the one hand for their implementation, transferability and reproducibility, and on the other hand for their validation which requires large scale numerical experiments to validate the submodules and the whole models.
+% This work proposes to tackle both issues by leveraging modularity and transparency for the construction of large urban models in a modular way, using scientific workflow systems to couple the different components of models and to launch numerical experiments for their validation.
 
 % advantages of modularity
 %  - generic application to any urban area
 
+% Scientific workflow systems
+
+\textbf{Scientific workflow systems}
+
+\cite{yu2005taxonomy} \cite{barker2007scientific}
+
+\medskip
+
+$\rightarrow$ Execution of numerical experiments and data processing in a systematic, reproducible and domain-specific way
+
+$\rightarrow$ Often coupled to High Performance Computing infrastructures
+
+$\rightarrow$ Flexibility with scripting languages and easier collaboration
+
+\bigskip
+
+\textbf{Proposed approach}
+
+\textit{Build modular urban transportation models from the bottom-up using workflow systems, open source sub-models and open data}
+
+\medskip
+
+$\rightarrow$ Sub-models coupled into the workflow, can be easily replaced
+
+$\rightarrow$ Reproducibility and transparency
+
+$\rightarrow$ Easier transferability of model application
+
+$\rightarrow$ Application of model validation methods
+
+
 }
+
 
 \section{Matsim}
 
 % More particularly, we demonstrate this approach by building a modular four-step multimodal trans- portation model using only open-source projects. We couple together the MATSim model (MATSim Community) to simulate the transportation system, the SPENSER model (University of Leeds) for the generation of synthetic population, the QUANT model (University College London) to estimate spatial interactions, and the spatialdata library (OpenMOLE Community) for data preparation. The model is integrated into the DAFNI facility (https://dafni.ac.uk/) which provides a scientific work- flow system for model integration and coupling, direct access to relevant open datasets, visualisation functionalities, and access to a High Performance Computing infrastructure.
 
 
-\sframe{Integrated models}{
+\sframe{Case study: integrated models}{
+
+
+
+\textbf{Case study:} \textit{Construct a modular four-step multimodal transportation model using open source projects and data}
+
+\bigskip
+
+\textbf{Integrated models:}
+
+\begin{itemize}
+	\item MATSim model (MATSim Community) for the transportation system \url{https://www.matsim.org/} \cite{horni2016multi}
+	\item SPENSER model (University of Leeds) for the synthetic population \url{https://github.com/nismod/microsimulation}
+	\item QUANT model (CASA, University College London) for spatial interactions to generate home-work plans \url{http://quant.casa.ucl.ac.uk/} \cite{milton2019accelerating}
+	\item spatialdata library (OpenMOLE community) for data processing \url{https://github.com/openmole/spatialdata} \cite{raimbault2020scala}
+\end{itemize}
+
+
 
 }
 
-\sframe{Model coupling structure}{
+\sframe{Case study: data and implementation}{
+
+
+\textbf{Data:}
+
+Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) in the UK: NOMIS census, OrdnanceSurvey roads
+
+\medskip
+
+\textbf{Workflow systems:}
+
+\begin{itemize}
+	\item DAFNI facility funded by UKCRIC \url{https://dafni.ac.uk}
+	\item OpenMOLE software \url{https://openmole.org/} \cite{reuillon2013openmole}
+\end{itemize}
+
+\medskip
+
+\textbf{Implementation}
+
+\begin{itemize}
+	\item Currently integrated: synthetic SPENSER population with uniform job locations; simple home-work commuting plans; network and plans prepared into MATSim xml files and fed into a one-mode MATSim.
+	\item Work in progress: use the QUANT model to generate more realistic home-work flows.
+\end{itemize}
+
+
 
 }
+
+
+%\sframe{Model coupling structure}{
+%}
 
 
 \sframe{DAFNI facility}{
+
+\textit{Platform developed for infrastructure research, providing dataset sharing, model upload, High-performance computing, workflow system.}
+
+\url{https://dafni.ac.uk}
+
+\medskip
+
+\begin{center}
+	%\includegraphics[width=0.8\linewidth]{figures/dafni.png}
+	
+	\includegraphics[width=0.8\linewidth]{figures/dafni-GUI.png}
+\end{center}
+
 
 }
 
@@ -91,23 +236,48 @@ January 28th, 2021\\
 	\includegraphics[width=\linewidth]{figures/visu_trips.png}	
 \end{center}
 
+}
+
+\sframe{Visualization of trips: Leeds}{
+
+\begin{center}
+	\includegraphics[width=\linewidth]{figures/visu-trips-Leeds.png}	
+\end{center}
+
+\medskip
+
+\textit{Issue of sampling the synthetic population to decrease computation time}
 
 }
+
+
+
 
 \sframe{Simulation results: travel distances}{
 
 % note: spatial interaction not implemented yet: simple synthetic pop
+% discuss Matsim params? not needed - too complicated (reserve slide? not time! -> link to workflow)
+
+\begin{center}
+\includegraphics[width=\linewidth]{figures/distances_allFUAs.png}
+\end{center}
 
 }
 
-\sframe{Travel patterns}{
+\sframe{Daily travel patterns}{
 
+departuretimes_allFUAs.png
 
 }
 
 
 
 \sframe{Role of stochasticity}{
+
+\begin{center}
+	\includegraphics[width=0.9\linewidth]{figures/stochasticity_Taunton.png}	
+\end{center}
+
 
 }
 

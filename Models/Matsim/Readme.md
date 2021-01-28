@@ -1,5 +1,9 @@
 
 
+## 2021/01/28
+
+ * visu: via https://simunto.com/ - check and explore installed appli Downloads/Via-20.3. pb: paying. => NetLogo for films?
+
 ## In progress 2021/01/04
 
  * Pb convergence in Spenser synthpop (occurs for The City MSOA (?) for example => iterations hardcoded in https://github.com/BenjaminIsaac0111/humanleague/blob/master/src/IPF.h

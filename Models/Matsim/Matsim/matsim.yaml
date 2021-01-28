@@ -11,7 +11,7 @@ metadata:
 
     Requires from upstream models: file /data/inputs/Network_$FUANAME.xml (network), file inputs/Plans_$FUANAME.xml (population)
 
-    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit 898b70bfe9 ; v1.0-UrbanDynamics_898b70bfe9
+    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit 0bbfdeb108 ; v1.0-UrbanDynamics_0bbfdeb108
 
 spec:
   inputs:
@@ -40,6 +40,11 @@ spec:
         type: integer
         default: 16
 
+      - name: MEMORY
+        title: MEMORY
+        desc: sbt memory
+        type: string
+        default: "64G"
 
   outputs:
     datasets:

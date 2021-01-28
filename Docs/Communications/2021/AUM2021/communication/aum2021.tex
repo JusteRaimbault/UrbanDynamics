@@ -1,0 +1,219 @@
+\input{header_slides.tex}
+
+\begin{document}
+
+\title
+[Modular urban transportation models]{Building and validating modular urban transportation models using scientific workflow systems}
+\author[Raimbault]{J.~Raimbault$^{1,2,3}$ and M.~Batty$^{1}$\\\medskip
+$^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
+}
+
+\institute[UCL]{$^{1}$Center for Advanced Spatial Analysis, University College London\\
+$^{2}$UPS CNRS 3611 Complex Systems Institute Paris\\
+$^{3}$UMR CNRS 8504 G{\'e}ographie-cit{\'e}s
+}
+
+
+
+
+\date[28/01/2021]{Applied Urban Modeling 2021\\
+Session 8: Modelling method (2)\\
+January 28th, 2021\\
+}
+
+\frame{\maketitle}
+
+
+% Headline summary (50-100 words)
+%Large scale urban transportation models such as four-step models require the integration of heteroge- nous data and the coupling of sub-models which can already be consequent in terms of complexity. Therefore, such integrated models are difficult to transfer, reproduce, and validate. We propose a modular and reproducible approach based on scientific workflow systems to build and validate such models. We illustrate it by coupling different open-source components within workflows to construct a four-step transportation model applied to all functional urban areas in the UK, and discuss its application to health indicators within public transport in the context of the COVID-19 crisis.
+
+%  
+
+
+\section{Introduction}
+
+
+%Urban transportation models such as four-step models, and more generally land-use transport inter- action models, require the integration of heterogenous data and the coupling of various submodules with possibly high levels of complexity. This raises issues on the one hand for their implementation, transferability and reproducibility, and on the other hand for their validation which requires large scale numerical experiments to validate the submodules and the whole models. 
+
+\sframe{Urban transportation models}{
+
+}
+
+% This work proposes to tackle both issues by leveraging modularity and transparency for the construction of large urban models in a modular way, using scientific workflow systems to couple the different components of models and to launch numerical experiments for their validation.
+
+\sframe{Towards modular models using workflow systems}{
+
+
+% advantages of modularity
+%  - generic application to any urban area
+
+}
+
+\section{Matsim}
+
+% More particularly, we demonstrate this approach by building a modular four-step multimodal trans- portation model using only open-source projects. We couple together the MATSim model (MATSim Community) to simulate the transportation system, the SPENSER model (University of Leeds) for the generation of synthetic population, the QUANT model (University College London) to estimate spatial interactions, and the spatialdata library (OpenMOLE Community) for data preparation. The model is integrated into the DAFNI facility (https://dafni.ac.uk/) which provides a scientific work- flow system for model integration and coupling, direct access to relevant open datasets, visualisation functionalities, and access to a High Performance Computing infrastructure.
+
+
+\sframe{Integrated models}{
+
+}
+
+\sframe{Model coupling structure}{
+
+}
+
+
+\sframe{DAFNI facility}{
+
+}
+
+\sframe{DAFNI workflow for coupled model}{
+
+\centering
+
+\includegraphics[width=\linewidth]{figures/matsim_workflow.png}
+
+}
+
+\sframe{Monte Carlo experiments}{
+
+\centering
+
+\includegraphics[width=\linewidth]{figures/matsim-iterations_workflow.png}
+
+}
+
+% The model is run on all functional urban areas in the UK. We show first results of numerical experiments comparing the use of the spatial interaction model with a null model to generate transport demand. We also study the role of stochasticity on model outputs, and show that spatial configuration has a significant influence.
+
+\sframe{Visualization within DAFNI}{
+
+\begin{center}
+	\includegraphics[width=\linewidth]{figures/visu_trips.png}	
+\end{center}
+
+
+}
+
+\sframe{Simulation results: travel distances}{
+
+% note: spatial interaction not implemented yet: simple synthetic pop
+
+}
+
+\sframe{Travel patterns}{
+
+
+}
+
+
+
+\sframe{Role of stochasticity}{
+
+}
+
+
+\sframe{Validation: towards spatial sensitivity analysis}{
+
+}
+
+
+
+
+
+\section{OpenMOLE}
+
+%To illustrate the reproducibility of our approach, we sketch the construction of the model with the OpenMOLE workflow engine, which provides a scripted workflow engine and methods to calibrate and validate simulation models, and suggest advanced numerical experiments for the validation of the coupled model.
+
+\sframe{OpenMOLE workflow engine}{
+
+}
+
+\sframe{Coupling SPENSER and QUANT with OpenMOLE}{
+
+\centering
+
+\includegraphics[width=\linewidth]{figures/openmole-spenserquant.png}
+
+}
+
+\sframe{Towards advanced validation experiments}{
+
+}
+
+
+\section{Discussion}
+
+%We finally discuss ongoing developments on the application of this model to the development of health indicators within public transportation, and more particularly linking transportation and work-from-home policies with effective densities in public transport which provide potential exposure indicators in the context of the COVID-19 crisis.
+
+\sframe{Discussion}{
+
+}
+
+
+
+\sframe{Conclusion}{
+
+
+$\rightarrow$ 
+
+
+\bigskip
+\bigskip
+
+\textbf{Open repositories}
+
+\url{https://github.com/JusteRaimbault/UrbanDynamics} for workflows
+
+
+\bigskip
+
+\textbf{Workflow engines}
+
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\bibliographystyle{apalike}
+\bibliography{biblio}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%
+%\sframe{Reserve slides}{
+%
+%\Huge
+%
+%\centering
+%
+%Reserve slides
+%
+%% possible questions?
+%% application to real systems?
+%% policy applications?
+%% def/carac coevol
+%% multiscale? ~
+%
+%}
+%
+%
+%\sframe{Defining co-evolution}{
+%
+%}
+%
+%\sframe{Characterizing co-evolution}{
+%
+%}
+%
+%\sframe{A LUTI model with governance processes}{
+%
+%}
+
+
+
+
+\end{document}
+

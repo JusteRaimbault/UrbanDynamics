@@ -11,7 +11,7 @@ metadata:
 
     Requires from upstream models: file /data/inputs/Network_$FUANAME.xml (network), file inputs/Plans_$FUANAME.xml (population)
 
-    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit e862e648cc
+    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit 898b70bfe9 ; v1.0-UrbanDynamics_898b70bfe9
 
 spec:
   inputs:

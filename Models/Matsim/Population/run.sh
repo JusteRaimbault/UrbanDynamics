@@ -1,6 +1,17 @@
 #!/bin/sh
+
+if [ -z "$MEMORY" ]
+then
+    export MEMORY=18G
+fi
+
+if [ -z "$PARALLEL" ]
+then
+    export PARALLEL="false"
+fi
+
 cd spatialdata/library
-export SBT_OPTS="-Xmx64G"
+export SBT_OPTS="-Xmx$MEMORY"
 mkdir -p /data/outputs
 
 # rq: issue with sbt recompiling: see https://github.com/sbt/sbt/issues/4168 -> use assembly instead?

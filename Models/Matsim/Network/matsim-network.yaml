@@ -24,6 +24,12 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+
+      - name: MEMORY
+        title: MEMORY
+        desc:  sbt memory
+        type: string
+        default: "64G"
     dataslots:
       - name: OS Open Roads
         description: >

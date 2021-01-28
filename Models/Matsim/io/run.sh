@@ -1,4 +1,5 @@
-cp -r /data/inputs /data/outputs
+cp -r /data /datatmp
+cp -r /datatmp /data/outputs
 
 : '
 # save docker

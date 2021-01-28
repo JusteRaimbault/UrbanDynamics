@@ -24,11 +24,18 @@ spec:
         desc:  Name of Functional Urban Area
         type: string
         default: "Exeter"
+
       - name: SAMPLE
         title: SAMPLE
         desc:  Proportion of population sampled
         type: number
         default: 0.1
+
+      - name: MEMORY
+        title: MEMORY
+        desc: sbt memory
+        type: string
+        default: "64G"
     dataslots:
       - name: GHS FUAs
         description: >

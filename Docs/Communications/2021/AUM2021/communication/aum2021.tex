@@ -4,7 +4,7 @@
 
 \title
 [Modular urban transportation models]{Building and validating modular urban transportation models using scientific workflow systems}
-\author[Raimbault]{J.~Raimbault$^{1,2,3}$ and M.~Batty$^{1}$\\\medskip
+\author[Raimbault]{J.~Raimbault$^{1,2,3,\ast}$ and M.~Batty$^{1}$\\\medskip
 $^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
 }
 
@@ -182,7 +182,7 @@ Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) in the UK: 
 \textbf{Implementation}
 
 \begin{itemize}
-	\item Currently integrated: synthetic SPENSER population with uniform job locations; simple home-work commuting plans; network and plans prepared into MATSim xml files and fed into a one-mode MATSim.
+	\item Currently integrated: synthetic SPENSER population with uniform job locations; simple home-work commuting plans; network and plans prepared into MATSim xml files and fed into a one-mode MATSim; models integrated as Docker containers.
 	\item Work in progress: use the QUANT model to generate more realistic home-work flows.
 \end{itemize}
 
@@ -259,14 +259,16 @@ Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) in the UK: 
 % discuss Matsim params? not needed - too complicated (reserve slide? not time! -> link to workflow)
 
 \begin{center}
-\includegraphics[width=\linewidth]{figures/distances_allFUAs.png}
+\includegraphics[width=0.9\linewidth]{figures/distances_allFUAs.png}
 \end{center}
 
 }
 
 \sframe{Daily travel patterns}{
 
-departuretimes_allFUAs.png
+\begin{center}
+\includegraphics[width=0.9\linewidth]{figures/departuretimes_allFUAs.png}
+\end{center}
 
 }
 
@@ -284,6 +286,10 @@ departuretimes_allFUAs.png
 
 \sframe{Validation: towards spatial sensitivity analysis}{
 
+\centering
+
+\includegraphics[width=0.95\linewidth]{figures/spatial_sa.png}
+
 }
 
 
@@ -295,6 +301,25 @@ departuretimes_allFUAs.png
 %To illustrate the reproducibility of our approach, we sketch the construction of the model with the OpenMOLE workflow engine, which provides a scripted workflow engine and methods to calibrate and validate simulation models, and suggest advanced numerical experiments for the validation of the coupled model.
 
 \sframe{OpenMOLE workflow engine}{
+
+
+
+OpenMOLE model exploration open source software \cite{reuillon2013openmole}
+
+\medskip
+
+\begin{center}
+\includegraphics[height=0.13\textheight]{figures/iconOM.png}
+\includegraphics[height=0.13\textheight]{figures/openmole.png}
+\end{center}
+
+\medskip
+
+\textit{Enables seamlessly (i) model embedding; (ii) access to HPC resources; (iii) exploration and optimization algorithms}
+
+\medskip
+
+\url{https://openmole.org/}
 
 }
 
@@ -308,6 +333,16 @@ departuretimes_allFUAs.png
 
 \sframe{Towards advanced validation experiments}{
 
+\textbf{OpenMOLE integrates methods for: } sensitivity analysis, spatial sensitivity analysis, design of experiments, calibration, diversity search, inverse problems, model reduction.
+
+\bigskip
+
+\begin{center}
+	\includegraphics[width=0.75\linewidth]{figures/dafni-oml.png}
+\end{center}
+
+\textit{Integration of OpenMOLE into DAFNI}
+
 }
 
 
@@ -317,6 +352,37 @@ departuretimes_allFUAs.png
 
 \sframe{Discussion}{
 
+\textbf{Developments}
+
+\medskip
+
+$\rightarrow$ Integration of QUANT to generate commuting plans
+
+\medskip
+
+$\rightarrow$ Construction of multimodal network data for MATSim
+
+\medskip
+
+$\rightarrow$ Dynamical strong coupling of QUANT and SPENSER
+
+\bigskip
+
+\textbf{Applications}
+
+\medskip
+
+$\rightarrow$ Validation of sub-models and integrated models using advanced model validation methods
+
+\medskip
+
+$\rightarrow$ Use MATSim outputs to quantify effective densities in public transport: potential exposure indicators in the COVID-19 context
+
+\medskip
+
+$\rightarrow$ Impact of policies and interventions on transport system dynamics and potential contaminations
+
+
 }
 
 
@@ -324,7 +390,7 @@ departuretimes_allFUAs.png
 \sframe{Conclusion}{
 
 
-$\rightarrow$ 
+$\rightarrow$ Open, reproducible and validated urban models as elementary bricks towards larger integrated models
 
 
 \bigskip
@@ -332,12 +398,27 @@ $\rightarrow$
 
 \textbf{Open repositories}
 
+\medskip
+
 \url{https://github.com/JusteRaimbault/UrbanDynamics} for workflows
+
+\medskip
+
+\url{https://github.com/openmole/spatialdata} for data processing
+
 
 
 \bigskip
 
 \textbf{Workflow engines}
+
+\medskip
+
+DAFNI: \url{https://dafni.ac.uk/}
+
+\medskip
+
+OpenMOLE: \url{https://openmole.org}
 
 }
 
@@ -350,37 +431,6 @@ $\rightarrow$
 \bibliography{biblio}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%
-%\sframe{Reserve slides}{
-%
-%\Huge
-%
-%\centering
-%
-%Reserve slides
-%
-%% possible questions?
-%% application to real systems?
-%% policy applications?
-%% def/carac coevol
-%% multiscale? ~
-%
-%}
-%
-%
-%\sframe{Defining co-evolution}{
-%
-%}
-%
-%\sframe{Characterizing co-evolution}{
-%
-%}
-%
-%\sframe{A LUTI model with governance processes}{
-%
-%}
 
 
 

@@ -39,6 +39,13 @@ Urban transport models \sep Scientific workflow systems \sep Modularity \sep Rep
 %\enlargethispage{-7mm}
 %\section{Introduction}
 
+\cite{usher2019software}
+
+\cite{horl2021integrating}
+
+\cite{horl2020reproducible}
+
+
 Urban transportation models such as four-step models, and more generally land-use transport interaction models \citep{wegener2004land}, require the integration of heterogenous data and the coupling of various submodules with possibly high levels of complexity. This raises issues on the one hand for their implementation, transferability and reproducibility, and on the other hand for their validation which requires large scale numerical experiments to validate the submodules and the whole models \citep{lee1973requiem,batty2014can}. This work proposes to tackle both issues by leveraging modularity and transparency for the construction of large urban models in a modular way, using scientific workflow systems \citep{barker2007scientific} to couple the different components of models and to launch numerical experiments for their validation.
 
 More particularly, we demonstrate this approach by building a modular four-step multimodal transportation model using only open-source projects. We couple together the MATSim model (MATSim Community \citep{horni2016multi}) to simulate the transportation system, the SPENSER model (University of Leeds, \url{https://github.com/nismod/microsimulation}) for the generation of synthetic population, the QUANT model (University College London \citep{milton2019accelerating}) to estimate spatial interactions, and the spatialdata library (OpenMOLE Community \citep{raimbault2020scala}) for data preparation. The model parts are embedded as docker containers into the DAFNI facility (\url{https://dafni.ac.uk/}), which workflow system is used to couple them and build the integrated model. DAFNI provides a scientific workflow system for model integration and coupling, direct access to relevant open datasets, visualisation functionalities, and access to a High Performance Computing infrastructure. We show in Fig.~\ref{fig:fig1} the workflow constructed with the interactive workflow builder within the platform, and an example of visualisation of model outputs.

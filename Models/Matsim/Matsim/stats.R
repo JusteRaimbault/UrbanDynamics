@@ -95,12 +95,14 @@ ggsave(file=paste0(resdir,'/stochasticity_',targetfua,'.png'),width=20,height=15
 ignoredfua = "Taunton"
 trips = getTrips(list.files('simulations/')[list.files('simulations/') %>% grep(pattern = ignoredfua,invert = T)])
 
+# trip departure time
 g=ggplot(trips,aes(x=start,group=fua,color=fua))
 g+geom_density()+scale_color_discrete(name="Urban area")+
   ylab("Density")+xlab("Trip departure time")+stdtheme
 ggsave(file=paste0(resdir,'/departuretimes_allFUAs.png'),width=20,height=15,units='cm')
 
 
+# trip distance
 g=ggplot(trips[trips$distances<50000,],aes(x=distances/1000,group=fua,color=fua))
 g+geom_density()+scale_color_discrete(name="Urban area")+
   ylab("Density")+xlab("Trip distance")+stdtheme

@@ -1,0 +1,14 @@
+
+@article{leung2021real,
+  title={Real-time tracking and prediction of COVID-19 infection using digital proxies of population mobility and mixing},
+  author={Leung, Kathy and Wu, Joseph T and Leung, Gabriel M},
+  journal={Nature Communications},
+  volume={12},
+  number={1},
+  pages={1--8},
+  year={2021},
+  publisher={Nature Publishing Group},
+  file={MobilityEpidemio/s41467-021-21776-2.pdf}
+}
+
+

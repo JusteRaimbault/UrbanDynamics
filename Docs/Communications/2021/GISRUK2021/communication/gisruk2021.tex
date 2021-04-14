@@ -29,10 +29,22 @@ April 14th, 2021\\
 \section{Introduction}
 
 
-\sframe{}{
+\sframe{Public transport in the COVID-19 pandemic}{
 
 % With the COVID-19 crisis and associated social distancing requirements, public transport has been designed and perceived as a risky environment (Tirachini and Cats, 2020), besides loosing ridership due to drops in mobility and modal shift (Gutiérrez et al., 2020). A detailed understanding of how work and transport related policies impacts effective densities in public transport is therefore an important issue. When systematically designing and testing transport policies, a reproducible and validated workflow is crucial first to ensure comparability between different case studies, but also to be able to apply them on a large set of urban areas.
 
+\begin{itemize}
+\item Public transport and COVID-19 transmission \cite{tirachini2020covid} \cite{gutierrez2020covid}
+\item Changes in mobility patterns \cite{batty2020london}
+\end{itemize}
+
+\begin{center}
+ \includegraphics[height=0.5\textheight]{figures/UK_mobility_changes.png}	
+\end{center}
+
+\bigskip
+
+$\rightarrow$ \textit{Need for open and reproducible transport models to study public transport congestion and associated policies}
 
 
 }
@@ -176,7 +188,7 @@ $\rightarrow$ Application of model validation methods
 
 \textbf{Data:}
 
-Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) in the UK: NOMIS census, OrdnanceSurvey roads, National 
+Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) or any arbitrary area in the UK: NOMIS census, OrdnanceSurvey roads, Traveline National Dataset for public transport
 
 \medskip
 
@@ -191,10 +203,30 @@ Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) in the UK: 
 
 \textbf{Implementation}
 
+Currently integrated into the DAFNI platform:
+
 \begin{itemize}
-	\item Currently integrated: synthetic SPENSER population with uniform job locations; simple home-work commuting plans; network and plans prepared into MATSim xml files and fed into a one-mode MATSim; models integrated as Docker containers.
-	\item Work in progress: use the QUANT model to generate more realistic home-work flows.
+	\item synthetic SPENSER population with uniform job locations
+	\item QUANT model to generate home-work commuting flows
+	\item network and plans prepared into MATSim xml files and fed into a one-mode MATSim (multimodal version still tested locally)
+	\item models integrated as Docker containers
 \end{itemize}
+
+
+
+}
+
+\sframe{Data preparation}{
+
+$\rightarrow$ Road network preprocessing: implemented into the \texttt{spatialdata} scala library \cite{raimbault2020scala}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{figures/road_data.png}	
+\end{center}
+
+\bigskip
+
+$\rightarrow$ Public transport data: from TransXchange (TNDS) to GTFS using UK2GTFS R package \cite{UK2GTFS}; GTFS to MATSim xml schedule using \texttt{pt2matsim} library
 
 
 
@@ -354,7 +386,7 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 
 \section{Discussion}
 
-%Work in progress includes the application of this model to the development of health indicators within public transportation, and more particularly linking transportation and work-from-home policies with effective densities in public transport which provide potential exposure indicators in the context of the COVID-19 crisis. While urban density in itself is not significantly linked to stronger transmission (Hamidi et al., 2020), possible transmission within closed environment of public transport causes some concerns. The MATSim transport model has already been applied in the pandemic context: for example, Müller et al. (2020) build on the MATSim model to construct a full epidemiological agent- based model for the propagation of COVID-19 for the Berlin urban area. We limit our work to estimating public transport congestion and density, providing a measure of potential contacts between individuals. Our approach is therefore easier to test and validate, as less sub-models and aspects have to be tested, and we expect it to provide more robust conclusions on public transport itself. As our transport model can be systematically applied to any urban area in UK, we also expect to be able to test and compare policies across different urban and epidemiological contexts.
+%
 
 
 \sframe{Discussion}{
@@ -363,15 +395,15 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 
 \medskip
 
-%$\rightarrow$ Integration of QUANT to generate commuting plans
-% => WIP
-%\medskip
+$\rightarrow$ Integration of multi-modal MATSim, calibration of mode choice parameters
 
-%$\rightarrow$ Construction of multimodal network data for MATSim
-%=> WIP
-%\medskip
+\medskip
 
-$\rightarrow$ Dynamical strong coupling of QUANT and SPENSER
+$\rightarrow$ Visualisation of MATSim agents dynamics (MATSim visu features not open)
+
+\medskip
+
+$\rightarrow$ Dynamical strong coupling of QUANT and SPENSER to combine population projections with the transport model
 
 \bigskip
 
@@ -394,6 +426,29 @@ $\rightarrow$ Impact of policies and interventions on transport system dynamics 
 
 \sframe{Health indicators for public transport}{
 
+% Work in progress includes the application of this model to the development of health indicators within public transportation, and more particularly linking transportation and work-from-home policies with effective densities in public transport which provide potential exposure indicators in the context of the COVID-19 crisis. While urban density in itself is not significantly linked to stronger transmission (Hamidi et al., 2020), possible transmission within closed environment of public transport causes some concerns. The MATSim transport model has already been applied in the pandemic context: for example, Müller et al. (2020) build on the MATSim model to construct a full epidemiological agent- based model for the propagation of COVID-19 for the Berlin urban area. We limit our work to estimating public transport congestion and density, providing a measure of potential contacts between individuals. Our approach is therefore easier to test and validate, as less sub-models and aspects have to be tested, and we expect it to provide more robust conclusions on public transport itself. As our transport model can be systematically applied to any urban area in UK, we also expect to be able to test and compare policies across different urban and epidemiological contexts.
+
+\justify
+
+\begin{itemize}
+\item \textit{No clear link between urban density and COVID-19 transmission \cite{hamidi2020does}, but concern about public transport \cite{tirachini2020covid}} 
+\item \textit{MATSim-based full epidemiological model \cite{muller2020mobility}: difficulty to validate and systematically explored}
+\end{itemize}
+
+\bigskip
+
+$\rightarrow$ Public transport density as proxy for potential transmission
+
+\medskip
+
+$\rightarrow$ To be computed downstream MATSim run using event xml files
+
+\medskip
+
+$\rightarrow$ Possible systematic exploration on all urban areas of home-work policies and modifications of agent schedules using genetic algorithms from OpenMOLE
+
+
+
 }
 
 
@@ -403,15 +458,21 @@ $\rightarrow$ Impact of policies and interventions on transport system dynamics 
 
 $\rightarrow$ Open, reproducible and validated urban models as elementary bricks towards larger integrated models
 
+\medskip
+
+$\rightarrow$ Open resource for teaching transport models
+
 
 \bigskip
 \bigskip
+
+\small
 
 \textbf{Open repositories}
 
 \medskip
 
-\url{https://github.com/JusteRaimbault/UrbanDynamics} for workflows
+\url{https://github.com/JusteRaimbault/UrbanDynamics/Models/Matsim} for containers and workflows
 
 \medskip
 
@@ -431,7 +492,11 @@ DAFNI: \url{https://dafni.ac.uk/}
 
 OpenMOLE: \url{https://openmole.org}
 
-The authors acknowledge the DAFNI platform for funding through the Champions program, and the funding of Urban Dynamics Lab Grant EPSRC EP/M023583/1.
+\bigskip
+
+\textbf{Acknowledgements}
+
+DAFNI platform/Champions program; Urban Dynamics Lab Grant EPSRC EP/M023583/1
 
 }
 

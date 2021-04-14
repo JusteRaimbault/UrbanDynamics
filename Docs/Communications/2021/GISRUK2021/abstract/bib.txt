@@ -1,0 +1,26 @@
+
+@article{cheetham2021determining,
+  title={Determining the level of social distancing necessary to avoid future COVID-19 epidemic waves: a modelling study for North East London},
+  author={Cheetham, Nathan and Waites, William and Ebyarimpa, Irene and Leber, Werner and Brennan, Katie and Panovska-Griffiths, Jasmina},
+  journal={Scientific reports},
+  volume={11},
+  number={1},
+  pages={1--10},
+  year={2021},
+  publisher={Nature Publishing Group},
+  file={MobilityEpidemio/s41598-021-84907-1.pdf}
+}
+
+@article{leung2021real,
+  title={Real-time tracking and prediction of COVID-19 infection using digital proxies of population mobility and mixing},
+  author={Leung, Kathy and Wu, Joseph T and Leung, Gabriel M},
+  journal={Nature Communications},
+  volume={12},
+  number={1},
+  pages={1--8},
+  year={2021},
+  publisher={Nature Publishing Group},
+  file={MobilityEpidemio/s41467-021-21776-2.pdf}
+}
+
+

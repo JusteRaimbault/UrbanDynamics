@@ -1,4 +1,16 @@
 
+# Open transport modeling using workflow systems
+
+Docker images and DAFNI model definition files for MATSim integration as open source components
+
+ - `Network`: Road network and public transport data preparation for MATSim, using [spatialdata](https://github.com/openmole/spatialdata) library for the road network; [UK2GTFS](https://github.com/itsleeds/uk2gtfs/) and [pt2matsim](https://github.com/matsim-org/pt2matsim) for public transport (*to be commited*)
+ - `Population`: Synthetic population generation using [SPENSER](https://github.com/nismod/microsimulation) and spatialdata for the population; [QUANT model](https://journals.sagepub.com/doi/full/10.1177/0042098020982252) to estimate and sample gravity flows ([spatialdata implementation](https://github.com/openmole/spatialdata/tree/master/library/src/main/scala/org/openmole/spatialdata/application/quant)) (*to be commited*)
+ - `Matsim` MATSim model
+
+For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantCoupling](https://github.com/JusteRaimbault/UrbanDynamics/tree/master/Models/SpenserQuantCoupling)
+
+
+# TODO
 
 ## 2021/05/26
 

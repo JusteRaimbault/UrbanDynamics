@@ -27,6 +27,18 @@ spec:
         type: string
         default: "Exeter"
 
+      - name: POPMODE
+        title: POPMODE
+        desc:  Home distribution method: uniform, detailed
+        type: string
+        default: "uniform"
+
+      - name: JOBMODE
+        title: JOBMODE
+        desc: Home distribution method: uniform, detailed
+        type: string
+        default: "uniform"
+
       - name: SAMPLE
         title: SAMPLE
         desc:  Proportion of population sampled
@@ -55,6 +67,15 @@ spec:
           - uid: db3ed282-26bb-48aa-ba13-5a5d77374a62
             versionUid: 2ccbf1f6-65c1-4278-9416-424f48dba316
         path: inputs/OA
+        required: true
+
+      - name: MSOA
+        description: >
+            MSOA
+        default:
+          - uid: a3073246-eb2d-41f9-a224-1de84e8bc963
+            versionUid: 3700fc98-8137-45b8-b62d-1187664d505c
+        path: inputs/MSOA
         required: true
 
       - name: LADistricts
@@ -92,6 +113,43 @@ spec:
             versionUid: a99cd6c1-051e-43a5-b27c-2e806cd99a91
         path: inputs/SPENSER/Wales
         required: true
+
+      - name: QUANT data
+        description: >
+          QUANT data.
+        default:
+          - uid: 232f3312-a4db-44c9-80dc-b0c53bfb33c6
+           versionUid: 6a65d56b-400b-47b8-a935-f19449707af2
+        path: inputs/QUANT
+        required: false
+
+      - name: OSM Buildings England
+        description: >
+          OSM buildings for England.
+        default:
+          - uid: 73ca3115-3dc7-4f12-823c-b959865d88fe
+            versionUid: 884b3801-d363-4e41-8a54-ffb7fb5e759e
+        path: inputs/OSMBuildings/England
+        required: false
+
+      - name: OSM Buildings Scotland
+        description: >
+          OSM buildings for Scotland.
+        default:
+          - uid: 779e5912-a841-4942-97a3-502845798018
+            versionUid: 4ef99ce0-e513-4edd-ae8f-c7b9f1e59283
+        path: inputs/OSMBuildings/Scotland
+        required: false
+
+      - name: OSM Buildings Wales
+        description: >
+          OSM buildings for Wales.
+        default:
+          - uid: 0b28517c-871d-4922-ac1f-867f54882e40
+            versionUid: 9f95ef34-2281-4a78-ae0e-3160b3caed69
+        path: inputs/OSMBuildings/Wales
+        required: false
+
 
   outputs:
     datasets:

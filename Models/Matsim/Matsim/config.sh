@@ -21,4 +21,9 @@ cat /root/config_tmp.xml | awk '
   }
 }' > /root/config.xml
 
+# DC mode parameters
+#marginalUtilityOfTraveling_util_hr
+# $MARGINALUTILITYCAR $MARGINALUTILITYPT $MARGINALUTILITYWALK
+
+
 rm /root/config_tmp.xml

@@ -67,6 +67,72 @@
 		<param name="activityTypicalDuration_2" value="08:00:00" />
 -->
 
+
+
+
+ <parameterset type="scoringParameters" >
+	 			<parameterset type="activityParams" >
+						 <param name="activityType" value="home" />
+						 <param name="closingTime" value="undefined" />
+						 <param name="earliestEndTime" value="undefined" />
+						 <param name="latestStartTime" value="undefined" />
+						 <param name="minimalDuration" value="undefined" />
+						 <param name="openingTime" value="undefined" />
+						 <param name="priority" value="1.0" />
+						 <param name="scoringThisActivityAtAll" value="false" />
+						 <param name="typicalDuration" value="undefined" />
+						 <param name="typicalDurationScoreComputation" value="relative" />
+		 </parameterset>
+
+		 <parameterset type="activityParams" >
+							 <param name="activityType" value="work" />
+							 <param name="closingTime" value="undefined" />
+							 <param name="earliestEndTime" value="undefined" />
+							 <param name="latestStartTime" value="undefined" />
+							 <param name="minimalDuration" value="undefined" />
+							 <param name="openingTime" value="undefined" />
+							 <param name="priority" value="1.0" />
+							 <param name="scoringThisActivityAtAll" value="false" />
+							 <param name="typicalDuration" value="undefined" />
+							 <param name="typicalDurationScoreComputation" value="relative" />
+			 </parameterset>
+
+
+	 				<parameterset type="modeParams" >
+													<!-- [utils] alternative-specific constant.  Normally per trip, but that is probably buggy for multi-leg trips. -->
+													<param name="constant" value="0.0" />
+													<!-- [money] daily monetary constant. default=0 to be backwards compatible -->
+													<param name="dailyMonetaryConstant" value="0.0" />
+													<!-- [utils] daily utility constant. default=0 to be backwards compatible -->
+													<param name="dailyUtilityConstant" value="0.0" />
+													<!-- [utils/m] utility of traveling (e.g. walking or driving) per m, normally negative.  this is on top of the time (dis)utility. -->
+													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+													<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+													<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
+													<param name="mode" value="car" />
+													<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+													<param name="monetaryDistanceRate" value="0.0" />
+									</parameterset>
+									<parameterset type="modeParams" >
+													<param name="constant" value="0.0" />
+													<param name="dailyMonetaryConstant" value="0.0" />
+													<param name="dailyUtilityConstant" value="0.0" />
+													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+													<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
+													<param name="mode" value="pt" />
+													<param name="monetaryDistanceRate" value="0.0" />
+									</parameterset>
+									<parameterset type="modeParams" >
+													<param name="constant" value="0.0" />
+													<param name="dailyMonetaryConstant" value="0.0" />
+													<param name="dailyUtilityConstant" value="0.0" />
+													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+													<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
+													<param name="mode" value="walk" />
+													<param name="monetaryDistanceRate" value="0.0" />
+									</parameterset>
+					</parameterset>
+
 	</module>
 
 	<module name="strategy">
@@ -81,5 +147,22 @@
 		<param name="ModuleProbability_3" value="0.1" />
 		<param name="Module_3" value="TimeAllocationMutator" />
 	</module>
+
+
+<!--
+	<module name="transit" >
+                <param name="inputScheduleCRS" value="null" />
+                <param name="insistingOnUsingDeprecatedAttributeFiles" value="false" />
+                <param name="transitLinesAttributesFile" value="null" />
+                  <param name="transitModes" value="pt" />
+                <param name="transitScheduleFile" value="transit_schedule.xml" />
+                  <param name="transitStopsAttributesFile" value="null" />
+                <param name="useTransit" value="true" />
+                <param name="usingTransitInMobsim" value="true" />
+                <param name="vehiclesFile" value="transit_vehicles.xml" />
+        </module>
+-->
+
+
 
 </config>

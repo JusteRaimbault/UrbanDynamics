@@ -9,7 +9,10 @@ metadata:
 
     Matsim model (release 12.0)
 
-    Requires from upstream models: file /data/inputs/Network_$FUANAME.xml (network), file inputs/Plans_$FUANAME.xml (population)
+    Requires from upstream models:
+       - files /data/inputs/Network_$FUANAME.xml (network)
+       - files /data/inputs/transit_schedule.xml /data/inputs/transit_schedule_$FUANAME.xml /data/inputs/transit_vehicles_$FUANAME.xml (network)
+       - file /data/inputs/Plans_$FUANAME.xml (population)
 
     Version: https://github.com/JusteRaimbault/UrbanDynamics : commit 0bbfdeb108 ; v1.0-UrbanDynamics_0bbfdeb108
 
@@ -45,6 +48,24 @@ spec:
         desc: sbt memory
         type: string
         default: "64G"
+
+      - name: MARGINALUTILITYCAR
+        title: MARGINALUTILITYCAR
+        desc: choice parameter for mode car
+        type: number
+        default: -1.0
+
+      - name: MARGINALUTILITYPT
+        title: MARGINALUTILITYPT
+        desc: choice parameter for mode pt
+        type: number
+        default: -1.0
+
+      - name: MARGINALUTILITYWALK
+        title: MARGINALUTILITYWALK
+        desc: choice parameter for mode walk
+        type: number
+        default: -1.0
 
   outputs:
     datasets:

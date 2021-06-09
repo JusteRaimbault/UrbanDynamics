@@ -12,11 +12,11 @@ metadata:
 
     Version:
 
-      - https://github.com/JusteRaimbault/UrbanDynamics : commit 657d1c24e8
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit 0a52e7b80f
 
-      - https://github.com/openmole/spatialdata : commit 07e6a3b1d7
+      - https://github.com/openmole/spatialdata : commit e6a6838f09
 
-      v1.0-UrbanDynamics_657d1c24e8-spatialdata_07e6a3b1d7
+      v1.0-UrbanDynamics_0a52e7b80f-spatialdata_e6a6838f09
 
 spec:
   inputs:
@@ -29,15 +29,15 @@ spec:
 
       - name: POPMODE
         title: POPMODE
-        desc:  Home distribution method: uniform, detailed
+        desc: Home distribution method (uniform, detailed)
         type: string
         default: "uniform"
 
       - name: JOBMODE
         title: JOBMODE
-        desc: Home distribution method: uniform, detailed
+        desc: Job distribution method (random, sample, gravity)
         type: string
-        default: "uniform"
+        default: "random"
 
       - name: SAMPLE
         title: SAMPLE
@@ -119,7 +119,7 @@ spec:
           QUANT data.
         default:
           - uid: 232f3312-a4db-44c9-80dc-b0c53bfb33c6
-           versionUid: 6a65d56b-400b-47b8-a935-f19449707af2
+            versionUid: 6a65d56b-400b-47b8-a935-f19449707af2
         path: inputs/QUANT
         required: false
 

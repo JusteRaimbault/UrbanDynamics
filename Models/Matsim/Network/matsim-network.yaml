@@ -4,19 +4,21 @@ metadata:
   displayName: Matsim Network
   name: matsim-network
   type: model
-  summary: Road network data preprocessing.
+  summary: Network data preprocessing.
   description: >
-    Road network data preprocessing for the Matsim model.
+    Network data preprocessing for the Matsim model.
 
     Functional Urban Areas with tile merging.
 
+    TNDS data for public transport, OS open roads for road network
+
     Version:
 
-      - https://github.com/JusteRaimbault/UrbanDynamics : commit 657d1c24e8
+      - https://github.com/JusteRaimbault/UrbanDynamics : commit 0a52e7b80f
 
-      - https://github.com/openmole/spatialdata : commit 07e6a3b1d7
+      - https://github.com/openmole/spatialdata : commit e6a6838f09
 
-      v1.0-UrbanDynamics_657d1c24e8-spatialdata_07e6a3b1d7
+      v1.0-UrbanDynamics_0a52e7b80f-spatialdata_e6a6838f09
 
 spec:
   inputs:
@@ -59,6 +61,16 @@ spec:
             versionUid: 1dfcc665-067e-400c-9e20-41270f721f72
         path: inputs/OSOpenRoadsTiles
         required: true
+
+      - name: TNDS GTFS
+        description: >
+          TNDS GTFS.
+        default:
+          - uid: 3b58701a-537e-4c5b-bd4d-20cb8da40c26
+            versionUid: e6d7bb81-8e81-441d-90b0-0b7f2311d265
+        path: inputs/TNDS
+        required: true
+
 
   outputs:
     datasets:

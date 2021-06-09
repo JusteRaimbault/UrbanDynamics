@@ -8,6 +8,8 @@ COPY run.sh /root/run.sh
 
 COPY map_network.ipynb /root/map_network.ipynb
 
+COPY test/gtfs /root/gtfs
+
 RUN chmod +x /root/run.sh
 
 RUN cd spatialdata/library;git log|head ;git pull origin master

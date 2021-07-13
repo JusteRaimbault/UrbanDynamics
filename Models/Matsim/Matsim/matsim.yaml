@@ -14,7 +14,7 @@ metadata:
        - files /data/inputs/transit_schedule.xml /data/inputs/transit_schedule_$FUANAME.xml /data/inputs/transit_vehicles_$FUANAME.xml (network)
        - file /data/inputs/Plans_$FUANAME.xml (population)
 
-    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit 0bbfdeb108 ; v1.0-UrbanDynamics_0bbfdeb108
+    Version: https://github.com/JusteRaimbault/UrbanDynamics : commit a263133704 ; v1.0-UrbanDynamics_a263133704
 
 spec:
   inputs:

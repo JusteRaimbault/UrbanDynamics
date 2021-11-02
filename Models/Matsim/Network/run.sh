@@ -14,15 +14,22 @@ cd spatialdata/library
 export SBT_OPTS="-Xmx$MEMORY"
 mkdir -p /data/outputs
 
+run_network () {
+   echo "Constructing network for FUA $1"
+   # road network
+   sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --network --FUAName=\""$1"\" --FUAFile=/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --TilesFile=/data/inputs/OSOpenRoadsTiles/OSOpenRoadsTiles.shp --datadir=/data/inputs/OSOpenRoads/data --output=/data/outputs/Network;"
+   # extract gtfs
+   R -e 'source("functions.R"); extract_gtfs(/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg,/data/inputs/gtfs,$1)'
+   # full network using pt2Matsim
+
+}
+
 if [ "$PARALLEL" = "true" ] ; then
     for NAME in ${FUANAME//;/ } ; do
-        echo "run $NAME"
-        sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --network --FUAName=\""$NAME"\" --FUAFile=/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --TilesFile=/data/inputs/OSOpenRoadsTiles/OSOpenRoadsTiles.shp --datadir=/data/inputs/OSOpenRoads/data --output=/data/outputs/Network;" &
-        #R -e 'source("functions.R"); extract_gtfs($NAME,/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg)'
+        run_network $NAME &
     done
 else
-    sbt "project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --network --FUAName=\""$FUANAME"\" --FUAFile=/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --TilesFile=/data/inputs/OSOpenRoadsTiles/OSOpenRoadsTiles.shp --datadir=/data/inputs/OSOpenRoads/data --output=/data/outputs/Network;"
-    #R -e 'source("functions.R"); extract_gtfs($FUANAME,/data/inputs/GHSFUAS/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg)'
+    run_network $FUANAME
 fi
 
 cp /root/map_network.ipynb /data/outputs/map_network.ipynb

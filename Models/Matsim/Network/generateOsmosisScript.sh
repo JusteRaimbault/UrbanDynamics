@@ -15,7 +15,7 @@ do
   then
      echo "" >> extractFUAsOSM.sh
      echo "" >> extractFUAsOSM.sh
-     echo -n 'osmosis --read-pbf $OSMFILE --tee 10 ' >> extractFUAsOSM.sh
+     echo -n 'osmosis -v --read-pbf $OSMFILE --tee 10 ' >> extractFUAsOSM.sh
   fi
   fuapref="$( cut -d '.' -f 1 <<< "$poly" )"
   fua="$( cut -d '/' -f 2 <<< "$fuapref" )"

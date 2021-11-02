@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script to preprocess networks locally (not in docker)
 
@@ -18,6 +18,8 @@ OSMFILE=$CS_HOME/Data/OSM/Geofabrik/britain-and-ireland/britain-and-ireland-late
 #osmosis --read-pbf $OSMFILE --tag-filter accept-ways highway=* railway=* --bounding-polygon file=runtime/$FUANAME.poly completeWays=yes --write-xml compressionMethod=gzip  runtime/$FUANAME.osm.gz
 
 # default config
+rm runtime/config.xml
+rm runtime/defaultConfigFile.xml
 java -Xmx4G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.CreateDefaultOsmConfig runtime/defaultConfigFile.xml
 while IFS= read -r confline; do
   if [[ $confline =~ "osmFile" ]]; then
@@ -41,10 +43,12 @@ done <runtime/defaultConfigFile.xml
 
 
 # construct multimodalnetwork
-java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Osm2MultimodalNetwork runtime/config.xml
+#java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Osm2MultimodalNetwork runtime/config.xml
 
 # extract gtfs
-#R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'")'
+R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'")'
+unzip "runtime/"$FUANAME"_gtfs.zip" -d "runtime/"$FUANAME"_gtfs"
 
 # gtfs to transit schedule
-#java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule runtime/config.xml
+java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule "runtime/"$FUANAME"_gtfs" "dayWithMostServices" "WGS84" $FUANAME"_transit_schedule.xml.gz" $FUANAME"_transit_vehicles.xml.gz"
+

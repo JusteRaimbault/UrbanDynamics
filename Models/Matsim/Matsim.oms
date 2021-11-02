@@ -8,17 +8,23 @@ val planFile = Val[File]
 
 
 
-val popcommand = "sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/fuaFile.gpkg --LAFile=/data/LAD/ladFile.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT --output=/Plans\""
+val popcommand = "ls /data/LAD;sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/ladFile.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT --output=/Plans\""
+//val popcommand="ls spatialdata;pwd"
 
 val population = ContainerTask(
     image = workDirectory / "images" / "matsim-population-1.0-0a52e7b80f.tar.gz",
     command = popcommand,
+    workDirectory = "/root/spatialdata/library",
     containerSystem = Singularity()
 ) set (
    (inputs,outputs) += (popSample,fuaName),
-   inputFiles += (fuaFile,"/data/fuaFile.gpkg"),
-   inputFiles += (ladDir,"/data/LAD"),
+   inputFiles += (dataDir,"/data/"),
    outputFiles += ("/Plans.xml",planFile),
-   dataDir := workDirectory / "data",
-   popSample := 0.1
+   dataDir := workDirectory / "rawdata",
+   popSample := 0.1,
+   fuaName := "Exeter"
 )
+
+population hook CopyFileHook(planFile,"data/TEST_Plans_${fuaName}.xml")
+
+

@@ -3,9 +3,10 @@
 
 FUANAME=$1
 SEED=$2
-CS_HOME=$3
+SAMPLE=$3
+CS_HOME=$4
 
-SAMPLE=0.1
+#SAMPLE=0.1
 ITERATIONS=5
 THREADS=10
 MEMORY=18G
@@ -84,5 +85,5 @@ MATSIMID=`docker ps -a --last 1 -q`
 
 echo "Container id: $MATSIMID"
 
-docker cp $MATSIMID:/data/outputs "simulations/matsim-output_FUA-"$FUANAME"_seed-"$SEED"_"$CONTEXT
+docker cp $MATSIMID:/data/outputs "simulations/matsim-output_FUA-"$FUANAME"_seed-"$SEED"_sample-"$SAMPLE"_"$CONTEXT
 

@@ -14,10 +14,8 @@ OSMFILE=$CS_HOME/Data/OSM/Geofabrik/britain-and-ireland/britain-and-ireland-late
 #R -e 'source("functions.R"); create_poly_file("'$FUAFILE'","'$FUANAME'")'
 
 # extract data with osmosis
+# -> done in separate thread to use osmosis multithreading
 #osmosis --read-pbf $OSMFILE --tag-filter accept-ways highway=* railway=* --bounding-polygon file=runtime/$FUANAME.poly completeWays=yes --write-xml compressionMethod=gzip  runtime/$FUANAME.osm.gz
-
-# extract gtfs
-#R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'")'
 
 # default config
 java -Xmx4G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.CreateDefaultOsmConfig runtime/defaultConfigFile.xml
@@ -44,8 +42,13 @@ done <runtime/defaultConfigFile.xml
 
 
 # construct multimodalnetwork
+java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Osm2MultimodalNetwork runtime/config.xml
 
 
-#java -jar pt2matsim-21.5/pt2matsim-21.5-shaded.jar -Xmx4G -Dmatsim.useLocalDtds=true org.matsim.pt2matsim.run.Gtfs2TransitSchedule runtime/config.xml
+# extract gtfs
+#R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'")'
 
 # gtfs to transit schedule
+#org.matsim.pt2matsim.run.Gtfs2TransitSchedule
+
+

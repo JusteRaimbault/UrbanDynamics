@@ -5,12 +5,14 @@ library(sf)
 library(openssl)
 
 
-
+#'
+#' create_all_poly_files(fuafile, "GBR")
 create_all_poly_files<-function(fuafile, country){
   fuas <-st_transform(st_read(fuafile),4326)
   areapolygons = fuas[fuas$Cntry_ISO==country,]
   for(i in 1:nrow(areapolygons)){
-    area=areapolygons[i,"eFUA_name"]
+    area=gsub("/","_",gsub(" ","_",areapolygons$eFUA_name[i]))
+    areapolygon=areapolygons[i,]
     coords = st_coordinates(areapolygon)
     coordlines = paste0('    ',coords[,1],'    ',coords[,2])
     fileConn<-file(paste0("runtime/",area,'.poly'))

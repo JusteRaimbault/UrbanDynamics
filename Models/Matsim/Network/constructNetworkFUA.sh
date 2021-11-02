@@ -42,10 +42,7 @@ while IFS= read -r confline; do
 done <runtime/defaultConfigFile.xml
 
 
-
 # construct multimodalnetwork
-
-
-#java -jar pt2matsim-21.5/pt2matsim-21.5-shaded.jar -Xmx4G -Dmatsim.useLocalDtds=true org.matsim.pt2matsim.run.Gtfs2TransitSchedule runtime/config.xml
+java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule runtime/config.xml
 
 # gtfs to transit schedule

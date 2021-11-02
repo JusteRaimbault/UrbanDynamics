@@ -6,6 +6,20 @@ library(openssl)
 
 
 
+create_all_poly_files<-function(fuafile, country){
+  fuas <-st_transform(st_read(fuafile),4326)
+  areapolygons = fuas[fuas$Cntry_ISO==country,]
+  for(i in 1:nrow(areapolygons)){
+    area=areapolygons[i,"eFUA_name"]
+    coords = st_coordinates(areapolygon)
+    coordlines = paste0('    ',coords[,1],'    ',coords[,2])
+    fileConn<-file(paste0("runtime/",area,'.poly'))
+    writeLines(c(area,"boundary",coordlines,"END","END"), fileConn)
+    close(fileConn)
+  }
+}
+
+
 create_poly_file<-function(fuafile,area){
   fuas <-st_transform(st_read(fuafile),4326)
   areapolygon = fuas[fuas$eFUA_name==area,]

@@ -50,7 +50,7 @@ extract_gtfs<-function(fuafile,datadir,area){
   
   areadata = gtfs_clip_df(
     gtfsdata,
-    fuas[fuas$eFUA_name==area,]
+    fuas[gsub(" ","_",gsub("/","_",fuas$eFUA_name))==area,]
   )
   # ! issue with sf version? 
   # st_as_sf(stops_inc, coords = c("stop_lon","stop_lat"), crs = 4326)

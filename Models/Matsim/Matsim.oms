@@ -1,0 +1,23 @@
+
+val popSample = Val[Double]
+val fuaName = Val[String]
+
+val fuaFile = Val[File]
+
+
+val planFile = Val[File]
+
+
+
+val popcommand = "sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode="$POPMODE" --jobMode="$JOBMODE" --planMode=default --sample="$SAMPLE" --FUAName=\""$FUANAME"\" --FUAFile=/fuaFile.gpkg --LAFile=/ladFile.shp --OAFile=/data/inputs/OA/OA2011_WGS84.shp --MSOAFile=/data/inputs/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/inputs/SPENSER/England,/data/inputs/SPENSER/Scotland,/data/inputs/SPENSER/Wales --OSMBuildingsDirs=/data/inputs/OSMBuildings/England,/data/inputs/OSMBuildings/Scotland,/data/inputs/OSMBuildings/Wales --QUANTDataDir=/data/inputs/QUANT --output=/Plans\""
+
+val population = ContainerTask(
+    image = workDirectory / "images" / "matsim-population-1.0-0a52e7b80f.tar.gz",
+    command = popcommand,
+    containerSystem = Singularity()
+) set (
+   (inputs,outputs) += (popSample),
+   inputFiles += (fuaFile,"/fuaFile.gpkg"),
+   outputFiles += ("/Plans.xml",planFile),
+   popSample := 0.1
+)

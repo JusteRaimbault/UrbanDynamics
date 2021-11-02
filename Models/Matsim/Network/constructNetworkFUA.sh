@@ -27,7 +27,7 @@ while IFS= read -r confline; do
          echo '<param name="outputCoordinateSystem" value="EPSG:4326" />' >> runtime/config.xml
      else
        if [[ $confline =~ "outputNetworkFile" ]]; then
-           echo '<param name="outputNetworkFile" value="runtime/network.xml.gz" />' >> runtime/config.xml
+           echo '<param name="outputNetworkFile" value="runtime/'$FUANAME'.xml.gz" />' >> runtime/config.xml
        else
          if [[ $confline =~ "</module>" ]]; then
              echo '<parameterset type="routableSubnetwork"><param name="allowedTransportModes" value="car" /><param name="subnetworkMode" value="car_passenger" /></parameterset></module>' >> runtime/config.xml

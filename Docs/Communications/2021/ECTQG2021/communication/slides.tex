@@ -1,0 +1,279 @@
+
+
+\input{header_slides.tex}
+
+\begin{document}
+
+
+\title[]{An agent-based model for modal shift in public transport}
+
+\author[Raimbault and Batty]{J.~Raimbault$^{1,2,3,\ast}$ and M.~Batty$^{1}$\\\medskip
+$^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
+}
+
+\institute[UCL]{$^{1}$Center for Advanced Spatial Analysis, University College London\\
+$^{2}$UPS CNRS 3611 Complex Systems Institute Paris\\
+$^{3}$UMR CNRS 8504 G{\'e}ographie-cit{\'e}s
+}
+
+
+\date[04/11/2021]{ECTQG 2021\\
+Special Session: Exploration and validation of spatial simulation models\\
+November 4th 2021
+}
+
+\frame{\maketitle}
+
+
+
+\section{Introduction}
+
+
+
+\sframe{}{
+
+\cite{zhuge2019sensitivity}
+
+}
+
+
+
+
+\sframe{Urban transportation models}{
+
+
+\textit{MATSim model: heterogenous data and integration of many sub-models}
+
+\medskip
+
+\begin{center}
+	\includegraphics[height=0.7\textheight]{figures/matsim.png}
+\end{center}
+
+Source: \cite{balmer2009matsim}
+
+}
+
+\sframe{Land-use transport models}{
+
+\textit{Land-use transport models as a progressive complexification through coupling of detailed sub-models}
+
+\medskip
+
+\begin{center}
+	\includegraphics[width=0.45\linewidth]{figures/wegener1.png}\hspace{0.3cm}
+	\includegraphics[width=0.45\linewidth]{figures/wegener2.png}
+\end{center}
+
+Source: \cite{wegener2004land}
+
+}
+
+
+
+
+
+
+
+
+
+
+\section{Model}
+
+\sframe{MATSim model integration}{
+
+
+
+\textbf{Case study:} \textit{Construct a modular four-step multimodal transportation model using open source projects and data}
+
+\bigskip
+
+\textbf{Integrated models:}
+
+\begin{itemize}
+	\item MATSim model (MATSim Community) for the transportation system \url{https://www.matsim.org/} \cite{horni2016multi}
+	\item SPENSER model (University of Leeds) for the synthetic population \url{https://github.com/nismod/microsimulation}
+	\item QUANT model (CASA, University College London) for spatial interactions to generate home-work plans \url{http://quant.casa.ucl.ac.uk/} \cite{milton2019accelerating}
+	\item spatialdata library (OpenMOLE community) for data processing \url{https://github.com/openmole/spatialdata} \cite{raimbault2020scala}
+\end{itemize}
+
+
+
+}
+
+
+\sframe{Data and implementation}{
+
+
+% Data used to construct the synthetic population is mostly Census data, while transportation networks are built combining Ordnance Survey open data, OpenStreetMap data, and GTFS data for public transport timetables. The QUANT model uses census commuting flows to estimate spatial interaction parameters.
+
+\textbf{Data:}
+
+Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) or any arbitrary area in the UK: NOMIS census, OrdnanceSurvey roads, Traveline National Dataset for public transport
+
+\medskip
+
+\textbf{Workflow systems:}
+
+\begin{itemize}
+	\item DAFNI facility funded by UKCRIC \url{https://dafni.ac.uk}
+	\item OpenMOLE software \url{https://openmole.org/} \cite{reuillon2013openmole}
+\end{itemize}
+
+\medskip
+
+\textbf{Implementation}
+
+Currently integrated into the DAFNI platform:
+
+\begin{itemize}
+	\item synthetic SPENSER population with uniform job locations
+	\item QUANT model to generate home-work commuting flows
+	\item network and plans prepared into MATSim xml files and fed into a one-mode MATSim (multimodal version still tested locally)
+	\item models integrated as Docker containers
+\end{itemize}
+
+
+
+}
+
+\sframe{Data preparation}{
+
+$\rightarrow$ Road network preprocessing: implemented into the \texttt{spatialdata} scala library \cite{raimbault2020scala}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{figures/road_data.png}	
+\end{center}
+
+\bigskip
+
+$\rightarrow$ Public transport data: from TransXchange (TNDS) to GTFS using UK2GTFS R package \cite{UK2GTFS}; GTFS to MATSim xml schedule using \texttt{pt2matsim} library
+
+
+
+}
+
+
+
+\sframe{OpenMOLE workflow engine}{
+
+
+
+OpenMOLE model exploration open source software \cite{reuillon2013openmole}
+
+\medskip
+
+\begin{center}
+\includegraphics[height=0.13\textheight]{figures/iconOM.png}
+\includegraphics[height=0.13\textheight]{figures/openmole.png}
+\end{center}
+
+\medskip
+
+\textit{Enables seamlessly (i) model embedding; (ii) access to HPC resources; (iii) exploration and optimization algorithms}
+
+\medskip
+
+\url{https://openmole.org/}
+
+}
+
+
+
+
+\section{Results}
+
+\sframe{Role of stochasticity}{
+
+\begin{center}
+	\includegraphics[width=0.9\linewidth]{figures/stochasticity_Taunton.png}
+\end{center}
+
+
+}
+
+
+\sframe{Global Sensitivity Analysis}{
+
+}
+
+
+\sframe{GSA results}{
+
+}
+
+
+
+
+\section{Discussion}
+
+
+
+
+
+
+
+\sframe{Conclusion}{
+
+
+
+\justify
+
+$\rightarrow$ 
+
+\medskip
+
+$\rightarrow$ 
+
+\bigskip
+\bigskip
+
+
+
+\textbf{Open repositories}
+
+\medskip
+
+\url{https://github.com/JusteRaimbault/UrbanDynamics/Models/Matsim} for containers and workflows
+
+\medskip
+
+\url{https://github.com/openmole/spatialdata} for data processing
+
+
+\bigskip
+
+\textbf{Acknowledgements}
+
+DAFNI platform/Champions program; Urban Dynamics Lab Grant EPSRC EP/M023583/1
+
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\bibliographystyle{apalike}
+\bibliography{biblio}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+

@@ -72,8 +72,12 @@ load_all_gtfs<-function(datadir){
 }
 
 #'
+#' datadir = paste0(Sys.getenv('CS_HOME'),'/UrbanDynamics/Data/TNDS/gtfs_20210322/')
+#'
 #' TODO: submit PR to fix these bugs? - ! may be due to wrong package versions?
-#'   ! done with R 3.6.1
+#'   ! done with R 3.6.1; retry with 4.1.2
+#'   issue memory: https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Memory
+#'    -> env variable in .REnviron
 merge_all_gtfs<-function(datadir,region_codes = c('EA','EM','L','NE','NW','S','SE','SW','W','WM'),files=paste0(region_codes,'_gtfs.zip')){
   datalist = lapply(files,function(f){return(gtfs_read(paste0(datadir,f)))})
   names(datalist) <-region_codes
@@ -132,6 +136,8 @@ merge_all_gtfs<-function(datadir,region_codes = c('EA','EM','L','NE','NW','S','S
   #res[["stop_times"]]$stop_id <- NULL
   #res[["stop_times"]]$stop_id = tmpids
   
+  # arrival times are fine before writing -> do not use mmodified write function? - ok with R 4.1.2 (issues due to older packages? -> should add check on load)
+  
   gtfs_write(res,folder = datadir,name='all_gtfs')
 }
 
@@ -145,7 +151,7 @@ hex_to_int = function(h) {
 
 #'
 #' rewrite: bug with arrival times
-gtfs_write <- function (gtfs, folder = getwd(), name = "gtfs", stripComma = TRUE, 
+gtfs_write_force <- function (gtfs, folder = getwd(), name = "gtfs", stripComma = TRUE, 
           stripTab = TRUE, stripNewline = TRUE, quote = FALSE) 
 {
   if (stripComma) {

@@ -17,7 +17,7 @@ val outputProcessing = ScalaTask("""
 """
 ) set (
   inputs += (outputDir),
-  outputs += (carShare, ptShare, walkShare, avgTripDistance, avgScore)
+  outputs += (carShare, ptShare, walkShare, avgTripDistance, avgScore),
   outputDir := workDirectory / "Matsim" / "output"
 )
 

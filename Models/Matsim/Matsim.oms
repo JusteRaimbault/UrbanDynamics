@@ -23,6 +23,12 @@ val transitVehiclesFile = Val[File]
 // matsim outputs
 val outputDir = Val[File]
 
+val carShare = Val[Double]
+val ptShare = Val[Double]
+val walkShare = Val[Double]
+val avgTripDistance = Val[Double]
+val avgScore = Val[Double]
+
 /*
 val popcommand = "ls /data/LAD;sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data"
 //val popcommand="ls spatialdata;pwd"
@@ -56,10 +62,11 @@ val readfiles = ScalaTask("""
    val transitVehiclesFile = workDirectory / "Network" / "runtime" / "${fuaName}_transit_vehicles.xml.gz"
 """
 ) set (
-  (inputs,outputs) += (fuaName, planFile),
+  (inputs,outputs) += (fuaName, planFile,popSample, utilitywalk,utilitycar,utilitypt),
   outputs += (networkFile, transitScheduleFile, transitVehiclesFile),
   fuaName := "Taunton",
-  planFile := workDirectory / "TEST_Plans_Taunton.xml"
+  planFile := workDirectory / "TEST_Plans_Taunton.xml",
+  popSample := 0.1
 )
 
 
@@ -89,10 +96,10 @@ val matsim = ContainerTask(
   //transitVehiclesFile := workDirectory / "Network" / "runtime" / "Exeter_transit_vehicles.xml.gz",
   iterations := 1,
   threads := 10,
-  seed := 42,
-  utilitywalk := 0.0,
-  utilitypt := 0.0,
-  utilitycar := 100.0,
+  //seed := 42,
+  //utilitywalk := 0.0,
+  //utilitypt := 0.0,
+  //utilitycar := 100.0,
   //planFile := workDirectory / "TEST_Plans_Exeter.xml",
   //popSample := 0.1
 )
@@ -102,14 +109,32 @@ val matsim = ContainerTask(
 
 val outputProcessing = ScalaTask("""
   val modeShares = (outputDir / "modestats.txt").content.split("\n").last.split("\t").drop(1).map(_.toDouble)
-  
+  val carShare = modeShares(0)
+  val ptShare = modeShares(1)
+  val walkShare = modeShares(2)
+  val avgTripDistance = (outputDir / "traveldistancestats.txt").content.split("\n").last.split("\t").last.toDouble
+  val avgScore = (outputDir / "scorestats.txt").content.split("\n").last.split("\t").dropRight(1).last.toDouble
 """
 ) set (
-  inputs += (outputDir)
+  (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads)
+  inputs += (outputDir),
+  outputs += (carShare, ptShare, walkShare, avgTripDistance, avgScore),
+  outputDir := workDirectory / "Matsim" / "output"
 )
 
 
+val purpose = "TEST"
+val indics_hook = AppendToCSVFileHook(workDirectory / "exploration" / (((new java.text.SimpleDateFormat("yyyyMMdd_HHmmss")).format(new java.util.Date()))+"_"+purpose+".csv"),arrayOnRow = true)
 
-
-matsim hook CopyFileHook(outputDir,"TEST_output")
+val model = readfiles -- matsim -- (outputProcessing hook indics_hook)
+//matsim hook CopyFileHook(outputDir,"TEST_output")
 //population -- (matsim hook CopyFileHook(outputDir,"TEST_output"))
+
+
+DirectSampling(
+  evaluation = model,
+  sampling = LHS(2,
+    utilitywalk in (0.0,100.0),
+    utilitypt in (0.0,100.0),
+    utilitycar in (0.0,100.0)
+)

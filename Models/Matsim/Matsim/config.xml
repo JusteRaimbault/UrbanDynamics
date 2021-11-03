@@ -11,7 +11,7 @@
 
 	<module name="network">
 		<!--<param name="inputNetworkFile" value="Network_example.xml" /> -->
-		<param name="inputNetworkFile" value="Network.xml" />
+		<param name="inputNetworkFile" value="Network.xml.gz" />
 	</module>
 
 	<module name="plans">

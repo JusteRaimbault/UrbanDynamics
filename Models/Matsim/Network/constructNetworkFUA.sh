@@ -51,5 +51,5 @@ R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'"
 unzip "runtime/"$FUANAME"_gtfs.zip" -d "runtime/"$FUANAME"_gtfs"
 
 # gtfs to transit schedule
-java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule "runtime/"$FUANAME"_gtfs" "dayWithMostServices" "WGS84" $FUANAME"_transit_schedule.xml.gz" $FUANAME"_transit_vehicles.xml.gz"
+java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule "runtime/"$FUANAME"_gtfs" "dayWithMostServices" "WGS84" "runtime/"$FUANAME"_transit_schedule.xml.gz" "runtime/"$FUANAME"_transit_vehicles.xml.gz"
 

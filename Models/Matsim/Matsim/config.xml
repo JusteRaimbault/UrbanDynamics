@@ -20,11 +20,16 @@
 	</module>
 
 	<module name="controler">
+		<param name="compressionType" value="gzip" />
 		<param name="outputDirectory" value="./output" />
 		<param name="firstIteration" value="0" />
 		<param name="lastIteration" value="3" />
-		<param name= "routingAlgorithmType" value="AStarLandmarks" />
+		<param name="routingAlgorithmType" value="FastAStarLandmarks" />
 		<param name="writeTripsInterval" value="1" />
+		<param name="dumpDataAtEnd" value="true" />
+		<param name="enableLinkToLinkRouting" value="false" />
+		<param name="mobsim" value="qsim" />
+		<param name="createGraphs" value="false" />
 	</module>
 
 	<module name="qsim" >
@@ -145,6 +150,19 @@
 		<param name="Module_3" value="TimeAllocationMutator" />
 	</module>
 
+	<module name="swissRailRaptor" >
+							 <!-- Sets whether intermodal access and egress modes are selected by least cost (default) or randomly chosen out of the available access / egress modes. -->
+							 <param name="intermodalAccessEgressModeSelection" value="CalcLeastCostModePerStop" />
+							 <!-- Possible values: Default, Individual -->
+							 <param name="scoringParameters" value="Default" />
+							 <param name="transferPenaltyBaseCost" value="0.0" />
+							 <param name="transferPenaltyCostPerTravelTimeHour" value="0.0" />
+							 <param name="transferPenaltyMaxCost" value="Infinity" />
+							 <param name="transferPenaltyMinCost" value="-Infinity" />
+							 <param name="useIntermodalAccessEgress" value="false" />
+							 <param name="useModeMappingForPassengers" value="false" />
+							 <param name="useRangeQuery" value="false" />
+			 </module>
 
 
 	<module name="transit" >

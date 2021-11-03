@@ -16,6 +16,12 @@ For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantC
 
 # TODO
 
+
+## 2021/11/03
+
+list of areas: 
+ ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "York|London|Manchester|Birmingham" | awk -F"." '{print $1}' > areas.txt
+
 ## 2021/06/10
 
 Open model for Vienna: https://github.com/ait-energy/matsim-model-vienna

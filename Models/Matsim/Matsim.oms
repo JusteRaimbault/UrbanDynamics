@@ -57,7 +57,8 @@ val matsim = ContainerTask(
   image = workDirectory / "images" / "matsim-1.0-78d32c0fbc.tar.gz",
   command = matsimcommand,
   workDirectory = "/root/",
-  containerSystem = Singularity()
+  containerSystem = Singularity(),
+  errorOnReturnValue = false
 ) set (
   (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads),
   inputFiles += (planFile,"Plans.xml"),

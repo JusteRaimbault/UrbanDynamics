@@ -39,7 +39,7 @@ val population = ContainerTask(
    inputFiles += (dataDir,"/data/"),
    outputFiles += ("Plans_${fuaName}.xml",planFile),
    dataDir := workDirectory / "rawdata",
-   popSample := 0.1,
+   popSample := 0.01,
    fuaName := "Exeter"
 )
 

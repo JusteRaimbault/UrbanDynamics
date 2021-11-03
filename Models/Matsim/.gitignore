@@ -1,6 +1,7 @@
 test
 
 TEST_Plans_*
+TEST_output
 
 # raw data
 rawdata

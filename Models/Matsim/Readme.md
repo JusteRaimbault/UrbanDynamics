@@ -22,6 +22,10 @@ For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantC
 list of areas: 
  ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "York|London|Manchester|Birmingham" | awk -F"." '{print $1}' > areas.txt
 
+Strange issues with Matsim: https://github.com/matsim-org/matsim-libs/issues/1347
+solved by adding CRS (and modules?); then strategy to change modes to have modal shares
+
+
 ## 2021/06/10
 
 Open model for Vienna: https://github.com/ait-energy/matsim-model-vienna

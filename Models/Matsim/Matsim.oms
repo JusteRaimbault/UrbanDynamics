@@ -2,7 +2,7 @@
 // parameters
 val popSample = Val[Double]
 val fuaName = Val[String]
-val seed = Val[Int]
+val seed = Val[Double]
 val utilitywalk = Val[Double]
 val utilitycar = Val[Double]
 val utilitypt = Val[Double]
@@ -13,6 +13,7 @@ val threads = Val[Int]
 
 // synth pop data
 val dataDir = Val[File]
+val nwDir = Val[File]
 
 // matsim data
 val planFile = Val[File]
@@ -57,13 +58,15 @@ val population = ContainerTask(
 
 
 val readfiles = ScalaTask("""
-   val networkFile = workDirectory / "Network" / "runtime" / "${fuaName}.xml.gz"
-   val transitScheduleFile = workDirectory / "Network" / "runtime" / "${fuaName}_transit_schedule.xml.gz"
-   val transitVehiclesFile = workDirectory / "Network" / "runtime" / "${fuaName}_transit_vehicles.xml.gz"
+   val networkFile = nwDir / (fuaName+".xml.gz")
+   val transitScheduleFile = nwDir / (fuaName+"_transit_schedule.xml.gz")
+   val transitVehiclesFile = nwDir / (fuaName+"_transit_vehicles.xml.gz")
 """
 ) set (
-  (inputs,outputs) += (fuaName, planFile,popSample, utilitywalk,utilitycar,utilitypt),
+  (inputs,outputs) += (fuaName, planFile,popSample, seed,utilitywalk,utilitycar,utilitypt),
+  inputs += (nwDir),
   outputs += (networkFile, transitScheduleFile, transitVehiclesFile),
+  nwDir := workDirectory / "Network" / "runtime",
   fuaName := "Taunton",
   planFile := workDirectory / "TEST_Plans_Taunton.xml",
   popSample := 0.1
@@ -71,14 +74,14 @@ val readfiles = ScalaTask("""
 
 
 val matsimcommand = """
-export SEED=${seed};export ITERATIONS=${iterations};export THREADS=${threads}
+export SEED=${seed.toInt};export ITERATIONS=${iterations};export THREADS=${threads}
 export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};export UTILITYCAR=${utilitycar}
 ./config.sh
 java -Xmx18G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_runtime.xml
 """
 
 val matsim = ContainerTask(
-  image = workDirectory / "images" / "matsim-1.0-5bf344a8ec.tar.gz",
+  image = workDirectory / "images" / "matsim-1.0-86a2c28210.tar.gz",
   command = matsimcommand,
   workDirectory = "/root/",
   containerSystem = Singularity(),
@@ -116,7 +119,7 @@ val outputProcessing = ScalaTask("""
   val avgScore = (outputDir / "scorestats.txt").content.split("\n").last.split("\t").dropRight(1).last.toDouble
 """
 ) set (
-  (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads)
+  (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads),
   inputs += (outputDir),
   outputs += (carShare, ptShare, walkShare, avgTripDistance, avgScore),
   outputDir := workDirectory / "Matsim" / "output"
@@ -133,8 +136,12 @@ val model = readfiles -- matsim -- (outputProcessing hook indics_hook)
 
 DirectSampling(
   evaluation = model,
-  sampling = LHS(2,
-    utilitywalk in (0.0,100.0),
-    utilitypt in (0.0,100.0),
-    utilitycar in (0.0,100.0)
+  sampling = LHS(sample = 2,
+    factor = Seq(
+	utilitywalk in (0.0,100.0),
+    	utilitypt in (0.0,100.0),
+    	utilitycar in (0.0,100.0),
+    	seed in (0.0,10000.0)
+        )
+    )
 )

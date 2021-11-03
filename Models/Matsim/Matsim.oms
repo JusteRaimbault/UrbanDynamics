@@ -39,18 +39,31 @@ val population = ContainerTask(
    outputFiles += ("Plans_${fuaName}.xml",planFile),
    dataDir := workDirectory / "rawdata",
    popSample := 0.1,
-   fuaName := "Exeter"
+   fuaName := "Taunton"
 )
+*/
 
 //population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")
-*/
+
 
 // switch to 13.0: https://githubmemory.com/repo/matsim-org/matsim-code-examples/issues/542
 // -> swissrailRaptor by default, by NUllPointerException at init
 
 
+val readfiles = ScalaTask("""
+   val networkFile = workDirectory / "Network" / "runtime" / "${fuaName}.xml.gz"
+   val transitScheduleFile = workDirectory / "Network" / "runtime" / "${fuaName}_transit_schedule.xml.gz"
+   val transitVehiclesFile = workDirectory / "Network" / "runtime" / "${fuaName}_transit_vehicles.xml.gz"
+"""
+) set (
+  (inputs,outputs) += (fuaName, planFile),
+  outputs += (networkFile, transitScheduleFile, transitVehiclesFile),
+  fuaName := "Taunton",
+  planFile := workDirectory / "TEST_Plans_Taunton.xml"
+)
+
+
 val matsimcommand = """
-ls
 export SEED=${seed};export ITERATIONS=${iterations};export THREADS=${threads}
 export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};export UTILITYCAR=${utilitycar}
 ./config.sh
@@ -70,31 +83,31 @@ val matsim = ContainerTask(
   inputFiles += (transitScheduleFile,"transit_schedule.xml.gz"),
   inputFiles += (transitVehiclesFile,"transit_vehicles.xml.gz"),
   outputFiles += ("output",outputDir),
-  fuaName := "Exeter",
-  networkFile := workDirectory / "Network" / "runtime" / "Exeter.xml.gz",
-  transitScheduleFile := workDirectory / "Network" / "runtime" / "Exeter_transit_schedule.xml.gz",
-  transitVehiclesFile := workDirectory / "Network" / "runtime" / "Exeter_transit_vehicles.xml.gz",
-  iterations := 5,
+  //fuaName := "Exeter",
+  //networkFile := workDirectory / "Network" / "runtime" / "Exeter.xml.gz",
+  //transitScheduleFile := workDirectory / "Network" / "runtime" / "Exeter_transit_schedule.xml.gz",
+  //transitVehiclesFile := workDirectory / "Network" / "runtime" / "Exeter_transit_vehicles.xml.gz",
+  iterations := 1,
   threads := 10,
   seed := 42,
-  utilitywalk := 1.0,
-  utilitypt := 10.0,
-  utilitycar := 1.0,
-  planFile := workDirectory / "TEST_Plans_Exeter.xml",
-  popSample := 0.1
+  utilitywalk := 0.0,
+  utilitypt := 0.0,
+  utilitycar := 100.0,
+  //planFile := workDirectory / "TEST_Plans_Exeter.xml",
+  //popSample := 0.1
 )
 
 // output: need to add counts / ptCount modules?
 
-/*
+
 val outputProcessing = ScalaTask("""
-
-
+  val modeShares = (outputDir / "modestats.txt").content.split("\n").last.split("\t").drop(1).map(_.toDouble)
+  
 """
 ) set (
   inputs += (outputDir)
 )
-*/
+
 
 
 

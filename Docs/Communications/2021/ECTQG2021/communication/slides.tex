@@ -5,7 +5,7 @@
 \begin{document}
 
 
-\title[]{An agent-based model for modal shift in public transport}
+\title[MATSim Sensitivity analysis]{Sensitivity analysis of the MATSim transport model}
 
 \author[Raimbault and Batty]{J.~Raimbault$^{1,2,3,\ast}$ and M.~Batty$^{1}$\\\medskip
 $^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
@@ -30,17 +30,11 @@ November 4th 2021
 
 
 
-\sframe{}{
-
-\cite{zhuge2019sensitivity}
-
-}
-
-
 
 
 \sframe{Urban transportation models}{
 
+% The MATSim framework (Multi-Agent Transport Simulation) is a widely used open-source library for such transport simulations, which has been applied to numerous dimensions of transport systems and on many case studies (Axhausen et al., 2016)
 
 \textit{MATSim model: heterogenous data and integration of many sub-models}
 
@@ -71,7 +65,15 @@ Source: \cite{wegener2004land}
 
 
 
+\sframe{}{
 
+% Agent-based transport models are useful tools to devise policies related to diverse urban issues, such as long-term urban planning, transport system operations, or health and public transport. In such contexts, a knowledge of result uncertainties and a certain confidence at least in qualitative patterns obtained, is crucial.
+% Studies providing some validation and sensitivity analysis of transport models based on MATSim, such as (Zhuge et al, 2019), remain however rare. We contribute in this presentation to the effort of validating these models with a sensitivity analysis of an open data implementation for the UK
+
+\cite{zhuge2019sensitivity}
+
+
+}
 
 
 
@@ -82,9 +84,9 @@ Source: \cite{wegener2004land}
 
 \sframe{MATSim model integration}{
 
+% We build on the four- step multimodal transport model introduced by (Raimbault and Batty, 2021), which combines, for any urban area in the UK, the generation of synthetic population using the SPENSER model (Lomax and Smith, 2017), spatial interaction modeling integrating the QUANT model (Batty and Milton, 2021), and the MATSim framework.
 
-
-\textbf{Case study:} \textit{Construct a modular four-step multimodal transportation model using open source projects and data}
+\textit{Modular four-step multimodal transportation model using open source projects and data}
 
 \bigskip
 
@@ -124,13 +126,11 @@ Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) or any arbi
 
 \textbf{Implementation}
 
-Currently integrated into the DAFNI platform:
-
 \begin{itemize}
-	\item synthetic SPENSER population with uniform job locations
-	\item QUANT model to generate home-work commuting flows
-	\item network and plans prepared into MATSim xml files and fed into a one-mode MATSim (multimodal version still tested locally)
-	\item models integrated as Docker containers
+	\item Synthetic SPENSER population distributed at the micro level using OSM buildings
+	\item QUANT model to generate home-work commuting flows, job locations determined by sampling flows
+	\item Network and plans (simple uniform commuting plans) prepared into MATSim xml files and fed into a multimodal MATSim model
+	\item Models integrated as Docker containers
 \end{itemize}
 
 
@@ -181,6 +181,8 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 
 \sframe{Explored parameters}{
 
+\textit{Parameter sampled for the sensitivity analysis:}
+
 \begin{itemize}
 	\item Functional Urban Area (spatial context \cite{raimbault2019space})
 	\item Random seed (influence of stochasticity \cite{bienzeisler2021uncertainty}) % gisruk? sds? ewgt!
@@ -208,6 +210,32 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 
 \sframe{Global Sensitivity Analysis}{
 
+
+\textit{Method based on the estimation of conditional relative variances}
+
+\cite{saltelli2010variance}
+
+\medskip
+
+\textbf{First order index}
+
+\[
+S_i \textrm{=} \frac{Var \left[ E_{\mathbf{X}_{\sim i}} \left(Y | X_i \right) \right]}{Var\left[Y\right]}
+\]
+
+is the expected relative variance reduction if $X_i$ would be fixed
+
+\medskip
+
+\textbf{Total effect index}
+\[
+ST_i = \frac{E_{\mathbf{X}_{\sim i}}\left[Var(Y | \mathbf{X}_{\sim i}) \right]}{Var(Y)}
+\]
+
+is the expected relative variance if all factors but $X_i$ are fixed (includes interaction effects)
+
+
+
 }
 
 
@@ -222,12 +250,29 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 
 
 
+\sframe{Discussion}{
+
+% on reproducibility: still experimental - but totally open. pb of infra? (galere memory e.g.)
+
+% covid? Possible systematic exploration on all urban areas of home-work policies and modifications of agent schedules using genetic algorithms from OpenMOLE
+%Visualisation of MATSim agents dynamics (MATSim visu features not open)
+% -> role of visualisation?
+
+% Dynamical strong coupling of QUANT and SPENSER to combine population projections with the transport model
+% Validation of sub-models and integrated models using advanced model validation methods
+% Use MATSim outputs to quantify effective densities in public transport: potential exposure indicators in the COVID-19 context
+% Impact of policies and interventions on transport system dynamics and potential contaminations
+
+}
+
 
 
 
 
 \sframe{Conclusion}{
 
+% Open, reproducible and validated urban models as elementary bricks towards larger integrated models
+% Open resource for teaching transport models
 
 
 \justify

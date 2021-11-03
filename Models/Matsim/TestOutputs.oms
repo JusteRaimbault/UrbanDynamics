@@ -1,0 +1,24 @@
+
+val outputDir = Val[File]
+
+val carShare = Val[Double]
+val ptShare = Val[Double]
+val walkShare = Val[Double]
+val avgTripDistance = Val[Double]
+val avgScore = Val[Double]
+
+val outputProcessing = ScalaTask("""
+  val modeShares = (outputDir / "modestats.txt").content.split("\n").last.split("\t").drop(1).map(_.toDouble)
+  val carShare = modeShares(0)
+  val ptShare = modeShares(1)
+  val walkShare = modeShares(2)
+  val avgTripDistance = (outputDir / "traveldistancestats.txt").content.split("\n").last.split("\t").last.toDouble
+  val avgScore = (outputDir / "scorestats.txt").content.split("\n").last.split("\t").dropRight(1).last.toDouble
+"""
+) set (
+  inputs += (outputDir),
+  outputs += (carShare, ptShare, walkShare, avgTripDistance, avgScore)
+  outputDir := workDirectory / "Matsim" / "output"
+)
+
+outputProcessing hook ToStringHook()

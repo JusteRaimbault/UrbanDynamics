@@ -2,7 +2,7 @@ FROM openjdk:11.0.9-jre
 
 COPY run.sh /root/run.sh
 
-COPY matsim-12.0 /root/matsim-12.0
+COPY matsim-13.0 /root/matsim-13.0
 
 COPY config.xml /root/config.xml
 

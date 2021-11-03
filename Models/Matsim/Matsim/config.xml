@@ -174,7 +174,8 @@
                 <param name="transitStopsAttributesFile" value="null" />
                 <param name="useTransit" value="true" />
                 <param name="usingTransitInMobsim" value="true" />
-                <param name="vehiclesFile" value="transit_vehicles.xml.gz" />
+		<param name="vehiclesFile" value="transit_vehicles.xml.gz" />
+		<param name="routingAlgorithmType" value="SwissRailRaptor" />
         </module>
 
 

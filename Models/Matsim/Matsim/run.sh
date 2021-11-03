@@ -27,18 +27,19 @@ fi
 
 
 # input files from upstream models
-cp /data/inputs/Network_$FUANAME.xml /root/Network.xml
-cp /data/inputs/Plans_$FUANAME.xml /root/Plans.xml
+cp /data/Network_$FUANAME.xml.gz /root/Network.xml.gz
+cp /data/Plans_$FUANAME.xml /root/Plans.xml
+cp /data/$FUANAME_transit_schedule.xml.gz /root/transit_schedule.xml.gz
 
 /root/config.sh
 
 rm -rf output
-java -Xmx$MEMORY -cp /root/matsim-12.0/matsim-12.0.jar org.matsim.run.Controler /root/config.xml
+java -Xmx$MEMORY -cp /root/matsim-12.0/matsim-12.0.jar org.matsim.run.Controler /root/config_runtime.xml
 # command line config available in eqasim but not matsim -> edit xml config
 # --config:global.randomSeed $SEED --config:controler.lastIteration 5 --config:controler.writeTripsInterval 1 --config:counts.writeCountsInterval 1
 #cp /root/map_network.ipynb /data/outputs/map_network.ipynb
 #mkdir -p /data/outputs
-cp -r output /data/outputs
+cp -r output /data/
 
 : '
 # test docker locally

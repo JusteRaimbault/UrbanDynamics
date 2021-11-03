@@ -1,16 +1,32 @@
 
+// parameters
 val popSample = Val[Double]
 val fuaName = Val[String]
+val seed = Val[Int]
+val utilitywalk = Val[Double]
+val utilitycar = Val[Double]
+val utilitypt = Val[Double]
 
+// runtime parameters
+val iterations = Val[Int]
+val threads = Val[Int]
+
+// synth pop data
 val dataDir = Val[File]
 
+// matsim data
 val planFile = Val[File]
+val networkFile = Val[File]
+val transitScheduleFile = Val[File]
+val transitVehiclesFile = Val[File]
 
-
+// matsim outputs
+val outputDir = Val[File]
 
 val popcommand = "ls /data/LAD;sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data"
 //val popcommand="ls spatialdata;pwd"
 
+// FIXME random seed is not included in population generation
 val population = ContainerTask(
     image = workDirectory / "images" / "matsim-population-1.0-0a52e7b80f.tar.gz",
     command = popcommand,
@@ -25,6 +41,52 @@ val population = ContainerTask(
    fuaName := "Exeter"
 )
 
-population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")
+//population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")
 
 
+val matsimcommand = """
+export SEED=${seed};export ITERATIONS=${iterations};export THREADS=${threads}
+export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};EXPORT UTILITYCAR=${utilitycar}
+./config.sh
+java -Xmx20G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_runtime.xml
+"""
+
+val matsim = ContainerTask(
+  image = workDirectory / "images" / "",
+  command = matsimcommand,
+  workDirectory = "/root/",
+  containerSystem = Singularity()
+) set (
+  (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads),
+  inputFiles += (planFile,"/root/Plans.xml"),
+  inputFiles += (networkFile,"/root/Network.xml.gz"),
+  inputFiles += (transitScheduleFile,"/root/transit_schedule.xml.gz"),
+  inputFiles += (transitVehiclesFile,"/root/transit_vehicles.xml.gz"),
+  outputFiles += ("/root/output",outputDir),
+  networkFile := workDirectory / "Network" / "runtime" / "${fuaName}.xml.gz",
+  transitScheduleFile := workDirectory / "Network" / "runtime" / "${fuaName}_transit_schedule.xml.gz",
+  transitVehiclesFile := workDirectory / "Network" / "runtime" / "${fuaName}_transit_vehicles.xml.gz",
+  iterations := 5,
+  threads := 10,
+  seed := 42,
+  utilitywalk := 1.0,
+  utilitypt := 10.0,
+  utilitycar := 0.0
+)
+
+// output: need to add counts / ptCount modules?
+
+/*
+val outputProcessing = ScalaTask("""
+
+
+"""
+) set (
+  inputs += (outputDir)
+)
+*/
+
+
+
+
+population -- (matsim hook CopyFileHook(outputDir,"TEST_output"))

@@ -93,7 +93,7 @@ Source: \cite{wegener2004land}
 \begin{itemize}
 	\item MATSim model (MATSim Community) for the transportation system \url{https://www.matsim.org/} \cite{horni2016multi}
 	\item SPENSER model (University of Leeds) for the synthetic population \url{https://github.com/nismod/microsimulation}
-	\item QUANT model (CASA, University College London) for spatial interactions to generate home-work plans \url{http://quant.casa.ucl.ac.uk/} \cite{milton2019accelerating}
+	\item QUANT model (CASA, University College London) for spatial interactions to generate home-work plans \url{http://quant.casa.ucl.ac.uk/} \cite{batty2021new} % \cite{milton2019accelerating}
 	\item spatialdata library (OpenMOLE community) for data processing \url{https://github.com/openmole/spatialdata} \cite{raimbault2020scala}
 \end{itemize}
 
@@ -142,7 +142,7 @@ Currently integrated into the DAFNI platform:
 $\rightarrow$ Road network preprocessing: implemented into the \texttt{spatialdata} scala library \cite{raimbault2020scala}
 
 \begin{center}
-	\includegraphics[width=\textwidth]{figures/road_data.png}	
+	\includegraphics[width=\textwidth]{figures/road_data.png}
 \end{center}
 
 \bigskip
@@ -175,6 +175,19 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 \medskip
 
 \url{https://openmole.org/}
+
+}
+
+
+\sframe{Explored parameters}{
+
+\begin{itemize}
+	\item Functional Urban Area (spatial context \cite{raimbault2019space})
+	\item Random seed (influence of stochasticity \cite{bienzeisler2021uncertainty}) % gisruk? sds? ewgt!
+	\item Synthetic population sampling share
+	\item Modal choice parameters \cite{horl2021integrating}
+\end{itemize}
+
 
 }
 

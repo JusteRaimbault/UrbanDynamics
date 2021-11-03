@@ -3,10 +3,10 @@
 <config>
 
 	<module name="global">
-		<param name="randomSeed" value="123" />
+		<param name="randomSeed" value="12345" />
 		<param name="coordinateSystem" value="WGS84" />
 		<!-- "global" number of threads.  This number is used, e.g., for replanning, but NOT in the mobsim.  This can typically be set to as many cores as you have available, or possibly even slightly more. -->
-		<param name="numberOfThreads" value="4" />
+		<param name="numberOfThreads" value="1" />
 	</module>
 
 	<module name="network">
@@ -22,7 +22,7 @@
 	<module name="controler">
 		<param name="outputDirectory" value="./output" />
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="3" />
+		<param name="lastIteration" value="10" />
 		<param name= "routingAlgorithmType" value="AStarLandmarks" />
 		<param name="writeTripsInterval" value="1" />
 	</module>
@@ -31,7 +31,7 @@
 		      <!-- end time in hours for one day of simulation? -->
 		      <param name="endTime" value="30:00:00" />
 					<!-- Number of threads used for the QSim.  Note that this setting is independent from the "global" threads setting.  In contrast to earlier versions, the non-parallel special version is no longer there. -->
-					<param name="numberOfThreads" value="4" />
+		<param name="numberOfThreads" value="1" />
 					<!-- capacityFactors should be scaled according to sampling -->
 					<!-- <param name="storageCapacityFactor" value="0.001" />
 					<param name="flowCapacityFactor" value="0.001" />-->
@@ -104,7 +104,7 @@
 													<!-- [money] daily monetary constant. default=0 to be backwards compatible -->
 													<param name="dailyMonetaryConstant" value="0.0" />
 													<!-- [utils] daily utility constant. default=0 to be backwards compatible -->
-													<param name="mode" value="car" /><param name="dailyUtilityConstant" value="0.0" />
+		<param name="mode" value="car" /><param name="dailyUtilityConstant" value="5.1" />
 													<!-- [utils/m] utility of traveling (e.g. walking or driving) per m, normally negative.  this is on top of the time (dis)utility. -->
 													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 													<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
@@ -115,7 +115,7 @@
 									<parameterset type="modeParams" >
 													<param name="constant" value="0.0" />
 													<param name="dailyMonetaryConstant" value="0.0" />
-													<param name="mode" value="pt" /><param name="dailyUtilityConstant" value="0.0" />
+		<param name="mode" value="pt" /><param name="dailyUtilityConstant" value="2" />
 													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 													<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
 													<param name="monetaryDistanceRate" value="0.0" />
@@ -123,7 +123,7 @@
 									<parameterset type="modeParams" >
 													<param name="constant" value="0.0" />
 													<param name="dailyMonetaryConstant" value="0.0" />
-													<param name="mode" value="walk" /><param name="dailyUtilityConstant" value="0.0" />
+		<param name="mode" value="walk" /><param name="dailyUtilityConstant" value="10" />
 													<param name="marginalUtilityOfDistance_util_m" value="0.0" />
 													<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
 													<param name="monetaryDistanceRate" value="0.0" />
@@ -152,11 +152,11 @@
                 <param name="insistingOnUsingDeprecatedAttributeFiles" value="false" />
                 <param name="transitLinesAttributesFile" value="null" />
                 <param name="transitModes" value="pt" />
-                <param name="transitScheduleFile" value="transit_schedule.xml.gz" />
+                <param name="transitScheduleFile" value="transit_schedule.xml" />
                 <param name="transitStopsAttributesFile" value="null" />
                 <param name="useTransit" value="true" />
                 <param name="usingTransitInMobsim" value="true" />
-                <param name="vehiclesFile" value="transit_vehicles.xml.gz" />
+                <param name="vehiclesFile" value="transit_vehicles.xml" />
         </module>
 
 

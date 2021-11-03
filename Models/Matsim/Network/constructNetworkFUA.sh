@@ -46,6 +46,7 @@ done <runtime/defaultConfigFile.xml
 #java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Osm2MultimodalNetwork runtime/config.xml
 
 # extract gtfs
+rm -rf  "runtime/"$FUANAME"_gtfs"
 R -e 'source("functions.R"); extract_gtfs("'$FUAFILE'","'$GTFSDIR'","'$FUANAME'")'
 unzip "runtime/"$FUANAME"_gtfs.zip" -d "runtime/"$FUANAME"_gtfs"
 

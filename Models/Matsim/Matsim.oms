@@ -23,6 +23,7 @@ val transitVehiclesFile = Val[File]
 // matsim outputs
 val outputDir = Val[File]
 
+/*
 val popcommand = "ls /data/LAD;sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data"
 //val popcommand="ls spatialdata;pwd"
 
@@ -42,36 +43,40 @@ val population = ContainerTask(
 )
 
 //population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")
-
+*/
 
 val matsimcommand = """
+ls
 export SEED=${seed};export ITERATIONS=${iterations};export THREADS=${threads}
-export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};EXPORT UTILITYCAR=${utilitycar}
+export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};export UTILITYCAR=${utilitycar}
 ./config.sh
 java -Xmx20G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_runtime.xml
 """
 
 val matsim = ContainerTask(
-  image = workDirectory / "images" / "",
+  image = workDirectory / "images" / "matsim-1.0-78d32c0fbc.tar.gz",
   command = matsimcommand,
   workDirectory = "/root/",
   containerSystem = Singularity()
 ) set (
   (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads),
-  inputFiles += (planFile,"/root/Plans.xml"),
-  inputFiles += (networkFile,"/root/Network.xml.gz"),
-  inputFiles += (transitScheduleFile,"/root/transit_schedule.xml.gz"),
-  inputFiles += (transitVehiclesFile,"/root/transit_vehicles.xml.gz"),
-  outputFiles += ("/root/output",outputDir),
-  networkFile := workDirectory / "Network" / "runtime" / "${fuaName}.xml.gz",
-  transitScheduleFile := workDirectory / "Network" / "runtime" / "${fuaName}_transit_schedule.xml.gz",
-  transitVehiclesFile := workDirectory / "Network" / "runtime" / "${fuaName}_transit_vehicles.xml.gz",
+  inputFiles += (planFile,"Plans.xml"),
+  inputFiles += (networkFile,"Network.xml.gz"),
+  inputFiles += (transitScheduleFile,"transit_schedule.xml.gz"),
+  inputFiles += (transitVehiclesFile,"transit_vehicles.xml.gz"),
+  outputFiles += ("output",outputDir),
+  fuaName := "Exeter",
+  networkFile := workDirectory / "Network" / "runtime" / "Exeter.xml.gz",
+  transitScheduleFile := workDirectory / "Network" / "runtime" / "Exeter_transit_schedule.xml.gz",
+  transitVehiclesFile := workDirectory / "Network" / "runtime" / "Exeter_transit_vehicles.xml.gz",
   iterations := 5,
   threads := 10,
   seed := 42,
   utilitywalk := 1.0,
   utilitypt := 10.0,
-  utilitycar := 0.0
+  utilitycar := 1.0,
+  planFile := workDirectory / "TEST_Plans_Exeter.xml",
+  popSample := 0.1
 )
 
 // output: need to add counts / ptCount modules?
@@ -88,5 +93,5 @@ val outputProcessing = ScalaTask("""
 
 
 
-
-population -- (matsim hook CopyFileHook(outputDir,"TEST_output"))
+matsim hook CopyFileHook(outputDir,"TEST_output")
+//population -- (matsim hook CopyFileHook(outputDir,"TEST_output"))

@@ -12,3 +12,8 @@ matsim-13.0-release.zip
 output
 test
 
+Network.xml.gz
+Plans.xml
+transit_schedule.xml.gz
+transit_vehicles.xml.gz
+

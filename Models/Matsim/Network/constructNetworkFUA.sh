@@ -53,3 +53,6 @@ unzip "runtime/"$FUANAME"_gtfs.zip" -d "runtime/"$FUANAME"_gtfs"
 # gtfs to transit schedule
 java -Xmx20G -Dmatsim.useLocalDtds=true -cp pt2matsim-21.5/pt2matsim-21.5-shaded.jar org.matsim.pt2matsim.run.Gtfs2TransitSchedule "runtime/"$FUANAME"_gtfs" "dayWithMostServices" "WGS84" "runtime/"$FUANAME"_transit_schedule.xml.gz" "runtime/"$FUANAME"_transit_vehicles.xml.gz"
 
+// validate? java -Xmx18G -cp Matsim/matsim-13.0/matsim-13.0.jar org.matsim.pt.utils.TransitScheduleValidator Network/runtime/Exeter_transit_schedule.xml.gz Network/runtime/Exeter.xml.gz 
+
+

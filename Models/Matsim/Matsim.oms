@@ -58,7 +58,7 @@ java -Xmx18G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_run
 """
 
 val matsim = ContainerTask(
-  image = workDirectory / "images" / "matsim-1.0-823ae92924.tar.gz",
+  image = workDirectory / "images" / "matsim-1.0-5bf344a8ec.tar.gz",
   command = matsimcommand,
   workDirectory = "/root/",
   containerSystem = Singularity(),

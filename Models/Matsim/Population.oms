@@ -40,7 +40,7 @@ val population = ContainerTask(
    outputFiles += ("Plans_${fuaName}.xml",planFile),
    dataDir := workDirectory / "rawdata",
    popSample := 0.01,
-   fuaName := "Exeter"
+   fuaName := "Taunton"
 )
 
 population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")

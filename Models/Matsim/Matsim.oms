@@ -45,16 +45,20 @@ val population = ContainerTask(
 //population hook CopyFileHook(planFile,"TEST_Plans_${fuaName}.xml")
 */
 
+// switch to 13.0: https://githubmemory.com/repo/matsim-org/matsim-code-examples/issues/542
+// -> swissrailRaptor by default, by NUllPointerException at init
+
+
 val matsimcommand = """
 ls
 export SEED=${seed};export ITERATIONS=${iterations};export THREADS=${threads}
 export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};export UTILITYCAR=${utilitycar}
 ./config.sh
-java -Xmx18G -cp matsim-13.0/matsim-13.0.jar org.matsim.run.Controler config_runtime.xml
+java -Xmx18G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_runtime.xml
 """
 
 val matsim = ContainerTask(
-  image = workDirectory / "images" / "matsim-1.0-97153bbf9a.tar.gz",
+  image = workDirectory / "images" / "matsim-1.0-823ae92924.tar.gz",
   command = matsimcommand,
   workDirectory = "/root/",
   containerSystem = Singularity(),

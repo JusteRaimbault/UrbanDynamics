@@ -7,13 +7,13 @@
 
 \title[MATSim Sensitivity analysis]{Sensitivity analysis of the MATSim transport model}
 
-\author[Raimbault and Batty]{J.~Raimbault$^{1,2,3,\ast}$ and M.~Batty$^{1}$\\\medskip
+\author[Raimbault and Batty]{J.~Raimbault$^{1,\ast}$ and M.~Batty$^{1}$\\\medskip
 $^{\ast}$\texttt{j.raimbault@ucl.ac.uk}
 }
 
-\institute[UCL]{$^{1}$Center for Advanced Spatial Analysis, University College London\\
-$^{2}$UPS CNRS 3611 Complex Systems Institute Paris\\
-$^{3}$UMR CNRS 8504 G{\'e}ographie-cit{\'e}s
+\institute[UCL]{$^{1}$Center for Advanced Spatial Analysis, University College London%\\
+%$^{2}$UPS CNRS 3611 Complex Systems Institute Paris\\
+%$^{3}$UMR CNRS 8504 G{\'e}ographie-cit{\'e}s
 }
 
 
@@ -65,12 +65,30 @@ Source: \cite{wegener2004land}
 
 
 
-\sframe{}{
+\sframe{Sensitivity analysis of MATSim}{
 
 % Agent-based transport models are useful tools to devise policies related to diverse urban issues, such as long-term urban planning, transport system operations, or health and public transport. In such contexts, a knowledge of result uncertainties and a certain confidence at least in qualitative patterns obtained, is crucial.
 % Studies providing some validation and sensitivity analysis of transport models based on MATSim, such as (Zhuge et al, 2019), remain however rare. We contribute in this presentation to the effort of validating these models with a sensitivity analysis of an open data implementation for the UK
 
-\cite{zhuge2019sensitivity}
+%\justify
+
+\textit{Large scale urban/transport ABMs must be validated for relevant and robust policy applications}
+
+\bigskip
+
+A few example of MATSim validation or sensitivity analysis in the literature: uncertainty \cite{bienzeisler2021uncertainty}, sensitivity analysis \cite{zhuge2019sensitivity}, discrete choice parameters \cite{horl2021integrating}
+
+
+\bigskip
+\bigskip
+
+\textbf{Research objective:}
+
+\medskip
+
+\textit{Provide a modular and open implementation of MATSim generic to any UK urban area and test global sensitivity analysis methods on it}
+
+
 
 
 }
@@ -94,7 +112,7 @@ Source: \cite{wegener2004land}
 
 \begin{itemize}
 	\item MATSim model (MATSim Community) for the transportation system \url{https://www.matsim.org/} \cite{horni2016multi}
-	\item SPENSER model (University of Leeds) for the synthetic population \url{https://github.com/nismod/microsimulation}
+	\item SPENSER model (University of Leeds) for the synthetic population \url{https://github.com/nismod/microsimulation} \cite{spooner2021dynamic}
 	\item QUANT model (CASA, University College London) for spatial interactions to generate home-work plans \url{http://quant.casa.ucl.ac.uk/} \cite{batty2021new} % \cite{milton2019accelerating}
 	\item spatialdata library (OpenMOLE community) for data processing \url{https://github.com/openmole/spatialdata} \cite{raimbault2020scala}
 \end{itemize}
@@ -109,13 +127,11 @@ Source: \cite{wegener2004land}
 
 % Data used to construct the synthetic population is mostly Census data, while transportation networks are built combining Ordnance Survey open data, OpenStreetMap data, and GTFS data for public transport timetables. The QUANT model uses census commuting flows to estimate spatial interaction parameters.
 
-\textbf{Data:}
-
-Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) or any arbitrary area in the UK: NOMIS census, OrdnanceSurvey roads, Traveline National Dataset for public transport
+\textbf{Data:} Generic for any Functional Urban Area (GHSL \cite{florczyk2019ghsl}) or any arbitrary area in the UK: NOMIS census, OrdnanceSurvey roads, Traveline National Dataset for public transport
 
 \medskip
 
-\textbf{Workflow systems:}
+\textbf{Workflow systems for the integration of submodels:}
 
 \begin{itemize}
 	\item DAFNI facility funded by UKCRIC \url{https://dafni.ac.uk}
@@ -186,14 +202,30 @@ OpenMOLE model exploration open source software \cite{reuillon2013openmole}
 \begin{itemize}
 	\item Functional Urban Area (spatial context \cite{raimbault2019space})
 	\item Random seed (influence of stochasticity \cite{bienzeisler2021uncertainty}) % gisruk? sds? ewgt!
-	\item Synthetic population sampling share
+	\item Synthetic population sampling
 	\item Modal choice parameters \cite{horl2021integrating}: mode constants in scoring function (car, public transport, walking)
 \end{itemize}
 
 
 }
 
+\sframe{OpenMOLE script}{
 
+\centering
+
+\includegraphics[width=1.1\linewidth]{figures/script_1.png}
+
+
+}
+
+\sframe{OpenMOLE script (continued)}{
+
+
+\centering
+
+\includegraphics[width=1.1\linewidth]{figures/script_2.png}
+
+}
 
 
 \section{Results}
@@ -229,7 +261,7 @@ is the expected relative variance reduction if $X_i$ would be fixed
 
 \textbf{Total effect index}
 \[
-ST_i = \frac{E_{\mathbf{X}_{\sim i}}\left[Var(Y | \mathbf{X}_{\sim i}) \right]}{Var(Y)}
+ST_i \textrm{=} \frac{E_{\mathbf{X}_{\sim i}}\left[Var\left(Y | \mathbf{X}_{\sim i}\right) \right]}{Var\left[Y\right]}
 \]
 
 is the expected relative variance if all factors but $X_i$ are fixed (includes interaction effects)
@@ -240,6 +272,23 @@ is the expected relative variance if all factors but $X_i$ are fixed (includes i
 
 
 \sframe{GSA results}{
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+	output & $\beta_W$ & $\beta_{PT}$ & $\beta_{C}$ & S & FUA & $p$ \\\hline
+carShare & 0.023 & 0.0058 & 0.0079 & 3.94  & 0.165 & 0.379 \\
+ptShare & 0.0081 & 0.0074 & 0.0030 & 2.164 & 0.04 & 0.0169 \\
+walkShare & 0.0059 & 0.0017 & 0.0074 & 0.834 & 0.16 & 0.082 \\
+avgTripDistance & 0.11 & 0.19 & 0.087 & 0.04 & 1.51 & 0.049 \\
+avgScore & 0.43 & 0.0003 & 0.0039 & 0.057 & 0.0085 & 0.0073 \\\hline
+\end{tabular}
+\end{center}
+
+\medskip
+
+\textit{Total order Saltelli indices obtained with $\simeq 50$ model runs}
 
 }
 
@@ -252,16 +301,44 @@ is the expected relative variance if all factors but $X_i$ are fixed (includes i
 
 \sframe{Discussion}{
 
+\justify
+
+\textbf{MATSim sensitivity analysis}
+
+$\rightarrow$ Preliminary results, but suggest a strong influence of stochasticity, context and parameters
+
+\medskip
+
 % on reproducibility: still experimental - but totally open. pb of infra? (galere memory e.g.)
 
-% covid? Possible systematic exploration on all urban areas of home-work policies and modifications of agent schedules using genetic algorithms from OpenMOLE
-%Visualisation of MATSim agents dynamics (MATSim visu features not open)
-% -> role of visualisation?
+\textbf{Large scale open, reproducible and validated models?}
 
-% Dynamical strong coupling of QUANT and SPENSER to combine population projections with the transport model
-% Validation of sub-models and integrated models using advanced model validation methods
-% Use MATSim outputs to quantify effective densities in public transport: potential exposure indicators in the COVID-19 context
-% Impact of policies and interventions on transport system dynamics and potential contaminations
+$\rightarrow$ Still a long way to go: a lot of tuning even with containers; issue of infrastructure (memory vs CPUs)
+
+\medskip
+
+
+\textbf{Role of visualisation}
+
+$\rightarrow$ Some models are intrinsically interactive/visual (cf QUANT): compatible with workflow systems / integration? (change in model function)
+
+\medskip
+
+\textbf{Future developments}
+
+$\rightarrow$ dynamical strong coupling of models (SPENSER/QUANT); applications to policies
+
+}
+
+
+\sframe{DAFNI integration}{
+
+\begin{center}
+\includegraphics[height=0.7\textheight]{figures/roadshow.png}
+\end{center}
+
+\tiny
+\url{https://www.eventbrite.co.uk/e/dafni-roadshow-ucl-urban-models-openmole-now-on-dafni-tickets-186614407717}
 
 }
 
@@ -277,11 +354,15 @@ is the expected relative variance if all factors but $X_i$ are fixed (includes i
 
 \justify
 
-$\rightarrow$ 
+$\rightarrow$ Open, reproducible and validated urban models as elementary bricks towards larger integrated models
 
 \medskip
 
-$\rightarrow$ 
+$\rightarrow$ Workflow systems provide model construction and exploration/validation
+
+\medskip
+
+$\rightarrow$ A preliminary global sensitivity analysis of multimodal MATSim for a generic implementation on UK FUAs
 
 \bigskip
 \bigskip

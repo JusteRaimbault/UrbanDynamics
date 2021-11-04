@@ -1,0 +1,55 @@
+
+
+val popSample = Val[Double]
+val seed = Val[Double]
+val fuaInd = Val[Double]
+val utilitywalk = Val[Double]
+val utilitycar = Val[Double]
+val utilitypt = Val[Double]
+
+val fuaName = Val[String]
+val fuaFile = Val[File]
+
+// runtime parameters
+val iterations = Val[Int]
+val threads = Val[Int]
+
+// synth pop data
+val dataDir = Val[File]
+val nwDir = Val[File]
+
+// matsim data
+val planFile = Val[File]
+val networkFile = Val[File]
+val transitScheduleFile = Val[File]
+val transitVehiclesFile = Val[File]
+
+// matsim outputs
+val outputDir = Val[File]
+
+val carShare = Val[Double]
+val ptShare = Val[Double]
+val walkShare = Val[Double]
+val avgTripDistance = Val[Double]
+val avgScore = Val[Double]
+
+
+// hardcoded list of fuas
+val setFUA = ScalaTask(
+  """
+  val potFUAs = fuaFile.content.split("\n").toSeq
+  println(fuaInd*potFUAs.size.toDouble)
+  println((fuaInd*potFUAs.size).toInt)
+  val fuaName = potFUAs((fuaInd*potFUAs.size.toDouble).toInt)
+  """
+) set (
+   (inputs,outputs) += (popSample,seed,utilitywalk,utilitycar,utilitypt),
+   inputs += (fuaInd,fuaFile),
+   outputs += (fuaName),
+   fuaFile := workDirectory / "areas.txt",
+  fuaInd := 0.5,popSample := 0.1, seed := 1.0,utilitywalk := 1.0,utilitycar := 1.0, utilitypt := 1.0
+)
+
+setFUA hook ToStringHook()
+
+

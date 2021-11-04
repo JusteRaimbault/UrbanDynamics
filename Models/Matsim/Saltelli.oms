@@ -37,8 +37,10 @@ val avgScore = Val[Double]
 // hardcoded list of fuas
 val setFUA = ScalaTask(
   """
-  val potFUAs = fuaFile.content.split("\n").toSeq
-  val fuaName = potFUAs((fuaInd*potFUAs.size).toInt)
+  //val potFUAs = fuaFile.content.split("\n").toSeq
+  val potFUAs = Seq("Taunton","Exeter")
+  val fuaName = potFUAs((fuaInd*potFUAs.size.toDouble).toInt)
+  //val fuaName="Taunton"
   """
 ) set (
    (inputs,outputs) += (popSample,seed,utilitywalk,utilitycar,utilitypt),
@@ -47,7 +49,7 @@ val setFUA = ScalaTask(
    fuaFile := workDirectory / "areas.txt"
 )
 
-val popcommand = "ls /data/LAD;sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data"
+val popcommand = "ls /data/LAD;export SBT_OPTS=\"-Xmx16G\";sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data;[ ! -f Plans_${fuaName}.xml ] && touch Plans_${fuaName}.xml"
 
 
 // FIXME random seed is not included in population generation
@@ -55,7 +57,8 @@ val population = ContainerTask(
     image = workDirectory / "images" / "matsim-population-1.0-0a52e7b80f.tar.gz",
     command = popcommand,
     workDirectory = "/root/spatialdata/library",
-    containerSystem = Singularity()
+    containerSystem = Singularity(),
+    errorOnReturnValue = false
 ) set (
    (inputs,outputs) += (fuaName,popSample,seed,utilitywalk,utilitycar,utilitypt),
    inputFiles += (dataDir,"/data/"),
@@ -80,10 +83,7 @@ val readfiles = ScalaTask("""
   (inputs,outputs) += (fuaName,popSample,seed,utilitywalk,utilitycar,utilitypt,planFile),
   inputs += (nwDir),
   outputs += (networkFile, transitScheduleFile, transitVehiclesFile),
-  nwDir := workDirectory / "Network" / "runtime",
-  fuaName := "Taunton",
-  planFile := workDirectory / "TEST_Plans_Taunton.xml",
-  popSample := 0.1
+  nwDir := workDirectory / "Network" / "runtime"
 )
 
 
@@ -92,6 +92,7 @@ export SEED=${seed.toInt};export ITERATIONS=${iterations};export THREADS=${threa
 export UTILITYWALK=${utilitywalk};export UTILITYPT=${utilitypt};export UTILITYCAR=${utilitycar}
 ./config.sh
 java -Xmx18G -cp matsim-12.0/matsim-12.0.jar org.matsim.run.Controler config_runtime.xml
+mkdir output
 """
 
 val matsim = ContainerTask(
@@ -125,12 +126,12 @@ val matsim = ContainerTask(
 
 
 val outputProcessing = ScalaTask("""
-  val modeShares = (outputDir / "modestats.txt").content.split("\n").last.split("\t").drop(1).map(_.toDouble)
+  val modeShares: Array[Double] = if (outputDir.list.size>0) (outputDir / "modestats.txt").content.split("\n").last.split("\t").drop(1).map(_.toDouble) else Array(0.0,0.0,0.0)
   val carShare = modeShares(0)
   val ptShare = modeShares(1)
   val walkShare = modeShares(2)
-  val avgTripDistance = (outputDir / "traveldistancestats.txt").content.split("\n").last.split("\t").last.toDouble
-  val avgScore = (outputDir / "scorestats.txt").content.split("\n").last.split("\t").dropRight(1).last.toDouble
+  val avgTripDistance = if (outputDir.list.size>0) (outputDir / "traveldistancestats.txt").content.split("\n").last.split("\t").last.toDouble else 0.0
+  val avgScore = if (outputDir.list.size>0) (outputDir / "scorestats.txt").content.split("\n").last.split("\t").dropRight(1).last.toDouble else 0.0
 """
 ) set (
   (inputs,outputs) += (popSample,fuaName,seed,utilitywalk,utilitycar,utilitypt,iterations,threads),
@@ -144,6 +145,7 @@ val purpose = "SALTELLI"
 val ts = ((new java.text.SimpleDateFormat("yyyyMMdd_HHmmss")).format(new java.util.Date()))
 val indics_hook = AppendToCSVFileHook(workDirectory / "saltelli" / (ts+"_"+purpose+".csv"),arrayOnRow = true)
 
+//val model = setFUA -- (population on LocalEnvironment(5)) -- readfiles -- (matsim on LocalEnvironment(1)) -- (outputProcessing hook indics_hook)
 val model = setFUA -- population -- readfiles -- matsim -- (outputProcessing hook indics_hook)
 
 
@@ -155,8 +157,8 @@ SensitivitySaltelli(
       utilitycar in (0.0,100.0),
       seed in (0.0,10000.0),
       fuaInd in (0.0,0.9999999999),
-      popSample in (0.0001,0.2)
+      popSample in (0.05,0.1)
       ),
   outputs = Seq(carShare, ptShare, walkShare, avgTripDistance, avgScore),
-  sample = 1
+  sample = 6
 ) hook (workDirectory / "saltelli" / (ts+"_"+purpose))

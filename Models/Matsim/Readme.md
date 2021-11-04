@@ -20,7 +20,12 @@ For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantC
 ## 2021/11/03
 
 list of areas: 
- ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "York|London|Manchester|Birmingham" | awk -F"." '{print $1}' > areas.txt
+largest: ls -Slh Network/runtime/ | grep .xml.gz 
++ remomve NI: Derry/Londonderry, Belfast
+
+ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "Belfast|Bangor|York|London|Manchester|Leeds|Glasgow|Nottingham|Liverpool|Bristol|Portsmouth|Birmingham" | awk -F"." '{print $1}' > areas.txt
+
+samples? ~10min with sample=1, small area, iterations=1 -> x3: 0.5h -> 20 samples? -> 10
 
 Strange issues with Matsim: https://github.com/matsim-org/matsim-libs/issues/1347
 solved by adding CRS (and modules?); then strategy to change modes to have modal shares

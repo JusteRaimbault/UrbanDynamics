@@ -17,6 +17,10 @@ For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantC
 # TODO
 
 
+## 2021/11/11
+
+paper sensitivity analysis -> for DC/scoring: Hörl, S. (2021). Integrating discrete choice models with MATSim scoring. Procedia Computer Science, 184, 704-711. (in bib/Transportation)
+
 ## 2021/11/03
 
 list of areas: 

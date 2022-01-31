@@ -50,7 +50,7 @@
 	path = Docs/WorkingPapers/ABMJobMarket-doc
 	url = git@github.com:JusteRaimbault/ABMJobMarket-doc.git
 [submodule "Docs/WorkingPapers/ABMJobMarket"]
-	path = Docs/WorkingPapers/ABMJobMarket
+	path = Docs/Papers/ABMJobMarket
 	url = git@github.com:JusteRaimbault/ABMJobMarket.git
 [submodule "Models/Microsimulation/microsimulation"]
 	path = Models/Microsimulation/microsimulation
@@ -62,5 +62,5 @@
 	path = Models/Matsim/eqasim-java
 	url = git@github.com:JusteRaimbault/eqasim-java.git
 [submodule "Models/ABMJobMarket"]
-	path = Models/ABMJobMarket
+	path = Models/ABMJobMarket-model
 	url = git@github.com:JusteRaimbault/ABMJobMarket-model.git

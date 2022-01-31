@@ -37,8 +37,8 @@ val avgScore = Val[Double]
 // hardcoded list of fuas
 val setFUA = ScalaTask(
   """
-  //val potFUAs = fuaFile.content.split("\n").toSeq
-  val potFUAs = Seq("Taunton","Exeter")
+  val potFUAs = fuaFile.content.split("\n").toSeq
+  //val potFUAs = Seq("Taunton","Exeter")
   val fuaName = potFUAs((fuaInd*potFUAs.size.toDouble).toInt)
   //val fuaName="Taunton"
   """
@@ -46,7 +46,8 @@ val setFUA = ScalaTask(
    (inputs,outputs) += (popSample,seed,utilitywalk,utilitycar,utilitypt),
    inputs += (fuaInd,fuaFile),
    outputs += (fuaName),
-   fuaFile := workDirectory / "areas.txt"
+   fuaFile := workDirectory / "areas.txt",
+   popSample := 1.0
 )
 
 val popcommand = "ls /data/LAD;export SBT_OPTS=\"-Xmx16G\";sbt \"project spatialdata; runMain org.openmole.spatialdata.application.matsim.RunMatsim --synthpop --popMode=detailed --jobMode=sample --planMode=default --sample=${popSample} --FUAName=${fuaName} --FUAFile=/data/GHS_FUA_UCDB2015_GLOBE_R2019A_54009_1K_V1_0_WGS84.gpkg --LAFile=/data/LAD/LAD_WGS84.shp --OAFile=/data/OA/OA2011_WGS84.shp --MSOAFile=/data/MSOA/EnglandWalesScotland_MSOAWGS84.shp --SPENSERDirs=/data/SPENSER/England,/data/SPENSER/Scotland,/data/SPENSER/Wales --OSMBuildingsDirs=/data/OSM/England,/data/OSM/Scotland,/data/OSM/Wales --QUANTDataDir=/data/QUANT/ --output=Plans\";ls /data;[ ! -f Plans_${fuaName}.xml ] && touch Plans_${fuaName}.xml"
@@ -156,9 +157,9 @@ SensitivitySaltelli(
       utilitypt in (0.0,100.0),
       utilitycar in (0.0,100.0),
       seed in (0.0,10000.0),
-      fuaInd in (0.0,0.9999999999),
-      popSample in (0.05,0.1)
+      fuaInd in (0.0,0.9999999999)//,
+      //popSample in (0.05,0.1)
       ),
   outputs = Seq(carShare, ptShare, walkShare, avgTripDistance, avgScore),
-  sample = 6
+  sample = 20
 ) hook (workDirectory / "saltelli" / (ts+"_"+purpose))

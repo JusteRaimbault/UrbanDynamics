@@ -26,8 +26,9 @@ paper sensitivity analysis -> for DC/scoring: Hörl, S. (2021). Integrating disc
 list of areas: 
 largest: ls -Slh Network/runtime/ | grep .xml.gz 
 + remomve NI: Derry/Londonderry, Belfast
++ Hull has no gtfs
 
-ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "Belfast|Bangor|York|London|Manchester|Leeds|Glasgow|Nottingham|Liverpool|Bristol|Portsmouth|Birmingham" | awk -F"." '{print $1}' > areas.txt
+ls Network/runtime/ | grep poly | grep -v "_" | grep -vE "Belfast|Bangor|York|London|Manchester|Leeds|Glasgow|Nottingham|Liverpool|Bristol|Portsmouth|Birmingham|Hull" | awk -F"." '{print $1}' > areas.txt
 
 samples? ~10min with sample=1, small area, iterations=1 -> x3: 0.5h -> 20 samples? -> 10
 

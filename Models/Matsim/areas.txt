@@ -9,7 +9,6 @@ Blackpool
 Blackwater
 Bournemouth
 Bridgend
-Brighton
 Burton-on-Trent
 Cambridge
 Canterbury
@@ -32,7 +31,6 @@ Folkestone
 Gloucester
 Greenock
 Grimsby
-Harrogate
 Hereford
 Ipswich
 Lancaster
@@ -47,7 +45,6 @@ Margate
 Middlesbrough
 Northampton
 Norwich
-Oxford
 Peterborough
 Plymouth
 Preston
@@ -62,8 +59,6 @@ Southport
 Stafford
 Stevenage
 Stoke-on-Trent
-Swansea
-Swindon
 Taunton
 Telford
 Torquay

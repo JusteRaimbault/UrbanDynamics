@@ -161,5 +161,5 @@ SensitivitySaltelli(
       //popSample in (0.05,0.1)
       ),
   outputs = Seq(carShare, ptShare, walkShare, avgTripDistance, avgScore),
-  sample = 20
+  sample = 25
 ) hook (workDirectory / "saltelli" / (ts+"_"+purpose))

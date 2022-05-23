@@ -1,7 +1,11 @@
 
 
 
-# 2022/02/22
+## 2022/03/09
+
+doi:10.1177/23998083211051139 (in bib/ModelCoupling): edito Mike mulitple models -> coupling, integation, validation
+
+## 2022/02/22
 
 lomax2022open (in bib/UrbanModeling): spenser, coupling, openudm
 https://github.com/geospatialncl/OpenUDM (resources)

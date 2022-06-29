@@ -21,6 +21,15 @@ For OpenMOLE scripts, see current QUANT-SPENSER integration at [../SpenserQuantC
 
 paper sensitivity analysis -> for DC/scoring: Hörl, S. (2021). Integrating discrete choice models with MATSim scoring. Procedia Computer Science, 184, 704-711. (in bib/Transportation)
 
+
+## 2021/11/19
+
+Some transit schdules missing -> ls -lh Network/runtime/ | grep transit_schedule | grep -v 158
+
+ls -lh Network/runtime/ | grep transit_schedule | grep -v 158 | grep -vE "Belfast|Bangor|York|London|Manchester|Leeds|Glasgow|Nottingham|Liverpool|Bristol|Portsmouth|Birmingham|Hull" | awk -F" " '{print $NF}' | awk -F"_transit" '{print $1}' | grep -v "_" > areas.txt
+
+-> 72 to 67 areas
+
 ## 2021/11/03
 
 list of areas: 

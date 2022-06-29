@@ -8,7 +8,7 @@
 	path = Models/QuantEpistemo
 	url = git@github.com:JusteRaimbault/UrbanModelingCitations.git
 [submodule "Docs/Papers/ABMCitiesFirms"]
-	path = Docs/Papers/ABMCitiesFirms
+	path = Docs/Papers/ABMCitiesFirms-paper
 	url = git@github.com:JusteRaimbault/ABMCitiesFirms-paper.git
 [submodule "Models/ABMCitiesFirms"]
 	path = Models/ABMCitiesFirms

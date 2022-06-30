@@ -551,6 +551,16 @@ avgScore & 0.43 & 0.0003 & 0.0039 & 0.057 & 0.0085 & 0.0073 \\\hline
 
 \textit{Total order Saltelli indices obtained with $\simeq 50$ model runs}
 
+
+\bigskip
+\bigskip
+
+
+\justify
+
+\textbf{Work in progress: } Use OpenMOLE implementation of a genetic algorithm for multi-objective optimisation (NSGA2) to calibrate mode parameters on share observed for census commuting flows.
+
+
 }
 
 
@@ -562,11 +572,62 @@ avgScore & 0.43 & 0.0003 & 0.0039 & 0.057 & 0.0085 & 0.0073 \\\hline
 
 \sframe{Coupling QUANT and SPENSER models}{
 
+\begin{table}
+\vspace{-0.7cm}
+	\centering
+	\begin{tabular}{|p{3.8cm}|p{3.5cm}|p{3.5cm}|}
+	\hline
+	\footnotesize
+	& QUANT & SPENSER \\
+	\hline
+Time scale & 10 years & 40 years \\
+Spatial scale & UK & UK \\
+Spatial resolution & MSOA & MSOA \\
+Agent granularity & Aggregated counts & individual level \\
+Static/Dynamic & Equilibrium (static) & Dynamic \\
+Randomness & Deterministic & Monte-Carlo \\\hline
+Transportation & 3 modes & NA \\
+Economics & Accessibility-based relocations & NA \\
+Demographics & NA & Data-driven \\
+Migration flows & Accessibility-based relocations & Data-driven \\
+\hline
+	\end{tabular}
+\end{table}
+
+%\smallskip
+\justify
+
+Weak coupling SPENSER (microsimulation) $\rightarrow$ QUANT (LUTI): $\simeq$ applying QUANT with future population $\simeq$ future impacts of a transportation infrastructure.
+
+
 }
 
 \sframe{Current work and prospects}{
 
 % open questions with spenser-quant coupling
+
+\textbf{Current coupling: } OpenMOLE script with containers for SPENSER (python/cpp) and the original QUANT backend (C{\#})
+
+\medskip
+
+\url{https://github.com/JusteRaimbault/UrbanDynamics/blob/master/Models/SpenserQuantCoupling}
+
+\bigskip
+
+\textbf{Work in progress: } extension of QUANT implementation in spatialdata for more flexibility on scenario exploration, application to the CAMCOX corridor.
+
+\bigskip
+
+\textbf{Open questions: }
+
+% not mention even stronger coupling: quant as module in spenser?
+
+\begin{itemize}
+	\item Meaning of the weak coupling QUANT $\rightarrow$ SPENSER
+	\item Stronger coupling: iteration of each model at each time step (progressive infrastructure construction, evolution of employments
+	\item Application: genetic algorithm exploration of potential infrastructure, trade-offs accessibility/emissions
+\end{itemize}
+
 
 }
 
@@ -590,6 +651,24 @@ avgScore & 0.43 & 0.0003 & 0.0039 & 0.057 & 0.0085 & 0.0073 \\\hline
 % Varenne - mmodel functions - couling/integrqtion / issues different
 
 % DEF and characterisation of model coupling: horizontal/vertical ; strength of coupling -> URGENT do some work (SR/MetaAnal) - rassembler idees - paper as primer?
+
+\justify
+
+$\rightarrow$ a theoretical and methodological framework to integrate model and associated tools - still does not solves all technical issues, model tuning, adaptation and optimisation may be necessary (e.g. MATSim: memory; QUANT-SPENSER: implementation). \textit{Possibility of totally seamless model manipulation and coupling?}
+
+\bigskip
+
+$\rightarrow$ Clear definition of model coupling and its measure still needed: between scales, ontologies, (in)compatibilities.
+
+\bigskip
+
+$\rightarrow$ Validation of coupled models ($\neq$ coupling validated models).
+
+\bigskip
+
+$\rightarrow$ Role of model functions, which may change at integration \cite{varenne2018theories}.
+
+
 
 
 
@@ -625,7 +704,7 @@ $\rightarrow$ \textbf{Complementarity} of perspectives, models and theories in a
 
 \bigskip
 
-\textbf{Presented models open source at }
+\textbf{Presented models are open source at }
 
 \url{https://github.com/JusteRaimbault/UrbanDynamics}
 

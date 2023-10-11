@@ -61,6 +61,3 @@
 [submodule "Models/Matsim/eqasim-java"]
 	path = Models/Matsim/eqasim-java
 	url = git@github.com:JusteRaimbault/eqasim-java.git
-[submodule "Models/ABMJobMarket"]
-	path = Models/ABMJobMarket-model
-	url = git@github.com:JusteRaimbault/ABMJobMarket-model.git

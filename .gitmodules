@@ -4,10 +4,10 @@
 [submodule "Models/MobilityPlaces"]
 	path = Models/MobilityPlaces
 	url = git@github.com:MettiHoof/3circles.git
-[submodule "Models/QuantEpistemo"]
-	path = Models/QuantEpistemo
+[submodule "Models/UrbanModelingCitations"]
+	path = Models/UrbanModelingCitations
 	url = git@github.com:JusteRaimbault/UrbanModelingCitations.git
-[submodule "Docs/Papers/ABMCitiesFirms"]
+[submodule "Docs/Papers/ABMCitiesFirms-paper"]
 	path = Docs/Papers/ABMCitiesFirms-paper
 	url = git@github.com:JusteRaimbault/ABMCitiesFirms-paper.git
 [submodule "Models/ABMCitiesFirms"]
@@ -40,7 +40,7 @@
 [submodule "Docs/WorkingPapers/QuantDescription"]
 	path = Docs/WorkingPapers/QuantDescription
 	url = git@github.com:JusteRaimbault/QuantDescription.git
-[submodule "Models/matsim-libs"]
+[submodule "Models/Matsim/matsim-libs"]
 	path = Models/Matsim/matsim-libs
 	url = https://github.com/matsim-org/matsim-libs.git
 [submodule "Docs/Papers/UrbanNetworkLUR"]
